@@ -1,0 +1,2036 @@
+[Log] Writing console output to: results/gs_cross_validation_20251223_124759.log
+==================================================================
+MultiGS-P (1.0): GENOMIC SELECTION PIPELINE USING MACHINING LEARNING AND DEEP LEARNING MODELS
+==================================================================
+Mode: CROSS_VALIDATION
+Enabled models: R_RRBLUP, R_GBLUP, RRBLUP, ElasticNet, RFR, BRR, XGBoost, LightGBM, DNNGS, MLPGS, GraphConvGS, GraphAttnGS, GraphSAGEGS, GraphFormer, DeepResBLUP, DeepBLUP, EnsembleGS
+Feature (marker) views: ['HAP']
+Results directory: results
+Marker file: ../../inputFile/train_genotype.vcf
+Pheno file: ../../inputFile/train_phenotype.txt
+------------------------------------------------------------------
+Running in CROSS-VALIDATION mode
+==================================================
+Running cross-validation for marker type: HAP
+==================================================
+[Input] Using VCF genotype file: ../../inputFile/train_genotype.vcf
+Total SNPs =  2000
+Total samples =  298
+[RUN] ../../../Pipelines/Utilities/rtm-gwas/rtm-gwas-snpldb --vcf ../../inputFile/train_genotype.vcf --thread 10 --out results/intermediate_data/train_genotype_hap
+RTM-GWAS SNPLDB 2023.0 (5 Aug 2023)
+INFO: reading genotype file ...
+INFO: 298 individuals, 2000 loci
+INFO: 23 blocks found on Chr1
+INFO: 19 blocks found on Chr10
+INFO: 5 blocks found on Chr11
+INFO: 12 blocks found on Chr12
+INFO: 37 blocks found on Chr13
+INFO: 21 blocks found on Chr14
+INFO: 14 blocks found on Chr15
+INFO: 22 blocks found on Chr2
+INFO: 17 blocks found on Chr3
+INFO: 6 blocks found on Chr4
+INFO: 26 blocks found on Chr5
+INFO: 19 blocks found on Chr6
+INFO: 16 blocks found on Chr7
+INFO: 12 blocks found on Chr8
+INFO: 20 blocks found on Chr9
+RTM-GWAS SNPLDB has finished
+
+haplotype vcf file: results/intermediate_data/train_genotype_hap.vcf
+Total samples in haplotype vcf : 298
+Total markers in haplotype vcf: 1607
+Total haplotypes =  1607
+Total samples =  298
+
+[DATA] Total samples: 293 
+[DATA] Feature view: HAP 
+[DATA] No. markers: 1607
+[DATA] Traits: ['YLD', 'PLH']
+[DATA] No. traits: 2
+
+
+=== [HAP] Replicate 1/1, Fold 1/5 ===
+Training models: R_RRBLUP, R_GBLUP, RRBLUP, ElasticNet, RFR, BRR, XGBoost, LightGBM, DNNGS, MLPGS, GraphConvGS, GraphAttnGS, GraphSAGEGS, GraphFormer, DeepResBLUP, DeepBLUP, EnsembleGS
+[HAP] Training R_RRBLUP...
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 234 samples, 1607 markers using REML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.116022, Vu=0.000244, h²=0.002
+  R_RRBLUP Trait 1/2 - SUCCESS
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 234 samples, 1607 markers using REML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.098701, Vu=0.000246, h²=0.002
+  R_RRBLUP Trait 2/2 - SUCCESS
+  R_RRBLUP: 2/2 traits trained successfully
+[HAP] [R_RRBLUP] memory used during training: 429.92 MB
+[HAP] [R_RRBLUP] training completed in 0.10 minutes (6.27 seconds)
+
+[HAP] Training R_GBLUP...
+✓ R package 'rrBLUP' successfully loaded
+R-GBLUP: Fitting with 234 samples, 1607 markers
+Computing kinship matrix with R's A.mat()...
+Calling R: mixed.solve() with kinship...
+Breeding values shape: (234,)
+Marker effects calculated via pseudoinverse, shape: (1607,)
+R-GBLUP fitted: Ve=0.113474, Vu=0.197429, h²=0.635
+  R_GBLUP Trait 1/2 - SUCCESS
+✓ R package 'rrBLUP' successfully loaded
+R-GBLUP: Fitting with 234 samples, 1607 markers
+Computing kinship matrix with R's A.mat()...
+Calling R: mixed.solve() with kinship...
+Breeding values shape: (234,)
+Marker effects calculated via pseudoinverse, shape: (1607,)
+R-GBLUP fitted: Ve=0.095061, Vu=0.200668, h²=0.679
+  R_GBLUP Trait 2/2 - SUCCESS
+  R_GBLUP: 2/2 traits trained successfully
+[HAP] [R_GBLUP] memory used during training: 23.78 MB
+[HAP] [R_GBLUP] training completed in 0.10 minutes (5.95 seconds)
+
+[HAP] Training RRBLUP...
+HighPerformanceRRBLUP: 234 samples, 1607 markers, method=mixed_model
+REML-like lambda estimation: λ=0.001000
+Using lambda: 0.001000
+RRBLUP mixed model fitted: λ=0.001000
+HighPerformanceRRBLUP: 234 samples, 1607 markers, method=mixed_model
+REML-like lambda estimation: λ=0.001000
+Using lambda: 0.001000
+RRBLUP mixed model fitted: λ=0.001000
+[HAP] [RRBLUP] memory used during training: -0.25 MB
+[HAP] [RRBLUP] training completed in 0.00 minutes (0.21 seconds)
+
+[HAP] Training ElasticNet...
+[HAP] [ElasticNet] memory used during training: 0.00 MB
+[HAP] [ElasticNet] training completed in 0.00 minutes (0.03 seconds)
+
+[HAP] Training RFR...
+[HAP] [RFR] memory used during training: 1.41 MB
+[HAP] [RFR] training completed in 0.01 minutes (0.33 seconds)
+
+[HAP] Training BRR...
+Using alpha_1=1e-06, alpha_2=1e-06, lambda_1=1e-06, lambda_2=1e-06
+Using alpha_1=1e-06, alpha_2=1e-06, lambda_1=1e-06, lambda_2=1e-06
+[HAP] [BRR] memory used during training: 35.62 MB
+[HAP] [BRR] training completed in 0.01 minutes (0.52 seconds)
+
+[HAP] Training XGBoost...
+[HAP] [XGBoost] memory used during training: 7.44 MB
+[HAP] [XGBoost] training completed in 0.02 minutes (0.94 seconds)
+
+[HAP] Training LightGBM...
+[HAP] [LightGBM] memory used during training: 7.53 MB
+[HAP] [LightGBM] training completed in 0.01 minutes (0.53 seconds)
+
+[HAP] Training DNNGS...
+    [DNNGS] Epoch 1/300, LR: 0.000033, Train Loss: 1.9409, Val Loss: 0.7296
+    [DNNGS] Epoch 11/300, LR: 0.000367, Train Loss: 0.6287, Val Loss: 0.2795
+    [DNNGS] Epoch 21/300, LR: 0.000700, Train Loss: 0.3319, Val Loss: 0.2545
+    [DNNGS] Epoch 31/300, LR: 0.000996, Train Loss: 0.2262, Val Loss: 0.2572
+    [DNNGS] Epoch 41/300, LR: 0.000959, Train Loss: 0.1850, Val Loss: 0.2438
+    [DNNGS] Epoch 51/300, LR: 0.000922, Train Loss: 0.1427, Val Loss: 0.2166
+    [DNNGS] Epoch 61/300, LR: 0.000885, Train Loss: 0.1328, Val Loss: 0.2300
+    [DNNGS] Epoch 71/300, LR: 0.000848, Train Loss: 0.1223, Val Loss: 0.2320
+    [DNNGS] Epoch 81/300, LR: 0.000811, Train Loss: 0.0823, Val Loss: 0.2216
+    [DNNGS] Epoch 91/300, LR: 0.000774, Train Loss: 0.0848, Val Loss: 0.1914
+    [DNNGS] Epoch 101/300, LR: 0.000737, Train Loss: 0.0869, Val Loss: 0.1818
+    [DNNGS] Epoch 111/300, LR: 0.000700, Train Loss: 0.0679, Val Loss: 0.1817
+    [DNNGS] Epoch 121/300, LR: 0.000663, Train Loss: 0.0646, Val Loss: 0.1962
+    [DNNGS] Epoch 131/300, LR: 0.000626, Train Loss: 0.0768, Val Loss: 0.1964
+    [DNNGS] Epoch 141/300, LR: 0.000589, Train Loss: 0.0669, Val Loss: 0.1899
+    [DNNGS] Epoch 151/300, LR: 0.000552, Train Loss: 0.0650, Val Loss: 0.1950
+Early stopping at epoch 153
+Loaded best DNNGS model with validation loss: 0.1742
+[HAP] [DNNGS] memory used during training: 4.36 MB
+[HAP] [DNNGS] training completed in 3.33 minutes (199.85 seconds)
+
+[HAP] Training MLPGS...
+    [MLPGS] Epoch 1/300, Train Loss: 0.3481, Val Loss: 0.4829
+    [MLPGS] Epoch 11/300, Train Loss: 0.0949, Val Loss: 0.2206
+    [MLPGS] Epoch 21/300, Train Loss: 0.0610, Val Loss: 0.1462
+    [MLPGS] Epoch 31/300, Train Loss: 0.0438, Val Loss: 0.1339
+    [MLPGS] Epoch 41/300, Train Loss: 0.0386, Val Loss: 0.1463
+    [MLPGS] Epoch 51/300, Train Loss: 0.0364, Val Loss: 0.1530
+Early stopping at epoch 56
+[HAP] [MLPGS] memory used during training: 37.23 MB
+[HAP] [MLPGS] training completed in 3.98 minutes (238.74 seconds)
+
+[HAP] Training GraphConvGS...
+[GraphConvGS] Building sample graph with 234 samples using KNN (top_k=20, metric=euclidean)
+[KNN Graph] Built graph with 7582 edges, top_k=20, metric=euclidean
+[GraphConvGS] Graph built with 7582 edges
+[GraphConvGS] Starting training for 500 epochs
+    [GraphConvGS] Epoch 11/500 | train_loss: 0.470727 | val_loss: 0.408494
+    [GraphConvGS] Epoch 21/500 | train_loss: 0.397755 | val_loss: 0.351101
+    [GraphConvGS] Epoch 31/500 | train_loss: 0.376491 | val_loss: 0.323481
+    [GraphConvGS] Epoch 41/500 | train_loss: 0.337641 | val_loss: 0.299964
+    [GraphConvGS] Epoch 51/500 | train_loss: 0.319580 | val_loss: 0.281369
+    [GraphConvGS] Epoch 61/500 | train_loss: 0.291603 | val_loss: 0.261899
+    [GraphConvGS] Epoch 71/500 | train_loss: 0.279422 | val_loss: 0.246573
+    [GraphConvGS] Epoch 81/500 | train_loss: 0.286683 | val_loss: 0.240973
+    [GraphConvGS] Epoch 91/500 | train_loss: 0.277564 | val_loss: 0.225472
+    [GraphConvGS] Epoch 101/500 | train_loss: 0.258069 | val_loss: 0.217399
+    [GraphConvGS] Epoch 111/500 | train_loss: 0.243371 | val_loss: 0.213549
+    [GraphConvGS] Epoch 121/500 | train_loss: 0.224626 | val_loss: 0.201815
+    [GraphConvGS] Epoch 131/500 | train_loss: 0.222953 | val_loss: 0.190777
+    [GraphConvGS] Epoch 141/500 | train_loss: 0.211291 | val_loss: 0.184810
+    [GraphConvGS] Epoch 151/500 | train_loss: 0.220602 | val_loss: 0.178310
+    [GraphConvGS] Epoch 161/500 | train_loss: 0.221091 | val_loss: 0.185906
+    [GraphConvGS] Epoch 171/500 | train_loss: 0.218906 | val_loss: 0.182090
+    [GraphConvGS] Epoch 181/500 | train_loss: 0.209480 | val_loss: 0.167626
+    [GraphConvGS] Epoch 191/500 | train_loss: 0.204853 | val_loss: 0.165486
+    [GraphConvGS] Epoch 201/500 | train_loss: 0.203158 | val_loss: 0.161774
+    [GraphConvGS] Epoch 211/500 | train_loss: 0.183784 | val_loss: 0.154177
+    [GraphConvGS] Epoch 221/500 | train_loss: 0.188654 | val_loss: 0.152569
+    [GraphConvGS] Epoch 231/500 | train_loss: 0.189774 | val_loss: 0.152641
+    [GraphConvGS] Epoch 241/500 | train_loss: 0.199384 | val_loss: 0.144010
+    [GraphConvGS] Epoch 251/500 | train_loss: 0.194905 | val_loss: 0.140703
+    [GraphConvGS] Epoch 261/500 | train_loss: 0.178379 | val_loss: 0.136354
+    [GraphConvGS] Epoch 271/500 | train_loss: 0.174803 | val_loss: 0.133744
+    [GraphConvGS] Epoch 281/500 | train_loss: 0.173173 | val_loss: 0.126782
+    [GraphConvGS] Epoch 291/500 | train_loss: 0.173181 | val_loss: 0.127258
+    [GraphConvGS] Epoch 301/500 | train_loss: 0.177077 | val_loss: 0.125186
+    [GraphConvGS] Epoch 311/500 | train_loss: 0.162801 | val_loss: 0.123407
+    [GraphConvGS] Epoch 321/500 | train_loss: 0.162223 | val_loss: 0.126635
+[GraphConvGS] Early stopping at epoch 321. Best val 0.121993
+[GraphConvGS] Training completed successfully
+[HAP] [GraphConvGS] memory used during training: 2.71 MB
+[HAP] [GraphConvGS] training completed in 0.96 minutes (57.67 seconds)
+
+[HAP] Training GraphAttnGS...
+[GraphAttnGS] Building sample graph with 234 samples using KNN (top_k=20, metric=euclidean)
+[KNN Graph] Built graph with 7582 edges, top_k=20, metric=euclidean
+[GraphAttnGS] Graph built with 7582 edges
+[GraphAttnGS] Starting training for 500 epochs
+    [GraphAttnGS] Epoch 11/500 | train_loss: 0.365468 | val_loss: 0.333383
+    [GraphAttnGS] Epoch 21/500 | train_loss: 0.299594 | val_loss: 0.271910
+    [GraphAttnGS] Epoch 31/500 | train_loss: 0.296030 | val_loss: 0.242020
+    [GraphAttnGS] Epoch 41/500 | train_loss: 0.255159 | val_loss: 0.211907
+    [GraphAttnGS] Epoch 51/500 | train_loss: 0.257657 | val_loss: 0.198819
+    [GraphAttnGS] Epoch 61/500 | train_loss: 0.238423 | val_loss: 0.177966
+    [GraphAttnGS] Epoch 71/500 | train_loss: 0.231966 | val_loss: 0.169414
+    [GraphAttnGS] Epoch 81/500 | train_loss: 0.186083 | val_loss: 0.155698
+    [GraphAttnGS] Epoch 91/500 | train_loss: 0.178661 | val_loss: 0.145893
+    [GraphAttnGS] Epoch 101/500 | train_loss: 0.197837 | val_loss: 0.136565
+    [GraphAttnGS] Epoch 111/500 | train_loss: 0.185368 | val_loss: 0.119445
+    [GraphAttnGS] Epoch 121/500 | train_loss: 0.190130 | val_loss: 0.109818
+    [GraphAttnGS] Epoch 131/500 | train_loss: 0.155947 | val_loss: 0.107313
+    [GraphAttnGS] Epoch 141/500 | train_loss: 0.144715 | val_loss: 0.096409
+    [GraphAttnGS] Epoch 151/500 | train_loss: 0.137497 | val_loss: 0.093836
+    [GraphAttnGS] Epoch 161/500 | train_loss: 0.155546 | val_loss: 0.087934
+    [GraphAttnGS] Epoch 171/500 | train_loss: 0.148147 | val_loss: 0.082598
+    [GraphAttnGS] Epoch 181/500 | train_loss: 0.142671 | val_loss: 0.078593
+    [GraphAttnGS] Epoch 191/500 | train_loss: 0.123437 | val_loss: 0.078197
+    [GraphAttnGS] Epoch 201/500 | train_loss: 0.128077 | val_loss: 0.072672
+    [GraphAttnGS] Epoch 211/500 | train_loss: 0.134750 | val_loss: 0.070784
+    [GraphAttnGS] Epoch 221/500 | train_loss: 0.131278 | val_loss: 0.065971
+    [GraphAttnGS] Epoch 231/500 | train_loss: 0.118550 | val_loss: 0.065046
+    [GraphAttnGS] Epoch 241/500 | train_loss: 0.127958 | val_loss: 0.065676
+    [GraphAttnGS] Epoch 251/500 | train_loss: 0.120758 | val_loss: 0.065850
+[GraphAttnGS] Early stopping at epoch 253. Best val 0.063193
+[GraphAttnGS] Training completed successfully
+[HAP] [GraphAttnGS] memory used during training: 4.11 MB
+[HAP] [GraphAttnGS] training completed in 2.99 minutes (179.56 seconds)
+
+[HAP] Training GraphSAGEGS...
+[GraphSAGEGS] Building sample graph with 234 samples using KNN (top_k=20, metric=euclidean)
+[KNN Graph] Built graph with 7582 edges, top_k=20, metric=euclidean
+[GraphSAGEGS] Graph built with 7582 edges
+[GraphSAGEGS] Starting training for 500 epochs
+    [GraphSAGEGS] Epoch 11/500 | train_loss: 0.360396 | val_loss: 0.285078
+    [GraphSAGEGS] Epoch 21/500 | train_loss: 0.217852 | val_loss: 0.172196
+    [GraphSAGEGS] Epoch 31/500 | train_loss: 0.188702 | val_loss: 0.110716
+    [GraphSAGEGS] Epoch 41/500 | train_loss: 0.122344 | val_loss: 0.070305
+    [GraphSAGEGS] Epoch 51/500 | train_loss: 0.115394 | val_loss: 0.054740
+    [GraphSAGEGS] Epoch 61/500 | train_loss: 0.087678 | val_loss: 0.042362
+    [GraphSAGEGS] Epoch 71/500 | train_loss: 0.078905 | val_loss: 0.036096
+    [GraphSAGEGS] Epoch 81/500 | train_loss: 0.070418 | val_loss: 0.027384
+    [GraphSAGEGS] Epoch 91/500 | train_loss: 0.064399 | val_loss: 0.020826
+    [GraphSAGEGS] Epoch 101/500 | train_loss: 0.059740 | val_loss: 0.017108
+    [GraphSAGEGS] Epoch 111/500 | train_loss: 0.050517 | val_loss: 0.012180
+    [GraphSAGEGS] Epoch 121/500 | train_loss: 0.049774 | val_loss: 0.010230
+    [GraphSAGEGS] Epoch 131/500 | train_loss: 0.051155 | val_loss: 0.009270
+    [GraphSAGEGS] Epoch 141/500 | train_loss: 0.042673 | val_loss: 0.008413
+    [GraphSAGEGS] Epoch 151/500 | train_loss: 0.040991 | val_loss: 0.007397
+    [GraphSAGEGS] Epoch 161/500 | train_loss: 0.040580 | val_loss: 0.009242
+    [GraphSAGEGS] Epoch 171/500 | train_loss: 0.038622 | val_loss: 0.006071
+    [GraphSAGEGS] Epoch 181/500 | train_loss: 0.039320 | val_loss: 0.005015
+    [GraphSAGEGS] Epoch 191/500 | train_loss: 0.035759 | val_loss: 0.006945
+    [GraphSAGEGS] Epoch 201/500 | train_loss: 0.037330 | val_loss: 0.004054
+    [GraphSAGEGS] Epoch 211/500 | train_loss: 0.039189 | val_loss: 0.004472
+[GraphSAGEGS] Early stopping at epoch 219. Best val 0.004012
+[GraphSAGEGS] Training completed successfully
+[HAP] [GraphSAGEGS] memory used during training: 1.61 MB
+[HAP] [GraphSAGEGS] training completed in 0.79 minutes (47.50 seconds)
+
+[HAP] Training GraphFormer...
+[KNN Graph] Built graph with 11018 edges, top_k=30, metric=euclidean
+[GraphFormer] Creating model:
+  - Input dim: 1607, Output dim: 2
+  - GNN type: SAGE, GNN hidden: 128
+  - Transformer: 2 layers, d_model: 128
+  - Device: cpu
+[GraphFormer] Model created successfully
+[GraphFormer] Model has GNN attribute: True
+[GraphFormer] GNN layer type: <class 'torch_geometric.nn.conv.sage_conv.SAGEConv'>
+[GraphFormer] Dataset created: 1 graphs
+[GraphFormer] Testing forward pass...
+[GraphFormer] Forward pass successful! Output shape: torch.Size([234, 2])
+[GraphFormer] Starting training for 500 epochs...
+    [GraphFormer] Epoch 1/500, Loss: 1.088906 *
+    [GraphFormer] Epoch 11/500, Loss: 0.126449 *
+    [GraphFormer] Epoch 21/500, Loss: 0.070413 *
+    [GraphFormer] Epoch 31/500, Loss: 0.047342 *
+    [GraphFormer] Epoch 41/500, Loss: 0.039595
+    [GraphFormer] Epoch 51/500, Loss: 0.029959
+    [GraphFormer] Epoch 61/500, Loss: 0.020039 *
+    [GraphFormer] Epoch 71/500, Loss: 0.019277
+    [GraphFormer] Epoch 81/500, Loss: 0.017700
+    [GraphFormer] Epoch 91/500, Loss: 0.013672 *
+    [GraphFormer] Epoch 101/500, Loss: 0.013515 *
+    [GraphFormer] Epoch 111/500, Loss: 0.011751 *
+    [GraphFormer] Epoch 121/500, Loss: 0.012306
+    [GraphFormer] Epoch 131/500, Loss: 0.011242
+    [GraphFormer] Epoch 141/500, Loss: 0.010487
+    [GraphFormer] Epoch 151/500, Loss: 0.012135
+    [GraphFormer] Early stopping at epoch 157
+[GraphFormer] Loaded best model with loss: 0.010366
+[GraphFormer] Training completed successfully
+[HAP] [GraphFormer] memory used during training: 1.19 MB
+[HAP] [GraphFormer] training completed in 1.14 minutes (68.55 seconds)
+
+[HAP] Training DeepResBLUP...
+[DeepResBLUP_Hybrid] Fit: base=R_RRBLUP, dl=MLPGS
+✓ R package 'rrBLUP' successfully loaded
+[DeepResBLUP_Hybrid] Training base (RRBLUP) model...
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 234 samples, 1607 markers using REML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.116022, Vu=0.000244, h²=0.002
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 234 samples, 1607 markers using REML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.098701, Vu=0.000246, h²=0.002
+[DeepResBLUP_Hybrid] Attempting to extract RRBLUP marker effects from base model...
+[DeepResBLUP_Hybrid] Computing base predictions...
+[DeepResBLUP_Hybrid] Creating DL residual model...
+MLPGSModel is used for residual learning.
+[DeepResBLUP_Hybrid] Training DL residual model...
+[DeepResBLUP_Hybrid] Preparing data loaders and training DL residual...
+    [DeepResBLUP_Hybrid] Epoch 1/100, Train Loss: 0.4042, Val Loss: 0.2457
+    [DeepResBLUP_Hybrid] Epoch 11/100, Train Loss: 0.0508, Val Loss: 0.0607
+    [DeepResBLUP_Hybrid] Epoch 21/100, Train Loss: 0.0304, Val Loss: 0.0598
+    [DeepResBLUP_Hybrid] Epoch 31/100, Train Loss: 0.0265, Val Loss: 0.0531
+Early stopping at epoch 35
+[DeepResBLUP_Hybrid] Fit completed.
+[HAP] [DeepResBLUP] memory used during training: 24.57 MB
+[HAP] [DeepResBLUP] training completed in 0.18 minutes (10.82 seconds)
+
+[HAP] Training DeepBLUP...
+Precomputing RRBLUP weights for initialization...
+  Computing R_RRBLUP weights for trait 1/2...
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 234 samples, 1607 markers using ML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.113474, Vu=0.000246, h²=0.002
+    Trait 1: Success
+  Computing R_RRBLUP weights for trait 2/2...
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 234 samples, 1607 markers using ML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.095061, Vu=0.000250, h²=0.003
+    Trait 2: Success
+  R_RRBLUP multi-trait weights computed: (128, 1607)
+  Successfully computed RRBLUP weights: (128, 1607)
+    [DeepBLUP] Epoch 2/200 - train_loss: 2.171855 - val_loss: 0.584327 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 11/200 - train_loss: 0.874298 - val_loss: 0.193383 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 21/200 - train_loss: 0.621477 - val_loss: 0.162205 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 31/200 - train_loss: 0.453356 - val_loss: 0.085247 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 41/200 - train_loss: 0.305027 - val_loss: 0.062279 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 51/200 - train_loss: 0.314519 - val_loss: 0.094641 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 61/200 - train_loss: 0.235469 - val_loss: 0.083256 - lr: 5.000000e-05
+    [DeepBLUP] Epoch 71/200 - train_loss: 0.200543 - val_loss: 0.085315 - lr: 2.500000e-05
+    [DeepBLUP] Epoch 81/200 - train_loss: 0.260476 - val_loss: 0.091731 - lr: 1.250000e-05
+    [DeepBLUP] Early stopping at epoch 83. Best val 0.054037
+    [DeepBLUP] Loaded best model from results/ckpts/best_HAP_DeepBLUP.pth with val_loss 0.054037
+[HAP] [DeepBLUP] memory used during training: 4.95 MB
+[HAP] [DeepBLUP] training completed in 0.25 minutes (14.80 seconds)
+
+Training EnsembleGS ensemble...
+EnsembleGS base models (requested): ['R_RRBLUP', 'ElasticNet', 'BRR', 'LightGBM', 'MLPGS']
+Models available (trained):   ['R_RRBLUP', 'R_GBLUP', 'RRBLUP', 'ElasticNet', 'RFR', 'BRR', 'XGBoost', 'LightGBM', 'DNNGS', 'MLPGS', 'GraphConvGS', 'GraphAttnGS', 'GraphSAGEGS', 'GraphFormer', 'DeepResBLUP', 'DeepBLUP']
+[EnsembleGS] Using in-sample training predictions for meta-learner.
+[EnsembleGS] Meta-features for each trait: (n_samples=234, n_bases=5) (source: in-sample)
+[HAP] [model_name] memory used during training: 0.23 MB
+[HAP] [model_name] training completed in 0.25 minutes (0.27 seconds)
+
+
+YLD [HAP][R_RRBLUP]: MSE=0.3531, PearsonR=0.839
+PLH [HAP][R_RRBLUP]: MSE=0.3818, PearsonR=0.814
+YLD [HAP][R_GBLUP]: MSE=1.0786, PearsonR=0.758
+PLH [HAP][R_GBLUP]: MSE=0.9914, PearsonR=0.788
+YLD [HAP][RRBLUP]: MSE=18.6060, PearsonR=0.800
+PLH [HAP][RRBLUP]: MSE=19.1422, PearsonR=0.768
+YLD [HAP][ElasticNet]: MSE=0.4296, PearsonR=0.820
+PLH [HAP][ElasticNet]: MSE=0.4679, PearsonR=0.774
+YLD [HAP][RFR]: MSE=0.3824, PearsonR=0.838
+PLH [HAP][RFR]: MSE=0.4323, PearsonR=0.799
+YLD [HAP][BRR]: MSE=0.4227, PearsonR=0.800
+PLH [HAP][BRR]: MSE=0.4574, PearsonR=0.768
+YLD [HAP][XGBoost]: MSE=0.4729, PearsonR=0.778
+PLH [HAP][XGBoost]: MSE=0.4755, PearsonR=0.757
+YLD [HAP][LightGBM]: MSE=0.3785, PearsonR=0.828
+PLH [HAP][LightGBM]: MSE=0.3883, PearsonR=0.805
+YLD [HAP][DNNGS]: MSE=0.4950, PearsonR=0.813
+PLH [HAP][DNNGS]: MSE=0.4203, PearsonR=0.821
+YLD [HAP][MLPGS]: MSE=0.4484, PearsonR=0.866
+PLH [HAP][MLPGS]: MSE=0.7356, PearsonR=0.799
+[GraphConvGS] Building prediction graph with 59 samples using KNN
+[KNN Graph] Built graph with 1667 edges, top_k=20, metric=euclidean
+YLD [HAP][GraphConvGS]: MSE=1.6126, PearsonR=0.658
+PLH [HAP][GraphConvGS]: MSE=1.6573, PearsonR=0.680
+[GraphAttnGS] Building prediction graph with 59 samples using KNN
+[KNN Graph] Built graph with 1667 edges, top_k=20, metric=euclidean
+YLD [HAP][GraphAttnGS]: MSE=1.7247, PearsonR=0.385
+PLH [HAP][GraphAttnGS]: MSE=0.6367, PearsonR=0.629
+[GraphSAGEGS] Building prediction graph with 59 samples using KNN
+[KNN Graph] Built graph with 1667 edges, top_k=20, metric=euclidean
+YLD [HAP][GraphSAGEGS]: MSE=0.4689, PearsonR=0.809
+PLH [HAP][GraphSAGEGS]: MSE=0.5161, PearsonR=0.768
+[GraphFormer] Building prediction graph with 59 samples using KNN
+[KNN Graph] Built graph with 2343 edges, top_k=30, metric=euclidean
+YLD [HAP][GraphFormer]: MSE=0.3776, PearsonR=0.836
+PLH [HAP][GraphFormer]: MSE=0.4537, PearsonR=0.815
+YLD [HAP][DeepResBLUP]: MSE=0.3491, PearsonR=0.836
+PLH [HAP][DeepResBLUP]: MSE=0.3843, PearsonR=0.812
+YLD [HAP][DeepBLUP]: MSE=0.3727, PearsonR=0.823
+PLH [HAP][DeepBLUP]: MSE=0.3864, PearsonR=0.814
+YLD [HAP][EnsembleGS]: MSE=0.3863, PearsonR=0.824
+PLH [HAP][EnsembleGS]: MSE=0.4192, PearsonR=0.789
+----------------------------------------------------------------------------
+Execution time for Replicate 1/1, Fold 1/5: 14.04 minutes (842.64 seconds)
+----------------------------------------------------------------------------
+
+=== [HAP] Replicate 1/1, Fold 2/5 ===
+Training models: R_RRBLUP, R_GBLUP, RRBLUP, ElasticNet, RFR, BRR, XGBoost, LightGBM, DNNGS, MLPGS, GraphConvGS, GraphAttnGS, GraphSAGEGS, GraphFormer, DeepResBLUP, DeepBLUP, EnsembleGS
+[HAP] Training R_RRBLUP...
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 234 samples, 1607 markers using REML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.103600, Vu=0.000265, h²=0.003
+  R_RRBLUP Trait 1/2 - SUCCESS
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 234 samples, 1607 markers using REML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.116758, Vu=0.000259, h²=0.002
+  R_RRBLUP Trait 2/2 - SUCCESS
+  R_RRBLUP: 2/2 traits trained successfully
+[HAP] [R_RRBLUP] memory used during training: 0.00 MB
+[HAP] [R_RRBLUP] training completed in 0.10 minutes (6.29 seconds)
+
+[HAP] Training R_GBLUP...
+✓ R package 'rrBLUP' successfully loaded
+R-GBLUP: Fitting with 234 samples, 1607 markers
+Computing kinship matrix with R's A.mat()...
+Calling R: mixed.solve() with kinship...
+Breeding values shape: (234,)
+Marker effects calculated via pseudoinverse, shape: (1607,)
+R-GBLUP fitted: Ve=0.100558, Vu=0.214672, h²=0.681
+  R_GBLUP Trait 1/2 - SUCCESS
+✓ R package 'rrBLUP' successfully loaded
+R-GBLUP: Fitting with 234 samples, 1607 markers
+Computing kinship matrix with R's A.mat()...
+Calling R: mixed.solve() with kinship...
+Breeding values shape: (234,)
+Marker effects calculated via pseudoinverse, shape: (1607,)
+R-GBLUP fitted: Ve=0.112583, Vu=0.211272, h²=0.652
+  R_GBLUP Trait 2/2 - SUCCESS
+  R_GBLUP: 2/2 traits trained successfully
+[HAP] [R_GBLUP] memory used during training: 0.00 MB
+[HAP] [R_GBLUP] training completed in 0.10 minutes (5.79 seconds)
+
+[HAP] Training RRBLUP...
+HighPerformanceRRBLUP: 234 samples, 1607 markers, method=mixed_model
+REML-like lambda estimation: λ=0.001000
+Using lambda: 0.001000
+RRBLUP mixed model fitted: λ=0.001000
+HighPerformanceRRBLUP: 234 samples, 1607 markers, method=mixed_model
+REML-like lambda estimation: λ=0.001000
+Using lambda: 0.001000
+RRBLUP mixed model fitted: λ=0.001000
+[HAP] [RRBLUP] memory used during training: 0.00 MB
+[HAP] [RRBLUP] training completed in 0.00 minutes (0.16 seconds)
+
+[HAP] Training ElasticNet...
+[HAP] [ElasticNet] memory used during training: 0.00 MB
+[HAP] [ElasticNet] training completed in 0.00 minutes (0.03 seconds)
+
+[HAP] Training RFR...
+[HAP] [RFR] memory used during training: 1.02 MB
+[HAP] [RFR] training completed in 0.00 minutes (0.29 seconds)
+
+[HAP] Training BRR...
+Using alpha_1=1e-06, alpha_2=1e-06, lambda_1=1e-06, lambda_2=1e-06
+Using alpha_1=1e-06, alpha_2=1e-06, lambda_1=1e-06, lambda_2=1e-06
+[HAP] [BRR] memory used during training: 3.94 MB
+[HAP] [BRR] training completed in 0.01 minutes (0.39 seconds)
+
+[HAP] Training XGBoost...
+[HAP] [XGBoost] memory used during training: 0.95 MB
+[HAP] [XGBoost] training completed in 0.01 minutes (0.89 seconds)
+
+[HAP] Training LightGBM...
+[HAP] [LightGBM] memory used during training: 0.00 MB
+[HAP] [LightGBM] training completed in 0.01 minutes (0.48 seconds)
+
+[HAP] Training DNNGS...
+    [DNNGS] Epoch 1/300, LR: 0.000033, Train Loss: 2.0823, Val Loss: 0.8637
+    [DNNGS] Epoch 11/300, LR: 0.000367, Train Loss: 0.6277, Val Loss: 0.3459
+    [DNNGS] Epoch 21/300, LR: 0.000700, Train Loss: 0.3017, Val Loss: 0.2943
+    [DNNGS] Epoch 31/300, LR: 0.000996, Train Loss: 0.2540, Val Loss: 0.2988
+    [DNNGS] Epoch 41/300, LR: 0.000959, Train Loss: 0.1912, Val Loss: 0.3021
+    [DNNGS] Epoch 51/300, LR: 0.000922, Train Loss: 0.1477, Val Loss: 0.2510
+    [DNNGS] Epoch 61/300, LR: 0.000885, Train Loss: 0.1423, Val Loss: 0.2827
+    [DNNGS] Epoch 71/300, LR: 0.000848, Train Loss: 0.1028, Val Loss: 0.2620
+    [DNNGS] Epoch 81/300, LR: 0.000811, Train Loss: 0.1060, Val Loss: 0.2588
+    [DNNGS] Epoch 91/300, LR: 0.000774, Train Loss: 0.0947, Val Loss: 0.2509
+    [DNNGS] Epoch 101/300, LR: 0.000737, Train Loss: 0.0890, Val Loss: 0.2479
+    [DNNGS] Epoch 111/300, LR: 0.000700, Train Loss: 0.0729, Val Loss: 0.2332
+    [DNNGS] Epoch 121/300, LR: 0.000663, Train Loss: 0.0740, Val Loss: 0.2306
+    [DNNGS] Epoch 131/300, LR: 0.000626, Train Loss: 0.0727, Val Loss: 0.2361
+    [DNNGS] Epoch 141/300, LR: 0.000589, Train Loss: 0.0773, Val Loss: 0.2140
+    [DNNGS] Epoch 151/300, LR: 0.000552, Train Loss: 0.0703, Val Loss: 0.2311
+    [DNNGS] Epoch 161/300, LR: 0.000515, Train Loss: 0.0554, Val Loss: 0.2175
+    [DNNGS] Epoch 171/300, LR: 0.000478, Train Loss: 0.0628, Val Loss: 0.2314
+Early stopping at epoch 181
+Loaded best DNNGS model with validation loss: 0.2140
+[HAP] [DNNGS] memory used during training: 0.00 MB
+[HAP] [DNNGS] training completed in 3.94 minutes (236.10 seconds)
+
+[HAP] Training MLPGS...
+    [MLPGS] Epoch 1/300, Train Loss: 0.3517, Val Loss: 0.6076
+    [MLPGS] Epoch 11/300, Train Loss: 0.0927, Val Loss: 0.2899
+    [MLPGS] Epoch 21/300, Train Loss: 0.0664, Val Loss: 0.2410
+    [MLPGS] Epoch 31/300, Train Loss: 0.0474, Val Loss: 0.2412
+    [MLPGS] Epoch 41/300, Train Loss: 0.0379, Val Loss: 0.2424
+    [MLPGS] Epoch 51/300, Train Loss: 0.0335, Val Loss: 0.2365
+    [MLPGS] Epoch 61/300, Train Loss: 0.0258, Val Loss: 0.2215
+    [MLPGS] Epoch 71/300, Train Loss: 0.0287, Val Loss: 0.2119
+    [MLPGS] Epoch 81/300, Train Loss: 0.0223, Val Loss: 0.2221
+Early stopping at epoch 88
+[HAP] [MLPGS] memory used during training: 1.61 MB
+[HAP] [MLPGS] training completed in 6.36 minutes (381.43 seconds)
+
+[HAP] Training GraphConvGS...
+[GraphConvGS] Building sample graph with 234 samples using KNN (top_k=20, metric=euclidean)
+[KNN Graph] Built graph with 7546 edges, top_k=20, metric=euclidean
+[GraphConvGS] Graph built with 7546 edges
+[GraphConvGS] Starting training for 500 epochs
+    [GraphConvGS] Epoch 11/500 | train_loss: 0.499986 | val_loss: 0.445101
+    [GraphConvGS] Epoch 21/500 | train_loss: 0.419349 | val_loss: 0.382606
+    [GraphConvGS] Epoch 31/500 | train_loss: 0.392898 | val_loss: 0.358416
+    [GraphConvGS] Epoch 41/500 | train_loss: 0.375478 | val_loss: 0.336964
+    [GraphConvGS] Epoch 51/500 | train_loss: 0.359592 | val_loss: 0.318079
+    [GraphConvGS] Epoch 61/500 | train_loss: 0.315113 | val_loss: 0.296041
+    [GraphConvGS] Epoch 71/500 | train_loss: 0.306058 | val_loss: 0.274195
+    [GraphConvGS] Epoch 81/500 | train_loss: 0.282997 | val_loss: 0.257597
+    [GraphConvGS] Epoch 91/500 | train_loss: 0.301744 | val_loss: 0.247154
+    [GraphConvGS] Epoch 101/500 | train_loss: 0.268831 | val_loss: 0.238294
+    [GraphConvGS] Epoch 111/500 | train_loss: 0.269185 | val_loss: 0.225426
+    [GraphConvGS] Epoch 121/500 | train_loss: 0.248078 | val_loss: 0.216629
+    [GraphConvGS] Epoch 131/500 | train_loss: 0.249219 | val_loss: 0.209018
+    [GraphConvGS] Epoch 141/500 | train_loss: 0.254236 | val_loss: 0.207194
+    [GraphConvGS] Epoch 151/500 | train_loss: 0.250779 | val_loss: 0.203860
+    [GraphConvGS] Epoch 161/500 | train_loss: 0.236762 | val_loss: 0.205282
+    [GraphConvGS] Epoch 171/500 | train_loss: 0.231711 | val_loss: 0.192458
+    [GraphConvGS] Epoch 181/500 | train_loss: 0.235892 | val_loss: 0.180645
+    [GraphConvGS] Epoch 191/500 | train_loss: 0.209616 | val_loss: 0.179434
+    [GraphConvGS] Epoch 201/500 | train_loss: 0.219081 | val_loss: 0.178923
+    [GraphConvGS] Epoch 211/500 | train_loss: 0.219047 | val_loss: 0.170265
+    [GraphConvGS] Epoch 221/500 | train_loss: 0.213295 | val_loss: 0.165008
+    [GraphConvGS] Epoch 231/500 | train_loss: 0.201767 | val_loss: 0.158148
+    [GraphConvGS] Epoch 241/500 | train_loss: 0.207981 | val_loss: 0.159205
+    [GraphConvGS] Epoch 251/500 | train_loss: 0.195319 | val_loss: 0.154555
+    [GraphConvGS] Epoch 261/500 | train_loss: 0.186863 | val_loss: 0.150279
+    [GraphConvGS] Epoch 271/500 | train_loss: 0.182686 | val_loss: 0.152006
+    [GraphConvGS] Epoch 281/500 | train_loss: 0.201400 | val_loss: 0.151176
+    [GraphConvGS] Epoch 291/500 | train_loss: 0.184971 | val_loss: 0.151263
+[GraphConvGS] Early stopping at epoch 291. Best val 0.145557
+[GraphConvGS] Training completed successfully
+[HAP] [GraphConvGS] memory used during training: 0.00 MB
+[HAP] [GraphConvGS] training completed in 0.87 minutes (52.45 seconds)
+
+[HAP] Training GraphAttnGS...
+[GraphAttnGS] Building sample graph with 234 samples using KNN (top_k=20, metric=euclidean)
+[KNN Graph] Built graph with 7546 edges, top_k=20, metric=euclidean
+[GraphAttnGS] Graph built with 7546 edges
+[GraphAttnGS] Starting training for 500 epochs
+    [GraphAttnGS] Epoch 11/500 | train_loss: 0.384180 | val_loss: 0.352978
+    [GraphAttnGS] Epoch 21/500 | train_loss: 0.352336 | val_loss: 0.293340
+    [GraphAttnGS] Epoch 31/500 | train_loss: 0.298208 | val_loss: 0.252423
+    [GraphAttnGS] Epoch 41/500 | train_loss: 0.272864 | val_loss: 0.236745
+    [GraphAttnGS] Epoch 51/500 | train_loss: 0.243111 | val_loss: 0.202351
+    [GraphAttnGS] Epoch 61/500 | train_loss: 0.236595 | val_loss: 0.190559
+    [GraphAttnGS] Epoch 71/500 | train_loss: 0.241621 | val_loss: 0.176281
+    [GraphAttnGS] Epoch 81/500 | train_loss: 0.216356 | val_loss: 0.172027
+    [GraphAttnGS] Epoch 91/500 | train_loss: 0.198738 | val_loss: 0.157219
+    [GraphAttnGS] Epoch 101/500 | train_loss: 0.214978 | val_loss: 0.144560
+    [GraphAttnGS] Epoch 111/500 | train_loss: 0.206877 | val_loss: 0.146540
+    [GraphAttnGS] Epoch 121/500 | train_loss: 0.169930 | val_loss: 0.129775
+    [GraphAttnGS] Epoch 131/500 | train_loss: 0.186551 | val_loss: 0.129301
+    [GraphAttnGS] Epoch 141/500 | train_loss: 0.171554 | val_loss: 0.119087
+    [GraphAttnGS] Epoch 151/500 | train_loss: 0.167422 | val_loss: 0.120007
+    [GraphAttnGS] Epoch 161/500 | train_loss: 0.165970 | val_loss: 0.110805
+    [GraphAttnGS] Epoch 171/500 | train_loss: 0.164675 | val_loss: 0.111296
+    [GraphAttnGS] Epoch 181/500 | train_loss: 0.160866 | val_loss: 0.107483
+    [GraphAttnGS] Epoch 191/500 | train_loss: 0.165576 | val_loss: 0.103086
+    [GraphAttnGS] Epoch 201/500 | train_loss: 0.174250 | val_loss: 0.099906
+    [GraphAttnGS] Epoch 211/500 | train_loss: 0.180988 | val_loss: 0.109603
+    [GraphAttnGS] Epoch 221/500 | train_loss: 0.146604 | val_loss: 0.093396
+    [GraphAttnGS] Epoch 231/500 | train_loss: 0.140568 | val_loss: 0.092121
+    [GraphAttnGS] Epoch 241/500 | train_loss: 0.144033 | val_loss: 0.090109
+    [GraphAttnGS] Epoch 251/500 | train_loss: 0.135767 | val_loss: 0.089421
+    [GraphAttnGS] Epoch 261/500 | train_loss: 0.135373 | val_loss: 0.083081
+    [GraphAttnGS] Epoch 271/500 | train_loss: 0.143557 | val_loss: 0.077735
+    [GraphAttnGS] Epoch 281/500 | train_loss: 0.137897 | val_loss: 0.083450
+[GraphAttnGS] Early stopping at epoch 289. Best val 0.077603
+[GraphAttnGS] Training completed successfully
+[HAP] [GraphAttnGS] memory used during training: -11.68 MB
+[HAP] [GraphAttnGS] training completed in 3.38 minutes (202.97 seconds)
+
+[HAP] Training GraphSAGEGS...
+[GraphSAGEGS] Building sample graph with 234 samples using KNN (top_k=20, metric=euclidean)
+[KNN Graph] Built graph with 7546 edges, top_k=20, metric=euclidean
+[GraphSAGEGS] Graph built with 7546 edges
+[GraphSAGEGS] Starting training for 500 epochs
+    [GraphSAGEGS] Epoch 11/500 | train_loss: 0.381277 | val_loss: 0.303217
+    [GraphSAGEGS] Epoch 21/500 | train_loss: 0.234034 | val_loss: 0.173437
+    [GraphSAGEGS] Epoch 31/500 | train_loss: 0.187808 | val_loss: 0.109092
+    [GraphSAGEGS] Epoch 41/500 | train_loss: 0.133682 | val_loss: 0.075020
+    [GraphSAGEGS] Epoch 51/500 | train_loss: 0.102950 | val_loss: 0.055112
+    [GraphSAGEGS] Epoch 61/500 | train_loss: 0.096434 | val_loss: 0.045701
+    [GraphSAGEGS] Epoch 71/500 | train_loss: 0.089693 | val_loss: 0.037634
+    [GraphSAGEGS] Epoch 81/500 | train_loss: 0.084162 | val_loss: 0.029201
+    [GraphSAGEGS] Epoch 91/500 | train_loss: 0.064878 | val_loss: 0.022767
+    [GraphSAGEGS] Epoch 101/500 | train_loss: 0.053645 | val_loss: 0.017765
+    [GraphSAGEGS] Epoch 111/500 | train_loss: 0.052661 | val_loss: 0.016996
+    [GraphSAGEGS] Epoch 121/500 | train_loss: 0.055948 | val_loss: 0.015407
+    [GraphSAGEGS] Epoch 131/500 | train_loss: 0.048082 | val_loss: 0.010985
+    [GraphSAGEGS] Epoch 141/500 | train_loss: 0.043905 | val_loss: 0.010273
+    [GraphSAGEGS] Epoch 151/500 | train_loss: 0.042124 | val_loss: 0.008825
+    [GraphSAGEGS] Epoch 161/500 | train_loss: 0.041695 | val_loss: 0.009384
+    [GraphSAGEGS] Epoch 171/500 | train_loss: 0.041237 | val_loss: 0.006732
+    [GraphSAGEGS] Epoch 181/500 | train_loss: 0.047871 | val_loss: 0.005971
+    [GraphSAGEGS] Epoch 191/500 | train_loss: 0.042654 | val_loss: 0.008221
+    [GraphSAGEGS] Epoch 201/500 | train_loss: 0.037573 | val_loss: 0.006622
+    [GraphSAGEGS] Epoch 211/500 | train_loss: 0.042412 | val_loss: 0.005592
+    [GraphSAGEGS] Epoch 221/500 | train_loss: 0.032990 | val_loss: 0.007918
+    [GraphSAGEGS] Epoch 231/500 | train_loss: 0.036181 | val_loss: 0.005031
+    [GraphSAGEGS] Epoch 241/500 | train_loss: 0.031355 | val_loss: 0.004520
+    [GraphSAGEGS] Epoch 251/500 | train_loss: 0.034252 | val_loss: 0.004841
+    [GraphSAGEGS] Epoch 261/500 | train_loss: 0.028714 | val_loss: 0.005150
+    [GraphSAGEGS] Epoch 271/500 | train_loss: 0.030366 | val_loss: 0.004752
+[GraphSAGEGS] Early stopping at epoch 271. Best val 0.003550
+[GraphSAGEGS] Training completed successfully
+[HAP] [GraphSAGEGS] memory used during training: 0.79 MB
+[HAP] [GraphSAGEGS] training completed in 0.99 minutes (59.56 seconds)
+
+[HAP] Training GraphFormer...
+[KNN Graph] Built graph with 10984 edges, top_k=30, metric=euclidean
+[GraphFormer] Creating model:
+  - Input dim: 1607, Output dim: 2
+  - GNN type: SAGE, GNN hidden: 128
+  - Transformer: 2 layers, d_model: 128
+  - Device: cpu
+[GraphFormer] Model created successfully
+[GraphFormer] Model has GNN attribute: True
+[GraphFormer] GNN layer type: <class 'torch_geometric.nn.conv.sage_conv.SAGEConv'>
+[GraphFormer] Dataset created: 1 graphs
+[GraphFormer] Testing forward pass...
+[GraphFormer] Forward pass successful! Output shape: torch.Size([234, 2])
+[GraphFormer] Starting training for 500 epochs...
+    [GraphFormer] Epoch 1/500, Loss: 1.107816 *
+    [GraphFormer] Epoch 11/500, Loss: 0.129655 *
+    [GraphFormer] Epoch 21/500, Loss: 0.068740 *
+    [GraphFormer] Epoch 31/500, Loss: 0.053414
+    [GraphFormer] Epoch 41/500, Loss: 0.044402
+    [GraphFormer] Epoch 51/500, Loss: 0.030595
+    [GraphFormer] Epoch 61/500, Loss: 0.022639 *
+    [GraphFormer] Epoch 71/500, Loss: 0.020341
+    [GraphFormer] Epoch 81/500, Loss: 0.019422
+    [GraphFormer] Epoch 91/500, Loss: 0.017182
+    [GraphFormer] Epoch 101/500, Loss: 0.016244
+    [GraphFormer] Epoch 111/500, Loss: 0.011863 *
+    [GraphFormer] Epoch 121/500, Loss: 0.013919
+    [GraphFormer] Epoch 131/500, Loss: 0.012817
+    [GraphFormer] Epoch 141/500, Loss: 0.014831
+    [GraphFormer] Epoch 151/500, Loss: 0.012121
+    [GraphFormer] Early stopping at epoch 152
+[GraphFormer] Loaded best model with loss: 0.010944
+[GraphFormer] Training completed successfully
+[HAP] [GraphFormer] memory used during training: 3.84 MB
+[HAP] [GraphFormer] training completed in 1.10 minutes (65.95 seconds)
+
+[HAP] Training DeepResBLUP...
+[DeepResBLUP_Hybrid] Fit: base=R_RRBLUP, dl=MLPGS
+✓ R package 'rrBLUP' successfully loaded
+[DeepResBLUP_Hybrid] Training base (RRBLUP) model...
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 234 samples, 1607 markers using REML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.103600, Vu=0.000265, h²=0.003
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 234 samples, 1607 markers using REML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.116758, Vu=0.000259, h²=0.002
+[DeepResBLUP_Hybrid] Attempting to extract RRBLUP marker effects from base model...
+[DeepResBLUP_Hybrid] Computing base predictions...
+[DeepResBLUP_Hybrid] Creating DL residual model...
+MLPGSModel is used for residual learning.
+[DeepResBLUP_Hybrid] Training DL residual model...
+[DeepResBLUP_Hybrid] Preparing data loaders and training DL residual...
+    [DeepResBLUP_Hybrid] Epoch 1/100, Train Loss: 0.4194, Val Loss: 0.3340
+    [DeepResBLUP_Hybrid] Epoch 11/100, Train Loss: 0.0613, Val Loss: 0.0704
+    [DeepResBLUP_Hybrid] Epoch 21/100, Train Loss: 0.0336, Val Loss: 0.0637
+    [DeepResBLUP_Hybrid] Epoch 31/100, Train Loss: 0.0238, Val Loss: 0.0591
+    [DeepResBLUP_Hybrid] Epoch 41/100, Train Loss: 0.0195, Val Loss: 0.0647
+Early stopping at epoch 50
+[DeepResBLUP_Hybrid] Fit completed.
+[HAP] [DeepResBLUP] memory used during training: 8.66 MB
+[HAP] [DeepResBLUP] training completed in 0.19 minutes (11.13 seconds)
+
+[HAP] Training DeepBLUP...
+Precomputing RRBLUP weights for initialization...
+  Computing R_RRBLUP weights for trait 1/2...
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 234 samples, 1607 markers using ML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.100557, Vu=0.000267, h²=0.003
+    Trait 1: Success
+  Computing R_RRBLUP weights for trait 2/2...
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 234 samples, 1607 markers using ML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.112584, Vu=0.000263, h²=0.002
+    Trait 2: Success
+  R_RRBLUP multi-trait weights computed: (128, 1607)
+  Successfully computed RRBLUP weights: (128, 1607)
+    [DeepBLUP] Epoch 2/200 - train_loss: 2.741190 - val_loss: 0.745559 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 11/200 - train_loss: 0.957008 - val_loss: 0.258135 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 21/200 - train_loss: 0.652353 - val_loss: 0.111180 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 31/200 - train_loss: 0.424795 - val_loss: 0.173637 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 41/200 - train_loss: 0.454188 - val_loss: 0.103377 - lr: 5.000000e-05
+    [DeepBLUP] Epoch 51/200 - train_loss: 0.311516 - val_loss: 0.099078 - lr: 2.500000e-05
+    [DeepBLUP] Epoch 61/200 - train_loss: 0.277083 - val_loss: 0.123006 - lr: 2.500000e-05
+    [DeepBLUP] Epoch 71/200 - train_loss: 0.341152 - val_loss: 0.096681 - lr: 1.250000e-05
+    [DeepBLUP] Epoch 81/200 - train_loss: 0.277072 - val_loss: 0.106215 - lr: 1.250000e-05
+    [DeepBLUP] Epoch 91/200 - train_loss: 0.228584 - val_loss: 0.121503 - lr: 1.250000e-05
+    [DeepBLUP] Epoch 101/200 - train_loss: 0.254675 - val_loss: 0.106079 - lr: 6.250000e-06
+    [DeepBLUP] Epoch 111/200 - train_loss: 0.254876 - val_loss: 0.085496 - lr: 3.125000e-06
+    [DeepBLUP] Early stopping at epoch 111. Best val 0.072105
+    [DeepBLUP] Loaded best model from results/ckpts/best_HAP_DeepBLUP.pth with val_loss 0.072105
+[HAP] [DeepBLUP] memory used during training: 3.05 MB
+[HAP] [DeepBLUP] training completed in 0.29 minutes (17.18 seconds)
+
+Training EnsembleGS ensemble...
+EnsembleGS base models (requested): ['R_RRBLUP', 'ElasticNet', 'BRR', 'LightGBM', 'MLPGS']
+Models available (trained):   ['R_RRBLUP', 'R_GBLUP', 'RRBLUP', 'ElasticNet', 'RFR', 'BRR', 'XGBoost', 'LightGBM', 'DNNGS', 'MLPGS', 'GraphConvGS', 'GraphAttnGS', 'GraphSAGEGS', 'GraphFormer', 'DeepResBLUP', 'DeepBLUP']
+[EnsembleGS] Using in-sample training predictions for meta-learner.
+[EnsembleGS] Meta-features for each trait: (n_samples=234, n_bases=5) (source: in-sample)
+[HAP] [model_name] memory used during training: 2.84 MB
+[HAP] [model_name] training completed in 0.29 minutes (0.29 seconds)
+
+
+YLD [HAP][R_RRBLUP]: MSE=0.2790, PearsonR=0.863
+PLH [HAP][R_RRBLUP]: MSE=0.2611, PearsonR=0.871
+YLD [HAP][R_GBLUP]: MSE=1.0378, PearsonR=0.754
+PLH [HAP][R_GBLUP]: MSE=1.0334, PearsonR=0.828
+YLD [HAP][RRBLUP]: MSE=24.5244, PearsonR=0.837
+PLH [HAP][RRBLUP]: MSE=28.8087, PearsonR=0.845
+YLD [HAP][ElasticNet]: MSE=0.3841, PearsonR=0.833
+PLH [HAP][ElasticNet]: MSE=0.3242, PearsonR=0.859
+YLD [HAP][RFR]: MSE=0.3277, PearsonR=0.843
+PLH [HAP][RFR]: MSE=0.2623, PearsonR=0.876
+YLD [HAP][BRR]: MSE=0.2790, PearsonR=0.863
+PLH [HAP][BRR]: MSE=0.2616, PearsonR=0.870
+YLD [HAP][XGBoost]: MSE=0.3864, PearsonR=0.803
+PLH [HAP][XGBoost]: MSE=0.4182, PearsonR=0.788
+YLD [HAP][LightGBM]: MSE=0.2995, PearsonR=0.850
+PLH [HAP][LightGBM]: MSE=0.2805, PearsonR=0.860
+YLD [HAP][DNNGS]: MSE=0.3451, PearsonR=0.858
+PLH [HAP][DNNGS]: MSE=0.2894, PearsonR=0.878
+YLD [HAP][MLPGS]: MSE=0.6249, PearsonR=0.852
+PLH [HAP][MLPGS]: MSE=0.7234, PearsonR=0.849
+[GraphConvGS] Building prediction graph with 59 samples using KNN
+[KNN Graph] Built graph with 1695 edges, top_k=20, metric=euclidean
+YLD [HAP][GraphConvGS]: MSE=1.8069, PearsonR=0.529
+PLH [HAP][GraphConvGS]: MSE=0.9297, PearsonR=0.733
+[GraphAttnGS] Building prediction graph with 59 samples using KNN
+[KNN Graph] Built graph with 1695 edges, top_k=20, metric=euclidean
+YLD [HAP][GraphAttnGS]: MSE=0.9402, PearsonR=0.620
+PLH [HAP][GraphAttnGS]: MSE=0.7264, PearsonR=0.717
+[GraphSAGEGS] Building prediction graph with 59 samples using KNN
+[KNN Graph] Built graph with 1695 edges, top_k=20, metric=euclidean
+YLD [HAP][GraphSAGEGS]: MSE=0.2925, PearsonR=0.860
+PLH [HAP][GraphSAGEGS]: MSE=0.3058, PearsonR=0.855
+[GraphFormer] Building prediction graph with 59 samples using KNN
+[KNN Graph] Built graph with 2311 edges, top_k=30, metric=euclidean
+YLD [HAP][GraphFormer]: MSE=0.2833, PearsonR=0.874
+PLH [HAP][GraphFormer]: MSE=0.2990, PearsonR=0.878
+YLD [HAP][DeepResBLUP]: MSE=0.2886, PearsonR=0.858
+PLH [HAP][DeepResBLUP]: MSE=0.2649, PearsonR=0.869
+YLD [HAP][DeepBLUP]: MSE=0.2921, PearsonR=0.856
+PLH [HAP][DeepBLUP]: MSE=0.2740, PearsonR=0.878
+YLD [HAP][EnsembleGS]: MSE=0.2884, PearsonR=0.856
+PLH [HAP][EnsembleGS]: MSE=0.2352, PearsonR=0.885
+----------------------------------------------------------------------------
+Execution time for Replicate 1/1, Fold 2/5: 17.57 minutes (1054.10 seconds)
+----------------------------------------------------------------------------
+
+=== [HAP] Replicate 1/1, Fold 3/5 ===
+Training models: R_RRBLUP, R_GBLUP, RRBLUP, ElasticNet, RFR, BRR, XGBoost, LightGBM, DNNGS, MLPGS, GraphConvGS, GraphAttnGS, GraphSAGEGS, GraphFormer, DeepResBLUP, DeepBLUP, EnsembleGS
+[HAP] Training R_RRBLUP...
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 234 samples, 1607 markers using REML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.130966, Vu=0.000259, h²=0.002
+  R_RRBLUP Trait 1/2 - SUCCESS
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 234 samples, 1607 markers using REML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.103617, Vu=0.000282, h²=0.003
+  R_RRBLUP Trait 2/2 - SUCCESS
+  R_RRBLUP: 2/2 traits trained successfully
+[HAP] [R_RRBLUP] memory used during training: 0.00 MB
+[HAP] [R_RRBLUP] training completed in 0.10 minutes (5.74 seconds)
+
+[HAP] Training R_GBLUP...
+✓ R package 'rrBLUP' successfully loaded
+R-GBLUP: Fitting with 234 samples, 1607 markers
+Computing kinship matrix with R's A.mat()...
+Calling R: mixed.solve() with kinship...
+Breeding values shape: (234,)
+Marker effects calculated via pseudoinverse, shape: (1607,)
+R-GBLUP fitted: Ve=0.128276, Vu=0.209420, h²=0.620
+  R_GBLUP Trait 1/2 - SUCCESS
+✓ R package 'rrBLUP' successfully loaded
+R-GBLUP: Fitting with 234 samples, 1607 markers
+Computing kinship matrix with R's A.mat()...
+Calling R: mixed.solve() with kinship...
+Breeding values shape: (234,)
+Marker effects calculated via pseudoinverse, shape: (1607,)
+R-GBLUP fitted: Ve=0.099414, Vu=0.230001, h²=0.698
+  R_GBLUP Trait 2/2 - SUCCESS
+  R_GBLUP: 2/2 traits trained successfully
+[HAP] [R_GBLUP] memory used during training: 0.00 MB
+[HAP] [R_GBLUP] training completed in 0.10 minutes (6.02 seconds)
+
+[HAP] Training RRBLUP...
+HighPerformanceRRBLUP: 234 samples, 1607 markers, method=mixed_model
+REML-like lambda estimation: λ=0.001000
+Using lambda: 0.001000
+RRBLUP mixed model fitted: λ=0.001000
+HighPerformanceRRBLUP: 234 samples, 1607 markers, method=mixed_model
+REML-like lambda estimation: λ=0.001000
+Using lambda: 0.001000
+RRBLUP mixed model fitted: λ=0.001000
+[HAP] [RRBLUP] memory used during training: -16.91 MB
+[HAP] [RRBLUP] training completed in 0.00 minutes (0.13 seconds)
+
+[HAP] Training ElasticNet...
+[HAP] [ElasticNet] memory used during training: 0.00 MB
+[HAP] [ElasticNet] training completed in 0.00 minutes (0.03 seconds)
+
+[HAP] Training RFR...
+[HAP] [RFR] memory used during training: 0.56 MB
+[HAP] [RFR] training completed in 0.00 minutes (0.30 seconds)
+
+[HAP] Training BRR...
+Using alpha_1=1e-06, alpha_2=1e-06, lambda_1=1e-06, lambda_2=1e-06
+Using alpha_1=1e-06, alpha_2=1e-06, lambda_1=1e-06, lambda_2=1e-06
+[HAP] [BRR] memory used during training: 1.44 MB
+[HAP] [BRR] training completed in 0.01 minutes (0.39 seconds)
+
+[HAP] Training XGBoost...
+[HAP] [XGBoost] memory used during training: 0.31 MB
+[HAP] [XGBoost] training completed in 0.01 minutes (0.82 seconds)
+
+[HAP] Training LightGBM...
+[HAP] [LightGBM] memory used during training: 0.00 MB
+[HAP] [LightGBM] training completed in 0.01 minutes (0.45 seconds)
+
+[HAP] Training DNNGS...
+    [DNNGS] Epoch 1/300, LR: 0.000033, Train Loss: 2.0098, Val Loss: 0.7914
+    [DNNGS] Epoch 11/300, LR: 0.000367, Train Loss: 0.6143, Val Loss: 0.3787
+    [DNNGS] Epoch 21/300, LR: 0.000700, Train Loss: 0.3330, Val Loss: 0.3234
+    [DNNGS] Epoch 31/300, LR: 0.000996, Train Loss: 0.2683, Val Loss: 0.2818
+    [DNNGS] Epoch 41/300, LR: 0.000959, Train Loss: 0.1792, Val Loss: 0.2964
+    [DNNGS] Epoch 51/300, LR: 0.000922, Train Loss: 0.1436, Val Loss: 0.2814
+    [DNNGS] Epoch 61/300, LR: 0.000885, Train Loss: 0.1240, Val Loss: 0.2835
+    [DNNGS] Epoch 71/300, LR: 0.000848, Train Loss: 0.1179, Val Loss: 0.2765
+    [DNNGS] Epoch 81/300, LR: 0.000811, Train Loss: 0.1099, Val Loss: 0.2641
+    [DNNGS] Epoch 91/300, LR: 0.000774, Train Loss: 0.0838, Val Loss: 0.2544
+    [DNNGS] Epoch 101/300, LR: 0.000737, Train Loss: 0.0889, Val Loss: 0.2434
+    [DNNGS] Epoch 111/300, LR: 0.000700, Train Loss: 0.0867, Val Loss: 0.2360
+    [DNNGS] Epoch 121/300, LR: 0.000663, Train Loss: 0.0823, Val Loss: 0.2449
+    [DNNGS] Epoch 131/300, LR: 0.000626, Train Loss: 0.0747, Val Loss: 0.2383
+Early stopping at epoch 139
+Loaded best DNNGS model with validation loss: 0.2220
+[HAP] [DNNGS] memory used during training: 0.00 MB
+[HAP] [DNNGS] training completed in 3.03 minutes (181.83 seconds)
+
+[HAP] Training MLPGS...
+    [MLPGS] Epoch 1/300, Train Loss: 0.3301, Val Loss: 0.5576
+    [MLPGS] Epoch 11/300, Train Loss: 0.1047, Val Loss: 0.3737
+    [MLPGS] Epoch 21/300, Train Loss: 0.0738, Val Loss: 0.2902
+    [MLPGS] Epoch 31/300, Train Loss: 0.0502, Val Loss: 0.2818
+    [MLPGS] Epoch 41/300, Train Loss: 0.0387, Val Loss: 0.2791
+Early stopping at epoch 44
+[HAP] [MLPGS] memory used during training: 23.90 MB
+[HAP] [MLPGS] training completed in 3.17 minutes (190.23 seconds)
+
+[HAP] Training GraphConvGS...
+[GraphConvGS] Building sample graph with 234 samples using KNN (top_k=20, metric=euclidean)
+[KNN Graph] Built graph with 7666 edges, top_k=20, metric=euclidean
+[GraphConvGS] Graph built with 7666 edges
+[GraphConvGS] Starting training for 500 epochs
+    [GraphConvGS] Epoch 11/500 | train_loss: 0.496357 | val_loss: 0.449483
+    [GraphConvGS] Epoch 21/500 | train_loss: 0.410544 | val_loss: 0.381166
+    [GraphConvGS] Epoch 31/500 | train_loss: 0.394752 | val_loss: 0.342641
+    [GraphConvGS] Epoch 41/500 | train_loss: 0.344299 | val_loss: 0.308021
+    [GraphConvGS] Epoch 51/500 | train_loss: 0.322105 | val_loss: 0.279247
+    [GraphConvGS] Epoch 61/500 | train_loss: 0.295000 | val_loss: 0.259561
+    [GraphConvGS] Epoch 71/500 | train_loss: 0.275563 | val_loss: 0.246919
+    [GraphConvGS] Epoch 81/500 | train_loss: 0.272274 | val_loss: 0.233575
+    [GraphConvGS] Epoch 91/500 | train_loss: 0.275822 | val_loss: 0.223185
+    [GraphConvGS] Epoch 101/500 | train_loss: 0.258248 | val_loss: 0.219702
+    [GraphConvGS] Epoch 111/500 | train_loss: 0.259019 | val_loss: 0.217754
+    [GraphConvGS] Epoch 121/500 | train_loss: 0.252600 | val_loss: 0.199813
+    [GraphConvGS] Epoch 131/500 | train_loss: 0.233456 | val_loss: 0.205907
+    [GraphConvGS] Epoch 141/500 | train_loss: 0.230233 | val_loss: 0.191173
+    [GraphConvGS] Epoch 151/500 | train_loss: 0.232582 | val_loss: 0.187773
+    [GraphConvGS] Epoch 161/500 | train_loss: 0.225642 | val_loss: 0.179372
+    [GraphConvGS] Epoch 171/500 | train_loss: 0.217869 | val_loss: 0.173903
+    [GraphConvGS] Epoch 181/500 | train_loss: 0.220213 | val_loss: 0.167705
+    [GraphConvGS] Epoch 191/500 | train_loss: 0.217232 | val_loss: 0.163166
+    [GraphConvGS] Epoch 201/500 | train_loss: 0.211989 | val_loss: 0.169948
+    [GraphConvGS] Epoch 211/500 | train_loss: 0.194495 | val_loss: 0.158347
+    [GraphConvGS] Epoch 221/500 | train_loss: 0.207446 | val_loss: 0.163946
+    [GraphConvGS] Epoch 231/500 | train_loss: 0.198187 | val_loss: 0.157940
+    [GraphConvGS] Epoch 241/500 | train_loss: 0.187716 | val_loss: 0.163449
+    [GraphConvGS] Epoch 251/500 | train_loss: 0.207793 | val_loss: 0.158744
+    [GraphConvGS] Epoch 261/500 | train_loss: 0.192089 | val_loss: 0.144502
+    [GraphConvGS] Epoch 271/500 | train_loss: 0.182021 | val_loss: 0.142034
+    [GraphConvGS] Epoch 281/500 | train_loss: 0.175547 | val_loss: 0.148316
+    [GraphConvGS] Epoch 291/500 | train_loss: 0.181039 | val_loss: 0.141999
+    [GraphConvGS] Epoch 301/500 | train_loss: 0.172641 | val_loss: 0.137748
+    [GraphConvGS] Epoch 311/500 | train_loss: 0.176789 | val_loss: 0.138122
+    [GraphConvGS] Epoch 321/500 | train_loss: 0.184598 | val_loss: 0.142672
+    [GraphConvGS] Epoch 331/500 | train_loss: 0.180593 | val_loss: 0.134946
+    [GraphConvGS] Epoch 341/500 | train_loss: 0.183100 | val_loss: 0.127848
+    [GraphConvGS] Epoch 351/500 | train_loss: 0.183545 | val_loss: 0.126958
+    [GraphConvGS] Epoch 361/500 | train_loss: 0.172087 | val_loss: 0.124990
+    [GraphConvGS] Epoch 371/500 | train_loss: 0.173153 | val_loss: 0.128300
+    [GraphConvGS] Epoch 381/500 | train_loss: 0.161667 | val_loss: 0.123689
+    [GraphConvGS] Epoch 391/500 | train_loss: 0.167431 | val_loss: 0.128584
+    [GraphConvGS] Epoch 401/500 | train_loss: 0.157210 | val_loss: 0.125469
+    [GraphConvGS] Epoch 411/500 | train_loss: 0.168744 | val_loss: 0.119925
+    [GraphConvGS] Epoch 421/500 | train_loss: 0.149378 | val_loss: 0.117834
+    [GraphConvGS] Epoch 431/500 | train_loss: 0.162849 | val_loss: 0.115339
+[GraphConvGS] Early stopping at epoch 434. Best val 0.114459
+[GraphConvGS] Training completed successfully
+[HAP] [GraphConvGS] memory used during training: 0.00 MB
+[HAP] [GraphConvGS] training completed in 1.31 minutes (78.38 seconds)
+
+[HAP] Training GraphAttnGS...
+[GraphAttnGS] Building sample graph with 234 samples using KNN (top_k=20, metric=euclidean)
+[KNN Graph] Built graph with 7666 edges, top_k=20, metric=euclidean
+[GraphAttnGS] Graph built with 7666 edges
+[GraphAttnGS] Starting training for 500 epochs
+    [GraphAttnGS] Epoch 11/500 | train_loss: 0.373200 | val_loss: 0.330878
+    [GraphAttnGS] Epoch 21/500 | train_loss: 0.321210 | val_loss: 0.261524
+    [GraphAttnGS] Epoch 31/500 | train_loss: 0.263613 | val_loss: 0.223265
+    [GraphAttnGS] Epoch 41/500 | train_loss: 0.240243 | val_loss: 0.198385
+    [GraphAttnGS] Epoch 51/500 | train_loss: 0.244696 | val_loss: 0.179929
+    [GraphAttnGS] Epoch 61/500 | train_loss: 0.234828 | val_loss: 0.166790
+    [GraphAttnGS] Epoch 71/500 | train_loss: 0.222049 | val_loss: 0.169353
+    [GraphAttnGS] Epoch 81/500 | train_loss: 0.197825 | val_loss: 0.162766
+    [GraphAttnGS] Epoch 91/500 | train_loss: 0.188438 | val_loss: 0.144675
+    [GraphAttnGS] Epoch 101/500 | train_loss: 0.193250 | val_loss: 0.136033
+    [GraphAttnGS] Epoch 111/500 | train_loss: 0.170261 | val_loss: 0.126189
+    [GraphAttnGS] Epoch 121/500 | train_loss: 0.169337 | val_loss: 0.116309
+    [GraphAttnGS] Epoch 131/500 | train_loss: 0.161788 | val_loss: 0.115427
+    [GraphAttnGS] Epoch 141/500 | train_loss: 0.165866 | val_loss: 0.106692
+    [GraphAttnGS] Epoch 151/500 | train_loss: 0.175000 | val_loss: 0.109535
+    [GraphAttnGS] Epoch 161/500 | train_loss: 0.153155 | val_loss: 0.094398
+    [GraphAttnGS] Epoch 171/500 | train_loss: 0.138584 | val_loss: 0.090612
+    [GraphAttnGS] Epoch 181/500 | train_loss: 0.138814 | val_loss: 0.086696
+    [GraphAttnGS] Epoch 191/500 | train_loss: 0.157622 | val_loss: 0.086590
+    [GraphAttnGS] Epoch 201/500 | train_loss: 0.165360 | val_loss: 0.084826
+    [GraphAttnGS] Epoch 211/500 | train_loss: 0.144026 | val_loss: 0.079536
+    [GraphAttnGS] Epoch 221/500 | train_loss: 0.117899 | val_loss: 0.079831
+    [GraphAttnGS] Epoch 231/500 | train_loss: 0.133115 | val_loss: 0.078914
+    [GraphAttnGS] Epoch 241/500 | train_loss: 0.126258 | val_loss: 0.070542
+    [GraphAttnGS] Epoch 251/500 | train_loss: 0.144892 | val_loss: 0.073599
+    [GraphAttnGS] Epoch 261/500 | train_loss: 0.119206 | val_loss: 0.065534
+    [GraphAttnGS] Epoch 271/500 | train_loss: 0.128205 | val_loss: 0.065874
+    [GraphAttnGS] Epoch 281/500 | train_loss: 0.110924 | val_loss: 0.063066
+    [GraphAttnGS] Epoch 291/500 | train_loss: 0.111747 | val_loss: 0.060397
+    [GraphAttnGS] Epoch 301/500 | train_loss: 0.112574 | val_loss: 0.070664
+    [GraphAttnGS] Epoch 311/500 | train_loss: 0.104286 | val_loss: 0.061108
+    [GraphAttnGS] Epoch 321/500 | train_loss: 0.105858 | val_loss: 0.060180
+    [GraphAttnGS] Epoch 331/500 | train_loss: 0.109005 | val_loss: 0.062308
+    [GraphAttnGS] Epoch 341/500 | train_loss: 0.110626 | val_loss: 0.056472
+    [GraphAttnGS] Epoch 351/500 | train_loss: 0.105718 | val_loss: 0.052529
+    [GraphAttnGS] Epoch 361/500 | train_loss: 0.096813 | val_loss: 0.058968
+    [GraphAttnGS] Epoch 371/500 | train_loss: 0.108104 | val_loss: 0.051469
+    [GraphAttnGS] Epoch 381/500 | train_loss: 0.096544 | val_loss: 0.053988
+    [GraphAttnGS] Epoch 391/500 | train_loss: 0.091878 | val_loss: 0.049115
+    [GraphAttnGS] Epoch 401/500 | train_loss: 0.102019 | val_loss: 0.043531
+    [GraphAttnGS] Epoch 411/500 | train_loss: 0.091071 | val_loss: 0.046997
+    [GraphAttnGS] Epoch 421/500 | train_loss: 0.083928 | val_loss: 0.041614
+    [GraphAttnGS] Epoch 431/500 | train_loss: 0.094363 | val_loss: 0.041700
+[GraphAttnGS] Early stopping at epoch 435. Best val 0.040731
+[GraphAttnGS] Training completed successfully
+[HAP] [GraphAttnGS] memory used during training: 14.12 MB
+[HAP] [GraphAttnGS] training completed in 5.10 minutes (306.05 seconds)
+
+[HAP] Training GraphSAGEGS...
+[GraphSAGEGS] Building sample graph with 234 samples using KNN (top_k=20, metric=euclidean)
+[KNN Graph] Built graph with 7666 edges, top_k=20, metric=euclidean
+[GraphSAGEGS] Graph built with 7666 edges
+[GraphSAGEGS] Starting training for 500 epochs
+    [GraphSAGEGS] Epoch 11/500 | train_loss: 0.375128 | val_loss: 0.316386
+    [GraphSAGEGS] Epoch 21/500 | train_loss: 0.252274 | val_loss: 0.184395
+    [GraphSAGEGS] Epoch 31/500 | train_loss: 0.198381 | val_loss: 0.124738
+    [GraphSAGEGS] Epoch 41/500 | train_loss: 0.133625 | val_loss: 0.084751
+    [GraphSAGEGS] Epoch 51/500 | train_loss: 0.131179 | val_loss: 0.058416
+    [GraphSAGEGS] Epoch 61/500 | train_loss: 0.096628 | val_loss: 0.045578
+    [GraphSAGEGS] Epoch 71/500 | train_loss: 0.075332 | val_loss: 0.034657
+    [GraphSAGEGS] Epoch 81/500 | train_loss: 0.076079 | val_loss: 0.029123
+    [GraphSAGEGS] Epoch 91/500 | train_loss: 0.067367 | val_loss: 0.023918
+    [GraphSAGEGS] Epoch 101/500 | train_loss: 0.064049 | val_loss: 0.019535
+    [GraphSAGEGS] Epoch 111/500 | train_loss: 0.049809 | val_loss: 0.015661
+    [GraphSAGEGS] Epoch 121/500 | train_loss: 0.056764 | val_loss: 0.013736
+    [GraphSAGEGS] Epoch 131/500 | train_loss: 0.046280 | val_loss: 0.011895
+    [GraphSAGEGS] Epoch 141/500 | train_loss: 0.047207 | val_loss: 0.009721
+    [GraphSAGEGS] Epoch 151/500 | train_loss: 0.038692 | val_loss: 0.008735
+    [GraphSAGEGS] Epoch 161/500 | train_loss: 0.046542 | val_loss: 0.009400
+    [GraphSAGEGS] Epoch 171/500 | train_loss: 0.045761 | val_loss: 0.006477
+    [GraphSAGEGS] Epoch 181/500 | train_loss: 0.043883 | val_loss: 0.006132
+    [GraphSAGEGS] Epoch 191/500 | train_loss: 0.039136 | val_loss: 0.005798
+    [GraphSAGEGS] Epoch 201/500 | train_loss: 0.039776 | val_loss: 0.005357
+    [GraphSAGEGS] Epoch 211/500 | train_loss: 0.041466 | val_loss: 0.005304
+    [GraphSAGEGS] Epoch 221/500 | train_loss: 0.041158 | val_loss: 0.003778
+    [GraphSAGEGS] Epoch 231/500 | train_loss: 0.045301 | val_loss: 0.005470
+    [GraphSAGEGS] Epoch 241/500 | train_loss: 0.031975 | val_loss: 0.004874
+[GraphSAGEGS] Early stopping at epoch 241. Best val 0.003687
+[GraphSAGEGS] Training completed successfully
+[HAP] [GraphSAGEGS] memory used during training: 3.23 MB
+[HAP] [GraphSAGEGS] training completed in 0.88 minutes (52.81 seconds)
+
+[HAP] Training GraphFormer...
+[KNN Graph] Built graph with 11168 edges, top_k=30, metric=euclidean
+[GraphFormer] Creating model:
+  - Input dim: 1607, Output dim: 2
+  - GNN type: SAGE, GNN hidden: 128
+  - Transformer: 2 layers, d_model: 128
+  - Device: cpu
+[GraphFormer] Model created successfully
+[GraphFormer] Model has GNN attribute: True
+[GraphFormer] GNN layer type: <class 'torch_geometric.nn.conv.sage_conv.SAGEConv'>
+[GraphFormer] Dataset created: 1 graphs
+[GraphFormer] Testing forward pass...
+[GraphFormer] Forward pass successful! Output shape: torch.Size([234, 2])
+[GraphFormer] Starting training for 500 epochs...
+    [GraphFormer] Epoch 1/500, Loss: 1.172316 *
+    [GraphFormer] Epoch 11/500, Loss: 0.147241 *
+    [GraphFormer] Epoch 21/500, Loss: 0.091042
+    [GraphFormer] Epoch 31/500, Loss: 0.057363
+    [GraphFormer] Epoch 41/500, Loss: 0.040784
+    [GraphFormer] Epoch 51/500, Loss: 0.032102
+    [GraphFormer] Epoch 61/500, Loss: 0.026348
+    [GraphFormer] Epoch 71/500, Loss: 0.023681
+    [GraphFormer] Epoch 81/500, Loss: 0.016939 *
+    [GraphFormer] Epoch 91/500, Loss: 0.017235
+    [GraphFormer] Epoch 101/500, Loss: 0.014561
+    [GraphFormer] Epoch 111/500, Loss: 0.013723
+    [GraphFormer] Epoch 121/500, Loss: 0.017295
+    [GraphFormer] Early stopping at epoch 128
+[GraphFormer] Loaded best model with loss: 0.012638
+[GraphFormer] Training completed successfully
+[HAP] [GraphFormer] memory used during training: -0.13 MB
+[HAP] [GraphFormer] training completed in 0.93 minutes (55.97 seconds)
+
+[HAP] Training DeepResBLUP...
+[DeepResBLUP_Hybrid] Fit: base=R_RRBLUP, dl=MLPGS
+✓ R package 'rrBLUP' successfully loaded
+[DeepResBLUP_Hybrid] Training base (RRBLUP) model...
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 234 samples, 1607 markers using REML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.130966, Vu=0.000259, h²=0.002
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 234 samples, 1607 markers using REML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.103617, Vu=0.000282, h²=0.003
+[DeepResBLUP_Hybrid] Attempting to extract RRBLUP marker effects from base model...
+[DeepResBLUP_Hybrid] Computing base predictions...
+[DeepResBLUP_Hybrid] Creating DL residual model...
+MLPGSModel is used for residual learning.
+[DeepResBLUP_Hybrid] Training DL residual model...
+[DeepResBLUP_Hybrid] Preparing data loaders and training DL residual...
+    [DeepResBLUP_Hybrid] Epoch 1/100, Train Loss: 0.3761, Val Loss: 0.2537
+    [DeepResBLUP_Hybrid] Epoch 11/100, Train Loss: 0.0608, Val Loss: 0.0849
+    [DeepResBLUP_Hybrid] Epoch 21/100, Train Loss: 0.0366, Val Loss: 0.0790
+    [DeepResBLUP_Hybrid] Epoch 31/100, Train Loss: 0.0249, Val Loss: 0.0889
+Early stopping at epoch 41
+[DeepResBLUP_Hybrid] Fit completed.
+[HAP] [DeepResBLUP] memory used during training: 0.00 MB
+[HAP] [DeepResBLUP] training completed in 0.18 minutes (10.87 seconds)
+
+[HAP] Training DeepBLUP...
+Precomputing RRBLUP weights for initialization...
+  Computing R_RRBLUP weights for trait 1/2...
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 234 samples, 1607 markers using ML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.128278, Vu=0.000261, h²=0.002
+    Trait 1: Success
+  Computing R_RRBLUP weights for trait 2/2...
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 234 samples, 1607 markers using ML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.099413, Vu=0.000287, h²=0.003
+    Trait 2: Success
+  R_RRBLUP multi-trait weights computed: (128, 1607)
+  Successfully computed RRBLUP weights: (128, 1607)
+    [DeepBLUP] Epoch 2/200 - train_loss: 2.571264 - val_loss: 1.929661 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 11/200 - train_loss: 1.009246 - val_loss: 0.268156 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 21/200 - train_loss: 0.729837 - val_loss: 0.192612 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 31/200 - train_loss: 0.438908 - val_loss: 0.254623 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 41/200 - train_loss: 0.349915 - val_loss: 0.150480 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 51/200 - train_loss: 0.270060 - val_loss: 0.125936 - lr: 5.000000e-05
+    [DeepBLUP] Epoch 61/200 - train_loss: 0.228453 - val_loss: 0.133198 - lr: 5.000000e-05
+    [DeepBLUP] Epoch 71/200 - train_loss: 0.214601 - val_loss: 0.125263 - lr: 2.500000e-05
+    [DeepBLUP] Epoch 81/200 - train_loss: 0.225224 - val_loss: 0.128137 - lr: 1.250000e-05
+    [DeepBLUP] Epoch 91/200 - train_loss: 0.211954 - val_loss: 0.148717 - lr: 6.250000e-06
+    [DeepBLUP] Epoch 101/200 - train_loss: 0.219878 - val_loss: 0.101336 - lr: 3.125000e-06
+    [DeepBLUP] Early stopping at epoch 108. Best val 0.080422
+    [DeepBLUP] Loaded best model from results/ckpts/best_HAP_DeepBLUP.pth with val_loss 0.080422
+[HAP] [DeepBLUP] memory used during training: 0.77 MB
+[HAP] [DeepBLUP] training completed in 0.29 minutes (17.26 seconds)
+
+Training EnsembleGS ensemble...
+EnsembleGS base models (requested): ['R_RRBLUP', 'ElasticNet', 'BRR', 'LightGBM', 'MLPGS']
+Models available (trained):   ['R_RRBLUP', 'R_GBLUP', 'RRBLUP', 'ElasticNet', 'RFR', 'BRR', 'XGBoost', 'LightGBM', 'DNNGS', 'MLPGS', 'GraphConvGS', 'GraphAttnGS', 'GraphSAGEGS', 'GraphFormer', 'DeepResBLUP', 'DeepBLUP']
+[EnsembleGS] Using in-sample training predictions for meta-learner.
+[EnsembleGS] Meta-features for each trait: (n_samples=234, n_bases=5) (source: in-sample)
+[HAP] [model_name] memory used during training: 0.00 MB
+[HAP] [model_name] training completed in 0.29 minutes (0.18 seconds)
+
+
+YLD [HAP][R_RRBLUP]: MSE=0.2385, PearsonR=0.840
+PLH [HAP][R_RRBLUP]: MSE=0.2272, PearsonR=0.845
+YLD [HAP][R_GBLUP]: MSE=0.7914, PearsonR=0.701
+PLH [HAP][R_GBLUP]: MSE=0.7373, PearsonR=0.788
+YLD [HAP][RRBLUP]: MSE=28.0200, PearsonR=0.810
+PLH [HAP][RRBLUP]: MSE=22.2632, PearsonR=0.815
+YLD [HAP][ElasticNet]: MSE=0.2862, PearsonR=0.806
+PLH [HAP][ElasticNet]: MSE=0.2618, PearsonR=0.827
+YLD [HAP][RFR]: MSE=0.3116, PearsonR=0.783
+PLH [HAP][RFR]: MSE=0.2421, PearsonR=0.832
+YLD [HAP][BRR]: MSE=0.3157, PearsonR=0.810
+PLH [HAP][BRR]: MSE=0.2815, PearsonR=0.815
+YLD [HAP][XGBoost]: MSE=0.3539, PearsonR=0.769
+PLH [HAP][XGBoost]: MSE=0.3137, PearsonR=0.773
+YLD [HAP][LightGBM]: MSE=0.2810, PearsonR=0.816
+PLH [HAP][LightGBM]: MSE=0.2613, PearsonR=0.819
+YLD [HAP][DNNGS]: MSE=0.2903, PearsonR=0.802
+PLH [HAP][DNNGS]: MSE=0.2409, PearsonR=0.843
+YLD [HAP][MLPGS]: MSE=0.7151, PearsonR=0.835
+PLH [HAP][MLPGS]: MSE=0.6999, PearsonR=0.802
+[GraphConvGS] Building prediction graph with 59 samples using KNN
+[KNN Graph] Built graph with 1685 edges, top_k=20, metric=euclidean
+YLD [HAP][GraphConvGS]: MSE=0.8688, PearsonR=0.544
+PLH [HAP][GraphConvGS]: MSE=0.5415, PearsonR=0.692
+[GraphAttnGS] Building prediction graph with 59 samples using KNN
+[KNN Graph] Built graph with 1685 edges, top_k=20, metric=euclidean
+YLD [HAP][GraphAttnGS]: MSE=0.9115, PearsonR=0.508
+PLH [HAP][GraphAttnGS]: MSE=0.6799, PearsonR=0.656
+[GraphSAGEGS] Building prediction graph with 59 samples using KNN
+[KNN Graph] Built graph with 1685 edges, top_k=20, metric=euclidean
+YLD [HAP][GraphSAGEGS]: MSE=0.3968, PearsonR=0.803
+PLH [HAP][GraphSAGEGS]: MSE=0.2564, PearsonR=0.856
+[GraphFormer] Building prediction graph with 59 samples using KNN
+[KNN Graph] Built graph with 2361 edges, top_k=30, metric=euclidean
+YLD [HAP][GraphFormer]: MSE=0.3690, PearsonR=0.820
+PLH [HAP][GraphFormer]: MSE=0.3456, PearsonR=0.849
+YLD [HAP][DeepResBLUP]: MSE=0.2422, PearsonR=0.842
+PLH [HAP][DeepResBLUP]: MSE=0.2269, PearsonR=0.846
+YLD [HAP][DeepBLUP]: MSE=0.2535, PearsonR=0.837
+PLH [HAP][DeepBLUP]: MSE=0.2216, PearsonR=0.852
+YLD [HAP][EnsembleGS]: MSE=0.2708, PearsonR=0.828
+PLH [HAP][EnsembleGS]: MSE=0.2588, PearsonR=0.827
+----------------------------------------------------------------------------
+Execution time for Replicate 1/1, Fold 3/5: 15.34 minutes (920.30 seconds)
+----------------------------------------------------------------------------
+
+=== [HAP] Replicate 1/1, Fold 4/5 ===
+Training models: R_RRBLUP, R_GBLUP, RRBLUP, ElasticNet, RFR, BRR, XGBoost, LightGBM, DNNGS, MLPGS, GraphConvGS, GraphAttnGS, GraphSAGEGS, GraphFormer, DeepResBLUP, DeepBLUP, EnsembleGS
+[HAP] Training R_RRBLUP...
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 235 samples, 1607 markers using REML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.131221, Vu=0.000246, h²=0.002
+  R_RRBLUP Trait 1/2 - SUCCESS
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 235 samples, 1607 markers using REML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.114734, Vu=0.000250, h²=0.002
+  R_RRBLUP Trait 2/2 - SUCCESS
+  R_RRBLUP: 2/2 traits trained successfully
+[HAP] [R_RRBLUP] memory used during training: 0.00 MB
+[HAP] [R_RRBLUP] training completed in 0.09 minutes (5.66 seconds)
+
+[HAP] Training R_GBLUP...
+✓ R package 'rrBLUP' successfully loaded
+R-GBLUP: Fitting with 235 samples, 1607 markers
+Computing kinship matrix with R's A.mat()...
+Calling R: mixed.solve() with kinship...
+Breeding values shape: (235,)
+Marker effects calculated via pseudoinverse, shape: (1607,)
+R-GBLUP fitted: Ve=0.128596, Vu=0.198548, h²=0.607
+  R_GBLUP Trait 1/2 - SUCCESS
+✓ R package 'rrBLUP' successfully loaded
+R-GBLUP: Fitting with 235 samples, 1607 markers
+Computing kinship matrix with R's A.mat()...
+Calling R: mixed.solve() with kinship...
+Breeding values shape: (235,)
+Marker effects calculated via pseudoinverse, shape: (1607,)
+R-GBLUP fitted: Ve=0.110551, Vu=0.203825, h²=0.648
+  R_GBLUP Trait 2/2 - SUCCESS
+  R_GBLUP: 2/2 traits trained successfully
+[HAP] [R_GBLUP] memory used during training: -44.97 MB
+[HAP] [R_GBLUP] training completed in 0.10 minutes (5.91 seconds)
+
+[HAP] Training RRBLUP...
+HighPerformanceRRBLUP: 235 samples, 1607 markers, method=mixed_model
+REML-like lambda estimation: λ=0.001000
+Using lambda: 0.001000
+RRBLUP mixed model fitted: λ=0.001000
+HighPerformanceRRBLUP: 235 samples, 1607 markers, method=mixed_model
+REML-like lambda estimation: λ=0.001000
+Using lambda: 0.001000
+RRBLUP mixed model fitted: λ=0.001000
+[HAP] [RRBLUP] memory used during training: 0.00 MB
+[HAP] [RRBLUP] training completed in 0.00 minutes (0.13 seconds)
+
+[HAP] Training ElasticNet...
+[HAP] [ElasticNet] memory used during training: 0.00 MB
+[HAP] [ElasticNet] training completed in 0.00 minutes (0.03 seconds)
+
+[HAP] Training RFR...
+[HAP] [RFR] memory used during training: 0.57 MB
+[HAP] [RFR] training completed in 0.00 minutes (0.29 seconds)
+
+[HAP] Training BRR...
+Using alpha_1=1e-06, alpha_2=1e-06, lambda_1=1e-06, lambda_2=1e-06
+Using alpha_1=1e-06, alpha_2=1e-06, lambda_1=1e-06, lambda_2=1e-06
+[HAP] [BRR] memory used during training: 19.59 MB
+[HAP] [BRR] training completed in 0.01 minutes (0.37 seconds)
+
+[HAP] Training XGBoost...
+[HAP] [XGBoost] memory used during training: 0.77 MB
+[HAP] [XGBoost] training completed in 0.01 minutes (0.82 seconds)
+
+[HAP] Training LightGBM...
+[HAP] [LightGBM] memory used during training: 0.00 MB
+[HAP] [LightGBM] training completed in 0.01 minutes (0.46 seconds)
+
+[HAP] Training DNNGS...
+    [DNNGS] Epoch 1/300, LR: 0.000033, Train Loss: 1.8636, Val Loss: 0.7480
+    [DNNGS] Epoch 11/300, LR: 0.000367, Train Loss: 0.6027, Val Loss: 0.3324
+    [DNNGS] Epoch 21/300, LR: 0.000700, Train Loss: 0.3172, Val Loss: 0.2629
+    [DNNGS] Epoch 31/300, LR: 0.000996, Train Loss: 0.2633, Val Loss: 0.2775
+    [DNNGS] Epoch 41/300, LR: 0.000959, Train Loss: 0.1898, Val Loss: 0.2080
+    [DNNGS] Epoch 51/300, LR: 0.000922, Train Loss: 0.1530, Val Loss: 0.2158
+    [DNNGS] Epoch 61/300, LR: 0.000885, Train Loss: 0.1042, Val Loss: 0.2116
+    [DNNGS] Epoch 71/300, LR: 0.000848, Train Loss: 0.1131, Val Loss: 0.2059
+    [DNNGS] Epoch 81/300, LR: 0.000811, Train Loss: 0.1048, Val Loss: 0.2181
+    [DNNGS] Epoch 91/300, LR: 0.000774, Train Loss: 0.0992, Val Loss: 0.2040
+    [DNNGS] Epoch 101/300, LR: 0.000737, Train Loss: 0.0685, Val Loss: 0.1963
+Early stopping at epoch 104
+Loaded best DNNGS model with validation loss: 0.1879
+[HAP] [DNNGS] memory used during training: 0.26 MB
+[HAP] [DNNGS] training completed in 2.28 minutes (136.69 seconds)
+
+[HAP] Training MLPGS...
+    [MLPGS] Epoch 1/300, Train Loss: 0.3463, Val Loss: 0.6269
+    [MLPGS] Epoch 11/300, Train Loss: 0.0997, Val Loss: 0.3338
+    [MLPGS] Epoch 21/300, Train Loss: 0.0607, Val Loss: 0.3133
+    [MLPGS] Epoch 31/300, Train Loss: 0.0447, Val Loss: 0.2803
+    [MLPGS] Epoch 41/300, Train Loss: 0.0389, Val Loss: 0.2660
+    [MLPGS] Epoch 51/300, Train Loss: 0.0275, Val Loss: 0.2962
+Early stopping at epoch 56
+[HAP] [MLPGS] memory used during training: 16.68 MB
+[HAP] [MLPGS] training completed in 4.05 minutes (243.08 seconds)
+
+[HAP] Training GraphConvGS...
+[GraphConvGS] Building sample graph with 235 samples using KNN (top_k=20, metric=euclidean)
+[KNN Graph] Built graph with 7645 edges, top_k=20, metric=euclidean
+[GraphConvGS] Graph built with 7645 edges
+[GraphConvGS] Starting training for 500 epochs
+    [GraphConvGS] Epoch 11/500 | train_loss: 0.477212 | val_loss: 0.428592
+    [GraphConvGS] Epoch 21/500 | train_loss: 0.395399 | val_loss: 0.358128
+    [GraphConvGS] Epoch 31/500 | train_loss: 0.371142 | val_loss: 0.327508
+    [GraphConvGS] Epoch 41/500 | train_loss: 0.331345 | val_loss: 0.301024
+    [GraphConvGS] Epoch 51/500 | train_loss: 0.317179 | val_loss: 0.276807
+    [GraphConvGS] Epoch 61/500 | train_loss: 0.321936 | val_loss: 0.258934
+    [GraphConvGS] Epoch 71/500 | train_loss: 0.280601 | val_loss: 0.244001
+    [GraphConvGS] Epoch 81/500 | train_loss: 0.263673 | val_loss: 0.229757
+    [GraphConvGS] Epoch 91/500 | train_loss: 0.254388 | val_loss: 0.218658
+    [GraphConvGS] Epoch 101/500 | train_loss: 0.246558 | val_loss: 0.206202
+    [GraphConvGS] Epoch 111/500 | train_loss: 0.265637 | val_loss: 0.201593
+    [GraphConvGS] Epoch 121/500 | train_loss: 0.230031 | val_loss: 0.194784
+    [GraphConvGS] Epoch 131/500 | train_loss: 0.248088 | val_loss: 0.190929
+    [GraphConvGS] Epoch 141/500 | train_loss: 0.213294 | val_loss: 0.179903
+    [GraphConvGS] Epoch 151/500 | train_loss: 0.219789 | val_loss: 0.182068
+    [GraphConvGS] Epoch 161/500 | train_loss: 0.229278 | val_loss: 0.172460
+    [GraphConvGS] Epoch 171/500 | train_loss: 0.226431 | val_loss: 0.173778
+    [GraphConvGS] Epoch 181/500 | train_loss: 0.207898 | val_loss: 0.166926
+    [GraphConvGS] Epoch 191/500 | train_loss: 0.202491 | val_loss: 0.164557
+    [GraphConvGS] Epoch 201/500 | train_loss: 0.211613 | val_loss: 0.172460
+    [GraphConvGS] Epoch 211/500 | train_loss: 0.204536 | val_loss: 0.158189
+    [GraphConvGS] Epoch 221/500 | train_loss: 0.205293 | val_loss: 0.155744
+    [GraphConvGS] Epoch 231/500 | train_loss: 0.208928 | val_loss: 0.148573
+    [GraphConvGS] Epoch 241/500 | train_loss: 0.187048 | val_loss: 0.149558
+    [GraphConvGS] Epoch 251/500 | train_loss: 0.201319 | val_loss: 0.145326
+    [GraphConvGS] Epoch 261/500 | train_loss: 0.189995 | val_loss: 0.145069
+    [GraphConvGS] Epoch 271/500 | train_loss: 0.172595 | val_loss: 0.144209
+    [GraphConvGS] Epoch 281/500 | train_loss: 0.171577 | val_loss: 0.138570
+    [GraphConvGS] Epoch 291/500 | train_loss: 0.184022 | val_loss: 0.139541
+    [GraphConvGS] Epoch 301/500 | train_loss: 0.171881 | val_loss: 0.135008
+    [GraphConvGS] Epoch 311/500 | train_loss: 0.185433 | val_loss: 0.148496
+    [GraphConvGS] Epoch 321/500 | train_loss: 0.177054 | val_loss: 0.138111
+    [GraphConvGS] Epoch 331/500 | train_loss: 0.181895 | val_loss: 0.139093
+    [GraphConvGS] Epoch 341/500 | train_loss: 0.170860 | val_loss: 0.128456
+    [GraphConvGS] Epoch 351/500 | train_loss: 0.165929 | val_loss: 0.123498
+    [GraphConvGS] Epoch 361/500 | train_loss: 0.159720 | val_loss: 0.125382
+    [GraphConvGS] Epoch 371/500 | train_loss: 0.151444 | val_loss: 0.119928
+    [GraphConvGS] Epoch 381/500 | train_loss: 0.161135 | val_loss: 0.120889
+    [GraphConvGS] Epoch 391/500 | train_loss: 0.162264 | val_loss: 0.119672
+    [GraphConvGS] Epoch 401/500 | train_loss: 0.157654 | val_loss: 0.120882
+    [GraphConvGS] Epoch 411/500 | train_loss: 0.148828 | val_loss: 0.119295
+    [GraphConvGS] Epoch 421/500 | train_loss: 0.173678 | val_loss: 0.115092
+    [GraphConvGS] Epoch 431/500 | train_loss: 0.174579 | val_loss: 0.116187
+    [GraphConvGS] Epoch 441/500 | train_loss: 0.156201 | val_loss: 0.122783
+[GraphConvGS] Early stopping at epoch 443. Best val 0.112732
+[GraphConvGS] Training completed successfully
+[HAP] [GraphConvGS] memory used during training: 0.00 MB
+[HAP] [GraphConvGS] training completed in 1.34 minutes (80.15 seconds)
+
+[HAP] Training GraphAttnGS...
+[GraphAttnGS] Building sample graph with 235 samples using KNN (top_k=20, metric=euclidean)
+[KNN Graph] Built graph with 7645 edges, top_k=20, metric=euclidean
+[GraphAttnGS] Graph built with 7645 edges
+[GraphAttnGS] Starting training for 500 epochs
+    [GraphAttnGS] Epoch 11/500 | train_loss: 0.375315 | val_loss: 0.327090
+    [GraphAttnGS] Epoch 21/500 | train_loss: 0.313401 | val_loss: 0.270725
+    [GraphAttnGS] Epoch 31/500 | train_loss: 0.279397 | val_loss: 0.246566
+    [GraphAttnGS] Epoch 41/500 | train_loss: 0.275628 | val_loss: 0.208406
+    [GraphAttnGS] Epoch 51/500 | train_loss: 0.219965 | val_loss: 0.189281
+    [GraphAttnGS] Epoch 61/500 | train_loss: 0.243944 | val_loss: 0.172721
+    [GraphAttnGS] Epoch 71/500 | train_loss: 0.201642 | val_loss: 0.161984
+    [GraphAttnGS] Epoch 81/500 | train_loss: 0.199158 | val_loss: 0.152564
+    [GraphAttnGS] Epoch 91/500 | train_loss: 0.200500 | val_loss: 0.144888
+    [GraphAttnGS] Epoch 101/500 | train_loss: 0.187377 | val_loss: 0.130868
+    [GraphAttnGS] Epoch 111/500 | train_loss: 0.175225 | val_loss: 0.126748
+    [GraphAttnGS] Epoch 121/500 | train_loss: 0.157637 | val_loss: 0.113762
+    [GraphAttnGS] Epoch 131/500 | train_loss: 0.158419 | val_loss: 0.104195
+    [GraphAttnGS] Epoch 141/500 | train_loss: 0.163747 | val_loss: 0.101141
+    [GraphAttnGS] Epoch 151/500 | train_loss: 0.137697 | val_loss: 0.093080
+    [GraphAttnGS] Epoch 161/500 | train_loss: 0.140925 | val_loss: 0.086076
+    [GraphAttnGS] Epoch 171/500 | train_loss: 0.145486 | val_loss: 0.093285
+    [GraphAttnGS] Epoch 181/500 | train_loss: 0.141734 | val_loss: 0.097181
+[GraphAttnGS] Early stopping at epoch 180. Best val 0.086076
+[GraphAttnGS] Training completed successfully
+[HAP] [GraphAttnGS] memory used during training: -11.05 MB
+[HAP] [GraphAttnGS] training completed in 2.08 minutes (124.98 seconds)
+
+[HAP] Training GraphSAGEGS...
+[GraphSAGEGS] Building sample graph with 235 samples using KNN (top_k=20, metric=euclidean)
+[KNN Graph] Built graph with 7645 edges, top_k=20, metric=euclidean
+[GraphSAGEGS] Graph built with 7645 edges
+[GraphSAGEGS] Starting training for 500 epochs
+    [GraphSAGEGS] Epoch 11/500 | train_loss: 0.363371 | val_loss: 0.297294
+    [GraphSAGEGS] Epoch 21/500 | train_loss: 0.242557 | val_loss: 0.193890
+    [GraphSAGEGS] Epoch 31/500 | train_loss: 0.177817 | val_loss: 0.130283
+    [GraphSAGEGS] Epoch 41/500 | train_loss: 0.152533 | val_loss: 0.087019
+    [GraphSAGEGS] Epoch 51/500 | train_loss: 0.120067 | val_loss: 0.059352
+    [GraphSAGEGS] Epoch 61/500 | train_loss: 0.104902 | val_loss: 0.047358
+    [GraphSAGEGS] Epoch 71/500 | train_loss: 0.074480 | val_loss: 0.038257
+    [GraphSAGEGS] Epoch 81/500 | train_loss: 0.071060 | val_loss: 0.028834
+    [GraphSAGEGS] Epoch 91/500 | train_loss: 0.073400 | val_loss: 0.023459
+    [GraphSAGEGS] Epoch 101/500 | train_loss: 0.062588 | val_loss: 0.017987
+    [GraphSAGEGS] Epoch 111/500 | train_loss: 0.054890 | val_loss: 0.017195
+    [GraphSAGEGS] Epoch 121/500 | train_loss: 0.056906 | val_loss: 0.014055
+    [GraphSAGEGS] Epoch 131/500 | train_loss: 0.041970 | val_loss: 0.010552
+    [GraphSAGEGS] Epoch 141/500 | train_loss: 0.044820 | val_loss: 0.009042
+    [GraphSAGEGS] Epoch 151/500 | train_loss: 0.036717 | val_loss: 0.009863
+    [GraphSAGEGS] Epoch 161/500 | train_loss: 0.047197 | val_loss: 0.009479
+    [GraphSAGEGS] Epoch 171/500 | train_loss: 0.042472 | val_loss: 0.008225
+    [GraphSAGEGS] Epoch 181/500 | train_loss: 0.043285 | val_loss: 0.006877
+    [GraphSAGEGS] Epoch 191/500 | train_loss: 0.039559 | val_loss: 0.005724
+    [GraphSAGEGS] Epoch 201/500 | train_loss: 0.038773 | val_loss: 0.007116
+    [GraphSAGEGS] Epoch 211/500 | train_loss: 0.035920 | val_loss: 0.005638
+    [GraphSAGEGS] Epoch 221/500 | train_loss: 0.036452 | val_loss: 0.004850
+    [GraphSAGEGS] Epoch 231/500 | train_loss: 0.037258 | val_loss: 0.004745
+    [GraphSAGEGS] Epoch 241/500 | train_loss: 0.033625 | val_loss: 0.004771
+    [GraphSAGEGS] Epoch 251/500 | train_loss: 0.029978 | val_loss: 0.003802
+    [GraphSAGEGS] Epoch 261/500 | train_loss: 0.033801 | val_loss: 0.003908
+    [GraphSAGEGS] Epoch 271/500 | train_loss: 0.029735 | val_loss: 0.004619
+[GraphSAGEGS] Early stopping at epoch 270. Best val 0.003802
+[GraphSAGEGS] Training completed successfully
+[HAP] [GraphSAGEGS] memory used during training: 0.90 MB
+[HAP] [GraphSAGEGS] training completed in 1.00 minutes (59.73 seconds)
+
+[HAP] Training GraphFormer...
+[KNN Graph] Built graph with 11033 edges, top_k=30, metric=euclidean
+[GraphFormer] Creating model:
+  - Input dim: 1607, Output dim: 2
+  - GNN type: SAGE, GNN hidden: 128
+  - Transformer: 2 layers, d_model: 128
+  - Device: cpu
+[GraphFormer] Model created successfully
+[GraphFormer] Model has GNN attribute: True
+[GraphFormer] GNN layer type: <class 'torch_geometric.nn.conv.sage_conv.SAGEConv'>
+[GraphFormer] Dataset created: 1 graphs
+[GraphFormer] Testing forward pass...
+[GraphFormer] Forward pass successful! Output shape: torch.Size([235, 2])
+[GraphFormer] Starting training for 500 epochs...
+    [GraphFormer] Epoch 1/500, Loss: 1.129180 *
+    [GraphFormer] Epoch 11/500, Loss: 0.140747 *
+    [GraphFormer] Epoch 21/500, Loss: 0.075082 *
+    [GraphFormer] Epoch 31/500, Loss: 0.050225 *
+    [GraphFormer] Epoch 41/500, Loss: 0.036514
+    [GraphFormer] Epoch 51/500, Loss: 0.026003
+    [GraphFormer] Epoch 61/500, Loss: 0.022238 *
+    [GraphFormer] Epoch 71/500, Loss: 0.021252
+    [GraphFormer] Epoch 81/500, Loss: 0.017812
+    [GraphFormer] Epoch 91/500, Loss: 0.015743
+    [GraphFormer] Epoch 101/500, Loss: 0.014786
+    [GraphFormer] Epoch 111/500, Loss: 0.013528 *
+    [GraphFormer] Epoch 121/500, Loss: 0.014319
+    [GraphFormer] Epoch 131/500, Loss: 0.018174
+    [GraphFormer] Epoch 141/500, Loss: 0.012258
+    [GraphFormer] Epoch 151/500, Loss: 0.013430
+    [GraphFormer] Epoch 161/500, Loss: 0.011576
+    [GraphFormer] Epoch 171/500, Loss: 0.009174 *
+    [GraphFormer] Epoch 181/500, Loss: 0.011843
+    [GraphFormer] Epoch 191/500, Loss: 0.009121
+    [GraphFormer] Epoch 201/500, Loss: 0.012733
+    [GraphFormer] Epoch 211/500, Loss: 0.008816 *
+    [GraphFormer] Epoch 221/500, Loss: 0.009633
+    [GraphFormer] Epoch 231/500, Loss: 0.010767
+    [GraphFormer] Epoch 241/500, Loss: 0.009272
+    [GraphFormer] Early stopping at epoch 241
+[GraphFormer] Loaded best model with loss: 0.008816
+[GraphFormer] Training completed successfully
+[HAP] [GraphFormer] memory used during training: 0.02 MB
+[HAP] [GraphFormer] training completed in 1.75 minutes (105.22 seconds)
+
+[HAP] Training DeepResBLUP...
+[DeepResBLUP_Hybrid] Fit: base=R_RRBLUP, dl=MLPGS
+✓ R package 'rrBLUP' successfully loaded
+[DeepResBLUP_Hybrid] Training base (RRBLUP) model...
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 235 samples, 1607 markers using REML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.131221, Vu=0.000246, h²=0.002
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 235 samples, 1607 markers using REML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.114734, Vu=0.000250, h²=0.002
+[DeepResBLUP_Hybrid] Attempting to extract RRBLUP marker effects from base model...
+[DeepResBLUP_Hybrid] Computing base predictions...
+[DeepResBLUP_Hybrid] Creating DL residual model...
+MLPGSModel is used for residual learning.
+[DeepResBLUP_Hybrid] Training DL residual model...
+[DeepResBLUP_Hybrid] Preparing data loaders and training DL residual...
+    [DeepResBLUP_Hybrid] Epoch 1/100, Train Loss: 0.4052, Val Loss: 0.1732
+    [DeepResBLUP_Hybrid] Epoch 11/100, Train Loss: 0.0534, Val Loss: 0.0816
+    [DeepResBLUP_Hybrid] Epoch 21/100, Train Loss: 0.0375, Val Loss: 0.0761
+    [DeepResBLUP_Hybrid] Epoch 31/100, Train Loss: 0.0234, Val Loss: 0.0804
+Early stopping at epoch 38
+[DeepResBLUP_Hybrid] Fit completed.
+[HAP] [DeepResBLUP] memory used during training: 2.76 MB
+[HAP] [DeepResBLUP] training completed in 0.18 minutes (10.77 seconds)
+
+[HAP] Training DeepBLUP...
+Precomputing RRBLUP weights for initialization...
+  Computing R_RRBLUP weights for trait 1/2...
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 235 samples, 1607 markers using ML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.128595, Vu=0.000247, h²=0.002
+    Trait 1: Success
+  Computing R_RRBLUP weights for trait 2/2...
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 235 samples, 1607 markers using ML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.110552, Vu=0.000254, h²=0.002
+    Trait 2: Success
+  R_RRBLUP multi-trait weights computed: (128, 1607)
+  Successfully computed RRBLUP weights: (128, 1607)
+    [DeepBLUP] Epoch 2/200 - train_loss: 2.342021 - val_loss: 0.798399 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 11/200 - train_loss: 1.083760 - val_loss: 0.204147 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 21/200 - train_loss: 0.592826 - val_loss: 0.156832 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 31/200 - train_loss: 0.406620 - val_loss: 0.153746 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 41/200 - train_loss: 0.294881 - val_loss: 0.150567 - lr: 5.000000e-05
+    [DeepBLUP] Epoch 51/200 - train_loss: 0.254971 - val_loss: 0.157559 - lr: 2.500000e-05
+    [DeepBLUP] Early stopping at epoch 57. Best val 0.103800
+    [DeepBLUP] Loaded best model from results/ckpts/best_HAP_DeepBLUP.pth with val_loss 0.103800
+[HAP] [DeepBLUP] memory used during training: 0.00 MB
+[HAP] [DeepBLUP] training completed in 0.21 minutes (12.42 seconds)
+
+Training EnsembleGS ensemble...
+EnsembleGS base models (requested): ['R_RRBLUP', 'ElasticNet', 'BRR', 'LightGBM', 'MLPGS']
+Models available (trained):   ['R_RRBLUP', 'R_GBLUP', 'RRBLUP', 'ElasticNet', 'RFR', 'BRR', 'XGBoost', 'LightGBM', 'DNNGS', 'MLPGS', 'GraphConvGS', 'GraphAttnGS', 'GraphSAGEGS', 'GraphFormer', 'DeepResBLUP', 'DeepBLUP']
+[EnsembleGS] Using in-sample training predictions for meta-learner.
+[EnsembleGS] Meta-features for each trait: (n_samples=235, n_bases=5) (source: in-sample)
+[HAP] [model_name] memory used during training: 0.00 MB
+[HAP] [model_name] training completed in 0.21 minutes (0.26 seconds)
+
+
+YLD [HAP][R_RRBLUP]: MSE=0.2537, PearsonR=0.862
+PLH [HAP][R_RRBLUP]: MSE=0.2847, PearsonR=0.853
+YLD [HAP][R_GBLUP]: MSE=0.9293, PearsonR=0.737
+PLH [HAP][R_GBLUP]: MSE=1.0070, PearsonR=0.784
+YLD [HAP][RRBLUP]: MSE=24.0713, PearsonR=0.821
+PLH [HAP][RRBLUP]: MSE=20.9612, PearsonR=0.827
+YLD [HAP][ElasticNet]: MSE=0.3760, PearsonR=0.793
+PLH [HAP][ElasticNet]: MSE=0.3808, PearsonR=0.814
+YLD [HAP][RFR]: MSE=0.3597, PearsonR=0.790
+PLH [HAP][RFR]: MSE=0.4715, PearsonR=0.739
+YLD [HAP][BRR]: MSE=0.3310, PearsonR=0.820
+PLH [HAP][BRR]: MSE=0.2849, PearsonR=0.853
+YLD [HAP][XGBoost]: MSE=0.3991, PearsonR=0.772
+PLH [HAP][XGBoost]: MSE=0.3801, PearsonR=0.796
+YLD [HAP][LightGBM]: MSE=0.3096, PearsonR=0.832
+PLH [HAP][LightGBM]: MSE=0.3287, PearsonR=0.826
+YLD [HAP][DNNGS]: MSE=0.3057, PearsonR=0.836
+PLH [HAP][DNNGS]: MSE=0.4284, PearsonR=0.780
+YLD [HAP][MLPGS]: MSE=0.6434, PearsonR=0.819
+PLH [HAP][MLPGS]: MSE=0.6481, PearsonR=0.802
+[GraphConvGS] Building prediction graph with 58 samples using KNN
+[KNN Graph] Built graph with 1664 edges, top_k=20, metric=euclidean
+YLD [HAP][GraphConvGS]: MSE=0.7094, PearsonR=0.728
+PLH [HAP][GraphConvGS]: MSE=0.5926, PearsonR=0.780
+[GraphAttnGS] Building prediction graph with 58 samples using KNN
+[KNN Graph] Built graph with 1664 edges, top_k=20, metric=euclidean
+YLD [HAP][GraphAttnGS]: MSE=0.4734, PearsonR=0.716
+PLH [HAP][GraphAttnGS]: MSE=0.7102, PearsonR=0.723
+[GraphSAGEGS] Building prediction graph with 58 samples using KNN
+[KNN Graph] Built graph with 1664 edges, top_k=20, metric=euclidean
+YLD [HAP][GraphSAGEGS]: MSE=0.3275, PearsonR=0.822
+PLH [HAP][GraphSAGEGS]: MSE=0.2928, PearsonR=0.857
+[GraphFormer] Building prediction graph with 58 samples using KNN
+[KNN Graph] Built graph with 2328 edges, top_k=30, metric=euclidean
+YLD [HAP][GraphFormer]: MSE=0.3867, PearsonR=0.809
+PLH [HAP][GraphFormer]: MSE=0.3305, PearsonR=0.841
+YLD [HAP][DeepResBLUP]: MSE=0.2834, PearsonR=0.842
+PLH [HAP][DeepResBLUP]: MSE=0.2769, PearsonR=0.857
+YLD [HAP][DeepBLUP]: MSE=0.3052, PearsonR=0.859
+PLH [HAP][DeepBLUP]: MSE=0.2853, PearsonR=0.851
+YLD [HAP][EnsembleGS]: MSE=0.2894, PearsonR=0.842
+PLH [HAP][EnsembleGS]: MSE=0.3033, PearsonR=0.840
+----------------------------------------------------------------------------
+Execution time for Replicate 1/1, Fold 4/5: 13.33 minutes (799.68 seconds)
+----------------------------------------------------------------------------
+
+=== [HAP] Replicate 1/1, Fold 5/5 ===
+Training models: R_RRBLUP, R_GBLUP, RRBLUP, ElasticNet, RFR, BRR, XGBoost, LightGBM, DNNGS, MLPGS, GraphConvGS, GraphAttnGS, GraphSAGEGS, GraphFormer, DeepResBLUP, DeepBLUP, EnsembleGS
+[HAP] Training R_RRBLUP...
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 235 samples, 1607 markers using REML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.139979, Vu=0.000227, h²=0.002
+  R_RRBLUP Trait 1/2 - SUCCESS
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 235 samples, 1607 markers using REML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.119165, Vu=0.000236, h²=0.002
+  R_RRBLUP Trait 2/2 - SUCCESS
+  R_RRBLUP: 2/2 traits trained successfully
+[HAP] [R_RRBLUP] memory used during training: 0.09 MB
+[HAP] [R_RRBLUP] training completed in 0.09 minutes (5.50 seconds)
+
+[HAP] Training R_GBLUP...
+✓ R package 'rrBLUP' successfully loaded
+R-GBLUP: Fitting with 235 samples, 1607 markers
+Computing kinship matrix with R's A.mat()...
+Calling R: mixed.solve() with kinship...
+Breeding values shape: (235,)
+Marker effects calculated via pseudoinverse, shape: (1607,)
+R-GBLUP fitted: Ve=0.137614, Vu=0.183209, h²=0.571
+  R_GBLUP Trait 1/2 - SUCCESS
+✓ R package 'rrBLUP' successfully loaded
+R-GBLUP: Fitting with 235 samples, 1607 markers
+Computing kinship matrix with R's A.mat()...
+Calling R: mixed.solve() with kinship...
+Breeding values shape: (235,)
+Marker effects calculated via pseudoinverse, shape: (1607,)
+R-GBLUP fitted: Ve=0.115843, Vu=0.191612, h²=0.623
+  R_GBLUP Trait 2/2 - SUCCESS
+  R_GBLUP: 2/2 traits trained successfully
+[HAP] [R_GBLUP] memory used during training: 0.00 MB
+[HAP] [R_GBLUP] training completed in 0.10 minutes (5.71 seconds)
+
+[HAP] Training RRBLUP...
+HighPerformanceRRBLUP: 235 samples, 1607 markers, method=mixed_model
+REML-like lambda estimation: λ=0.001000
+Using lambda: 0.001000
+RRBLUP mixed model fitted: λ=0.001000
+HighPerformanceRRBLUP: 235 samples, 1607 markers, method=mixed_model
+REML-like lambda estimation: λ=0.001000
+Using lambda: 0.001000
+RRBLUP mixed model fitted: λ=0.001000
+[HAP] [RRBLUP] memory used during training: 5.28 MB
+[HAP] [RRBLUP] training completed in 0.00 minutes (0.12 seconds)
+
+[HAP] Training ElasticNet...
+[HAP] [ElasticNet] memory used during training: 0.00 MB
+[HAP] [ElasticNet] training completed in 0.00 minutes (0.03 seconds)
+
+[HAP] Training RFR...
+[HAP] [RFR] memory used during training: 0.71 MB
+[HAP] [RFR] training completed in 0.01 minutes (0.30 seconds)
+
+[HAP] Training BRR...
+Using alpha_1=1e-06, alpha_2=1e-06, lambda_1=1e-06, lambda_2=1e-06
+Using alpha_1=1e-06, alpha_2=1e-06, lambda_1=1e-06, lambda_2=1e-06
+[HAP] [BRR] memory used during training: -0.19 MB
+[HAP] [BRR] training completed in 0.01 minutes (0.43 seconds)
+
+[HAP] Training XGBoost...
+[HAP] [XGBoost] memory used during training: 0.32 MB
+[HAP] [XGBoost] training completed in 0.01 minutes (0.81 seconds)
+
+[HAP] Training LightGBM...
+[HAP] [LightGBM] memory used during training: 0.00 MB
+[HAP] [LightGBM] training completed in 0.01 minutes (0.46 seconds)
+
+[HAP] Training DNNGS...
+    [DNNGS] Epoch 1/300, LR: 0.000033, Train Loss: 1.8855, Val Loss: 0.8140
+    [DNNGS] Epoch 11/300, LR: 0.000367, Train Loss: 0.5878, Val Loss: 0.2964
+    [DNNGS] Epoch 21/300, LR: 0.000700, Train Loss: 0.3027, Val Loss: 0.2660
+    [DNNGS] Epoch 31/300, LR: 0.000996, Train Loss: 0.2018, Val Loss: 0.2871
+    [DNNGS] Epoch 41/300, LR: 0.000959, Train Loss: 0.1896, Val Loss: 0.2479
+    [DNNGS] Epoch 51/300, LR: 0.000922, Train Loss: 0.1293, Val Loss: 0.2021
+    [DNNGS] Epoch 61/300, LR: 0.000885, Train Loss: 0.1146, Val Loss: 0.2154
+    [DNNGS] Epoch 71/300, LR: 0.000848, Train Loss: 0.1161, Val Loss: 0.1970
+    [DNNGS] Epoch 81/300, LR: 0.000811, Train Loss: 0.0995, Val Loss: 0.1653
+    [DNNGS] Epoch 91/300, LR: 0.000774, Train Loss: 0.0859, Val Loss: 0.2078
+    [DNNGS] Epoch 101/300, LR: 0.000737, Train Loss: 0.0822, Val Loss: 0.1728
+    [DNNGS] Epoch 111/300, LR: 0.000700, Train Loss: 0.0738, Val Loss: 0.1675
+    [DNNGS] Epoch 121/300, LR: 0.000663, Train Loss: 0.0696, Val Loss: 0.1868
+    [DNNGS] Epoch 131/300, LR: 0.000626, Train Loss: 0.0820, Val Loss: 0.2149
+    [DNNGS] Epoch 141/300, LR: 0.000589, Train Loss: 0.0738, Val Loss: 0.1781
+Early stopping at epoch 147
+Loaded best DNNGS model with validation loss: 0.1472
+[HAP] [DNNGS] memory used during training: 0.00 MB
+[HAP] [DNNGS] training completed in 3.22 minutes (193.05 seconds)
+
+[HAP] Training MLPGS...
+    [MLPGS] Epoch 1/300, Train Loss: 0.3440, Val Loss: 0.6040
+    [MLPGS] Epoch 11/300, Train Loss: 0.1075, Val Loss: 0.2956
+    [MLPGS] Epoch 21/300, Train Loss: 0.0669, Val Loss: 0.2249
+    [MLPGS] Epoch 31/300, Train Loss: 0.0391, Val Loss: 0.2494
+    [MLPGS] Epoch 41/300, Train Loss: 0.0355, Val Loss: 0.2529
+Early stopping at epoch 42
+[HAP] [MLPGS] memory used during training: 1.96 MB
+[HAP] [MLPGS] training completed in 3.02 minutes (180.91 seconds)
+
+[HAP] Training GraphConvGS...
+[GraphConvGS] Building sample graph with 235 samples using KNN (top_k=20, metric=euclidean)
+[KNN Graph] Built graph with 7545 edges, top_k=20, metric=euclidean
+[GraphConvGS] Graph built with 7545 edges
+[GraphConvGS] Starting training for 500 epochs
+    [GraphConvGS] Epoch 11/500 | train_loss: 0.449688 | val_loss: 0.412439
+    [GraphConvGS] Epoch 21/500 | train_loss: 0.392796 | val_loss: 0.343521
+    [GraphConvGS] Epoch 31/500 | train_loss: 0.362986 | val_loss: 0.321025
+    [GraphConvGS] Epoch 41/500 | train_loss: 0.335531 | val_loss: 0.302285
+    [GraphConvGS] Epoch 51/500 | train_loss: 0.319632 | val_loss: 0.284195
+    [GraphConvGS] Epoch 61/500 | train_loss: 0.298607 | val_loss: 0.266535
+    [GraphConvGS] Epoch 71/500 | train_loss: 0.295191 | val_loss: 0.253724
+    [GraphConvGS] Epoch 81/500 | train_loss: 0.278337 | val_loss: 0.243258
+    [GraphConvGS] Epoch 91/500 | train_loss: 0.263028 | val_loss: 0.229966
+    [GraphConvGS] Epoch 101/500 | train_loss: 0.265324 | val_loss: 0.224603
+    [GraphConvGS] Epoch 111/500 | train_loss: 0.251232 | val_loss: 0.218533
+    [GraphConvGS] Epoch 121/500 | train_loss: 0.239601 | val_loss: 0.210479
+    [GraphConvGS] Epoch 131/500 | train_loss: 0.244891 | val_loss: 0.205507
+    [GraphConvGS] Epoch 141/500 | train_loss: 0.232319 | val_loss: 0.196278
+    [GraphConvGS] Epoch 151/500 | train_loss: 0.250157 | val_loss: 0.196271
+    [GraphConvGS] Epoch 161/500 | train_loss: 0.240958 | val_loss: 0.187854
+    [GraphConvGS] Epoch 171/500 | train_loss: 0.231013 | val_loss: 0.186409
+    [GraphConvGS] Epoch 181/500 | train_loss: 0.218706 | val_loss: 0.180408
+    [GraphConvGS] Epoch 191/500 | train_loss: 0.216538 | val_loss: 0.179293
+    [GraphConvGS] Epoch 201/500 | train_loss: 0.199269 | val_loss: 0.169980
+    [GraphConvGS] Epoch 211/500 | train_loss: 0.206765 | val_loss: 0.168926
+    [GraphConvGS] Epoch 221/500 | train_loss: 0.202685 | val_loss: 0.160498
+    [GraphConvGS] Epoch 231/500 | train_loss: 0.201325 | val_loss: 0.157932
+    [GraphConvGS] Epoch 241/500 | train_loss: 0.213052 | val_loss: 0.158657
+    [GraphConvGS] Epoch 251/500 | train_loss: 0.208111 | val_loss: 0.154229
+    [GraphConvGS] Epoch 261/500 | train_loss: 0.193733 | val_loss: 0.149151
+    [GraphConvGS] Epoch 271/500 | train_loss: 0.196039 | val_loss: 0.158988
+    [GraphConvGS] Epoch 281/500 | train_loss: 0.179959 | val_loss: 0.163379
+    [GraphConvGS] Epoch 291/500 | train_loss: 0.194056 | val_loss: 0.146455
+    [GraphConvGS] Epoch 301/500 | train_loss: 0.187646 | val_loss: 0.138288
+    [GraphConvGS] Epoch 311/500 | train_loss: 0.182318 | val_loss: 0.140816
+    [GraphConvGS] Epoch 321/500 | train_loss: 0.184663 | val_loss: 0.140505
+    [GraphConvGS] Epoch 331/500 | train_loss: 0.170669 | val_loss: 0.141801
+    [GraphConvGS] Epoch 341/500 | train_loss: 0.182197 | val_loss: 0.133551
+    [GraphConvGS] Epoch 351/500 | train_loss: 0.194036 | val_loss: 0.134393
+    [GraphConvGS] Epoch 361/500 | train_loss: 0.164688 | val_loss: 0.129743
+    [GraphConvGS] Epoch 371/500 | train_loss: 0.163927 | val_loss: 0.120812
+    [GraphConvGS] Epoch 381/500 | train_loss: 0.161644 | val_loss: 0.121914
+    [GraphConvGS] Epoch 391/500 | train_loss: 0.152146 | val_loss: 0.127161
+    [GraphConvGS] Epoch 401/500 | train_loss: 0.158974 | val_loss: 0.118817
+    [GraphConvGS] Epoch 411/500 | train_loss: 0.153646 | val_loss: 0.123608
+    [GraphConvGS] Epoch 421/500 | train_loss: 0.158966 | val_loss: 0.112309
+    [GraphConvGS] Epoch 431/500 | train_loss: 0.143521 | val_loss: 0.116024
+    [GraphConvGS] Epoch 441/500 | train_loss: 0.153941 | val_loss: 0.105214
+    [GraphConvGS] Epoch 451/500 | train_loss: 0.152626 | val_loss: 0.108764
+    [GraphConvGS] Epoch 461/500 | train_loss: 0.146190 | val_loss: 0.110903
+[GraphConvGS] Early stopping at epoch 460. Best val 0.105214
+[GraphConvGS] Training completed successfully
+[HAP] [GraphConvGS] memory used during training: 0.00 MB
+[HAP] [GraphConvGS] training completed in 1.39 minutes (83.21 seconds)
+
+[HAP] Training GraphAttnGS...
+[GraphAttnGS] Building sample graph with 235 samples using KNN (top_k=20, metric=euclidean)
+[KNN Graph] Built graph with 7545 edges, top_k=20, metric=euclidean
+[GraphAttnGS] Graph built with 7545 edges
+[GraphAttnGS] Starting training for 500 epochs
+    [GraphAttnGS] Epoch 11/500 | train_loss: 0.363770 | val_loss: 0.319583
+    [GraphAttnGS] Epoch 21/500 | train_loss: 0.300636 | val_loss: 0.268370
+    [GraphAttnGS] Epoch 31/500 | train_loss: 0.264842 | val_loss: 0.222020
+    [GraphAttnGS] Epoch 41/500 | train_loss: 0.245003 | val_loss: 0.187920
+    [GraphAttnGS] Epoch 51/500 | train_loss: 0.222884 | val_loss: 0.170086
+    [GraphAttnGS] Epoch 61/500 | train_loss: 0.199679 | val_loss: 0.163389
+    [GraphAttnGS] Epoch 71/500 | train_loss: 0.187372 | val_loss: 0.150530
+    [GraphAttnGS] Epoch 81/500 | train_loss: 0.194495 | val_loss: 0.138729
+    [GraphAttnGS] Epoch 91/500 | train_loss: 0.180548 | val_loss: 0.141143
+    [GraphAttnGS] Epoch 101/500 | train_loss: 0.194909 | val_loss: 0.128556
+    [GraphAttnGS] Epoch 111/500 | train_loss: 0.183293 | val_loss: 0.120390
+    [GraphAttnGS] Epoch 121/500 | train_loss: 0.168757 | val_loss: 0.124271
+    [GraphAttnGS] Epoch 131/500 | train_loss: 0.173164 | val_loss: 0.112711
+    [GraphAttnGS] Epoch 141/500 | train_loss: 0.147010 | val_loss: 0.103332
+    [GraphAttnGS] Epoch 151/500 | train_loss: 0.145750 | val_loss: 0.111807
+    [GraphAttnGS] Epoch 161/500 | train_loss: 0.136456 | val_loss: 0.093991
+    [GraphAttnGS] Epoch 171/500 | train_loss: 0.151924 | val_loss: 0.090054
+    [GraphAttnGS] Epoch 181/500 | train_loss: 0.146456 | val_loss: 0.087922
+    [GraphAttnGS] Epoch 191/500 | train_loss: 0.141366 | val_loss: 0.085307
+    [GraphAttnGS] Epoch 201/500 | train_loss: 0.126848 | val_loss: 0.080988
+    [GraphAttnGS] Epoch 211/500 | train_loss: 0.114364 | val_loss: 0.080537
+    [GraphAttnGS] Epoch 221/500 | train_loss: 0.120585 | val_loss: 0.076196
+    [GraphAttnGS] Epoch 231/500 | train_loss: 0.127934 | val_loss: 0.070348
+    [GraphAttnGS] Epoch 241/500 | train_loss: 0.109561 | val_loss: 0.067174
+    [GraphAttnGS] Epoch 251/500 | train_loss: 0.110174 | val_loss: 0.064026
+    [GraphAttnGS] Epoch 261/500 | train_loss: 0.115990 | val_loss: 0.059720
+    [GraphAttnGS] Epoch 271/500 | train_loss: 0.108247 | val_loss: 0.059100
+    [GraphAttnGS] Epoch 281/500 | train_loss: 0.111857 | val_loss: 0.056587
+    [GraphAttnGS] Epoch 291/500 | train_loss: 0.121519 | val_loss: 0.058187
+    [GraphAttnGS] Epoch 301/500 | train_loss: 0.101137 | val_loss: 0.051558
+    [GraphAttnGS] Epoch 311/500 | train_loss: 0.103532 | val_loss: 0.051438
+    [GraphAttnGS] Epoch 321/500 | train_loss: 0.089055 | val_loss: 0.044252
+    [GraphAttnGS] Epoch 331/500 | train_loss: 0.107631 | val_loss: 0.047054
+    [GraphAttnGS] Epoch 341/500 | train_loss: 0.090396 | val_loss: 0.041203
+    [GraphAttnGS] Epoch 351/500 | train_loss: 0.091710 | val_loss: 0.043027
+    [GraphAttnGS] Epoch 361/500 | train_loss: 0.088382 | val_loss: 0.048748
+    [GraphAttnGS] Epoch 371/500 | train_loss: 0.108078 | val_loss: 0.055610
+[GraphAttnGS] Early stopping at epoch 377. Best val 0.039012
+[GraphAttnGS] Training completed successfully
+[HAP] [GraphAttnGS] memory used during training: -11.66 MB
+[HAP] [GraphAttnGS] training completed in 4.44 minutes (266.11 seconds)
+
+[HAP] Training GraphSAGEGS...
+[GraphSAGEGS] Building sample graph with 235 samples using KNN (top_k=20, metric=euclidean)
+[KNN Graph] Built graph with 7545 edges, top_k=20, metric=euclidean
+[GraphSAGEGS] Graph built with 7545 edges
+[GraphSAGEGS] Starting training for 500 epochs
+    [GraphSAGEGS] Epoch 11/500 | train_loss: 0.343159 | val_loss: 0.275228
+    [GraphSAGEGS] Epoch 21/500 | train_loss: 0.250436 | val_loss: 0.182350
+    [GraphSAGEGS] Epoch 31/500 | train_loss: 0.169753 | val_loss: 0.127600
+    [GraphSAGEGS] Epoch 41/500 | train_loss: 0.146947 | val_loss: 0.086598
+    [GraphSAGEGS] Epoch 51/500 | train_loss: 0.105235 | val_loss: 0.063710
+    [GraphSAGEGS] Epoch 61/500 | train_loss: 0.097017 | val_loss: 0.048600
+    [GraphSAGEGS] Epoch 71/500 | train_loss: 0.097163 | val_loss: 0.040940
+    [GraphSAGEGS] Epoch 81/500 | train_loss: 0.077798 | val_loss: 0.032814
+    [GraphSAGEGS] Epoch 91/500 | train_loss: 0.067680 | val_loss: 0.027161
+    [GraphSAGEGS] Epoch 101/500 | train_loss: 0.066470 | val_loss: 0.021711
+    [GraphSAGEGS] Epoch 111/500 | train_loss: 0.058018 | val_loss: 0.020768
+    [GraphSAGEGS] Epoch 121/500 | train_loss: 0.054617 | val_loss: 0.014356
+    [GraphSAGEGS] Epoch 131/500 | train_loss: 0.046415 | val_loss: 0.012894
+    [GraphSAGEGS] Epoch 141/500 | train_loss: 0.048849 | val_loss: 0.010325
+    [GraphSAGEGS] Epoch 151/500 | train_loss: 0.042639 | val_loss: 0.009504
+    [GraphSAGEGS] Epoch 161/500 | train_loss: 0.049275 | val_loss: 0.009315
+    [GraphSAGEGS] Epoch 171/500 | train_loss: 0.050008 | val_loss: 0.009530
+[GraphSAGEGS] Early stopping at epoch 176. Best val 0.007799
+[GraphSAGEGS] Training completed successfully
+[HAP] [GraphSAGEGS] memory used during training: 1.27 MB
+[HAP] [GraphSAGEGS] training completed in 0.64 minutes (38.34 seconds)
+
+[HAP] Training GraphFormer...
+[KNN Graph] Built graph with 10931 edges, top_k=30, metric=euclidean
+[GraphFormer] Creating model:
+  - Input dim: 1607, Output dim: 2
+  - GNN type: SAGE, GNN hidden: 128
+  - Transformer: 2 layers, d_model: 128
+  - Device: cpu
+[GraphFormer] Model created successfully
+[GraphFormer] Model has GNN attribute: True
+[GraphFormer] GNN layer type: <class 'torch_geometric.nn.conv.sage_conv.SAGEConv'>
+[GraphFormer] Dataset created: 1 graphs
+[GraphFormer] Testing forward pass...
+[GraphFormer] Forward pass successful! Output shape: torch.Size([235, 2])
+[GraphFormer] Starting training for 500 epochs...
+    [GraphFormer] Epoch 1/500, Loss: 1.085702 *
+    [GraphFormer] Epoch 11/500, Loss: 0.150438 *
+    [GraphFormer] Epoch 21/500, Loss: 0.085484
+    [GraphFormer] Epoch 31/500, Loss: 0.058370
+    [GraphFormer] Epoch 41/500, Loss: 0.045502
+    [GraphFormer] Epoch 51/500, Loss: 0.030209 *
+    [GraphFormer] Epoch 61/500, Loss: 0.029588
+    [GraphFormer] Epoch 71/500, Loss: 0.023013
+    [GraphFormer] Epoch 81/500, Loss: 0.016343 *
+    [GraphFormer] Epoch 91/500, Loss: 0.019491
+    [GraphFormer] Epoch 101/500, Loss: 0.014175
+    [GraphFormer] Epoch 111/500, Loss: 0.014531
+    [GraphFormer] Epoch 121/500, Loss: 0.013094
+    [GraphFormer] Epoch 131/500, Loss: 0.012804
+    [GraphFormer] Epoch 141/500, Loss: 0.010274 *
+    [GraphFormer] Epoch 151/500, Loss: 0.013469
+    [GraphFormer] Epoch 161/500, Loss: 0.012085
+    [GraphFormer] Epoch 171/500, Loss: 0.013188
+    [GraphFormer] Early stopping at epoch 171
+[GraphFormer] Loaded best model with loss: 0.010274
+[GraphFormer] Training completed successfully
+[HAP] [GraphFormer] memory used during training: 0.11 MB
+[HAP] [GraphFormer] training completed in 1.24 minutes (74.50 seconds)
+
+[HAP] Training DeepResBLUP...
+[DeepResBLUP_Hybrid] Fit: base=R_RRBLUP, dl=MLPGS
+✓ R package 'rrBLUP' successfully loaded
+[DeepResBLUP_Hybrid] Training base (RRBLUP) model...
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 235 samples, 1607 markers using REML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.139979, Vu=0.000227, h²=0.002
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 235 samples, 1607 markers using REML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.119165, Vu=0.000236, h²=0.002
+[DeepResBLUP_Hybrid] Attempting to extract RRBLUP marker effects from base model...
+[DeepResBLUP_Hybrid] Computing base predictions...
+[DeepResBLUP_Hybrid] Creating DL residual model...
+MLPGSModel is used for residual learning.
+[DeepResBLUP_Hybrid] Training DL residual model...
+[DeepResBLUP_Hybrid] Preparing data loaders and training DL residual...
+    [DeepResBLUP_Hybrid] Epoch 1/100, Train Loss: 0.4012, Val Loss: 0.2387
+    [DeepResBLUP_Hybrid] Epoch 11/100, Train Loss: 0.0581, Val Loss: 0.0900
+    [DeepResBLUP_Hybrid] Epoch 21/100, Train Loss: 0.0363, Val Loss: 0.0885
+Early stopping at epoch 30
+[DeepResBLUP_Hybrid] Fit completed.
+[HAP] [DeepResBLUP] memory used during training: 0.00 MB
+[HAP] [DeepResBLUP] training completed in 0.17 minutes (10.14 seconds)
+
+[HAP] Training DeepBLUP...
+Precomputing RRBLUP weights for initialization...
+  Computing R_RRBLUP weights for trait 1/2...
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 235 samples, 1607 markers using ML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.137614, Vu=0.000228, h²=0.002
+    Trait 1: Success
+  Computing R_RRBLUP weights for trait 2/2...
+✓ R package 'rrBLUP' successfully loaded
+R-RRBLUP: Fitting with 235 samples, 1607 markers using ML
+Calling R: mixed.solve()...
+R-RRBLUP fitted: Ve=0.115844, Vu=0.000239, h²=0.002
+    Trait 2: Success
+  R_RRBLUP multi-trait weights computed: (128, 1607)
+  Successfully computed RRBLUP weights: (128, 1607)
+    [DeepBLUP] Epoch 2/200 - train_loss: 2.668344 - val_loss: 0.516730 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 11/200 - train_loss: 1.150670 - val_loss: 0.237953 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 21/200 - train_loss: 0.595602 - val_loss: 0.163612 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 31/200 - train_loss: 0.367626 - val_loss: 0.106914 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 41/200 - train_loss: 0.313507 - val_loss: 0.117940 - lr: 1.000000e-04
+    [DeepBLUP] Epoch 51/200 - train_loss: 0.289410 - val_loss: 0.148282 - lr: 5.000000e-05
+    [DeepBLUP] Epoch 61/200 - train_loss: 0.242418 - val_loss: 0.152341 - lr: 2.500000e-05
+    [DeepBLUP] Epoch 71/200 - train_loss: 0.199160 - val_loss: 0.120466 - lr: 1.250000e-05
+    [DeepBLUP] Early stopping at epoch 75. Best val 0.098830
+    [DeepBLUP] Loaded best model from results/ckpts/best_HAP_DeepBLUP.pth with val_loss 0.098830
+[HAP] [DeepBLUP] memory used during training: 0.00 MB
+[HAP] [DeepBLUP] training completed in 0.23 minutes (14.05 seconds)
+
+Training EnsembleGS ensemble...
+EnsembleGS base models (requested): ['R_RRBLUP', 'ElasticNet', 'BRR', 'LightGBM', 'MLPGS']
+Models available (trained):   ['R_RRBLUP', 'R_GBLUP', 'RRBLUP', 'ElasticNet', 'RFR', 'BRR', 'XGBoost', 'LightGBM', 'DNNGS', 'MLPGS', 'GraphConvGS', 'GraphAttnGS', 'GraphSAGEGS', 'GraphFormer', 'DeepResBLUP', 'DeepBLUP']
+[EnsembleGS] Using in-sample training predictions for meta-learner.
+[EnsembleGS] Meta-features for each trait: (n_samples=235, n_bases=5) (source: in-sample)
+[HAP] [model_name] memory used during training: 0.00 MB
+[HAP] [model_name] training completed in 0.23 minutes (0.30 seconds)
+
+
+YLD [HAP][R_RRBLUP]: MSE=0.3066, PearsonR=0.860
+PLH [HAP][R_RRBLUP]: MSE=0.3019, PearsonR=0.859
+YLD [HAP][R_GBLUP]: MSE=1.0352, PearsonR=0.714
+PLH [HAP][R_GBLUP]: MSE=1.0431, PearsonR=0.763
+YLD [HAP][RRBLUP]: MSE=18.3950, PearsonR=0.837
+PLH [HAP][RRBLUP]: MSE=21.4569, PearsonR=0.854
+YLD [HAP][ElasticNet]: MSE=0.4400, PearsonR=0.806
+PLH [HAP][ElasticNet]: MSE=0.4402, PearsonR=0.800
+YLD [HAP][RFR]: MSE=0.3800, PearsonR=0.838
+PLH [HAP][RFR]: MSE=0.3833, PearsonR=0.829
+YLD [HAP][BRR]: MSE=0.3062, PearsonR=0.860
+PLH [HAP][BRR]: MSE=0.3011, PearsonR=0.860
+YLD [HAP][XGBoost]: MSE=0.2870, PearsonR=0.863
+PLH [HAP][XGBoost]: MSE=0.4363, PearsonR=0.779
+YLD [HAP][LightGBM]: MSE=0.3384, PearsonR=0.833
+PLH [HAP][LightGBM]: MSE=0.3814, PearsonR=0.816
+YLD [HAP][DNNGS]: MSE=0.3796, PearsonR=0.840
+PLH [HAP][DNNGS]: MSE=0.3532, PearsonR=0.862
+YLD [HAP][MLPGS]: MSE=0.6014, PearsonR=0.828
+PLH [HAP][MLPGS]: MSE=0.6055, PearsonR=0.815
+[GraphConvGS] Building prediction graph with 58 samples using KNN
+[KNN Graph] Built graph with 1658 edges, top_k=20, metric=euclidean
+YLD [HAP][GraphConvGS]: MSE=0.9626, PearsonR=0.456
+PLH [HAP][GraphConvGS]: MSE=0.7294, PearsonR=0.627
+[GraphAttnGS] Building prediction graph with 58 samples using KNN
+[KNN Graph] Built graph with 1658 edges, top_k=20, metric=euclidean
+YLD [HAP][GraphAttnGS]: MSE=0.9619, PearsonR=0.444
+PLH [HAP][GraphAttnGS]: MSE=0.7946, PearsonR=0.630
+[GraphSAGEGS] Building prediction graph with 58 samples using KNN
+[KNN Graph] Built graph with 1658 edges, top_k=20, metric=euclidean
+YLD [HAP][GraphSAGEGS]: MSE=0.3253, PearsonR=0.846
+PLH [HAP][GraphSAGEGS]: MSE=0.3338, PearsonR=0.839
+[GraphFormer] Building prediction graph with 58 samples using KNN
+[KNN Graph] Built graph with 2268 edges, top_k=30, metric=euclidean
+YLD [HAP][GraphFormer]: MSE=0.2863, PearsonR=0.862
+PLH [HAP][GraphFormer]: MSE=0.2860, PearsonR=0.863
+YLD [HAP][DeepResBLUP]: MSE=0.2983, PearsonR=0.862
+PLH [HAP][DeepResBLUP]: MSE=0.2974, PearsonR=0.856
+YLD [HAP][DeepBLUP]: MSE=0.3275, PearsonR=0.846
+PLH [HAP][DeepBLUP]: MSE=0.2763, PearsonR=0.864
+YLD [HAP][EnsembleGS]: MSE=0.3395, PearsonR=0.832
+PLH [HAP][EnsembleGS]: MSE=0.3374, PearsonR=0.839
+----------------------------------------------------------------------------
+Execution time for Replicate 1/1, Fold 5/5: 14.78 minutes (886.65 seconds)
+----------------------------------------------------------------------------
+
+RESULT SUMMRIZATION:
+
+=== FINAL RESULTS ===
+
+YLD:
+  BRR [HAP]: PearsonR = 0.831 ± 0.026
+  DNNGS [HAP]: PearsonR = 0.830 ± 0.020
+  DeepBLUP [HAP]: PearsonR = 0.844 ± 0.013
+  DeepResBLUP [HAP]: PearsonR = 0.848 ± 0.010
+  ElasticNet [HAP]: PearsonR = 0.812 ± 0.014
+  EnsembleGS [HAP]: PearsonR = 0.837 ± 0.012
+  GraphAttnGS [HAP]: PearsonR = 0.534 ± 0.119
+  GraphConvGS [HAP]: PearsonR = 0.583 ± 0.097
+  GraphFormer [HAP]: PearsonR = 0.840 ± 0.025
+  GraphSAGEGS [HAP]: PearsonR = 0.828 ± 0.022
+  LightGBM [HAP]: PearsonR = 0.832 ± 0.011
+  MLPGS [HAP]: PearsonR = 0.840 ± 0.017
+  RFR [HAP]: PearsonR = 0.818 ± 0.026
+  RRBLUP [HAP]: PearsonR = 0.821 ± 0.014
+  R_GBLUP [HAP]: PearsonR = 0.733 ± 0.022
+  R_RRBLUP [HAP]: PearsonR = 0.853 ± 0.011
+  XGBoost [HAP]: PearsonR = 0.797 ± 0.035
+
+PLH:
+  BRR [HAP]: PearsonR = 0.833 ± 0.038
+  DNNGS [HAP]: PearsonR = 0.837 ± 0.034
+  DeepBLUP [HAP]: PearsonR = 0.852 ± 0.022
+  DeepResBLUP [HAP]: PearsonR = 0.848 ± 0.019
+  ElasticNet [HAP]: PearsonR = 0.815 ± 0.028
+  EnsembleGS [HAP]: PearsonR = 0.836 ± 0.031
+  GraphAttnGS [HAP]: PearsonR = 0.671 ± 0.041
+  GraphConvGS [HAP]: PearsonR = 0.702 ± 0.051
+  GraphFormer [HAP]: PearsonR = 0.849 ± 0.021
+  GraphSAGEGS [HAP]: PearsonR = 0.835 ± 0.034
+  LightGBM [HAP]: PearsonR = 0.825 ± 0.019
+  MLPGS [HAP]: PearsonR = 0.813 ± 0.019
+  RFR [HAP]: PearsonR = 0.815 ± 0.045
+  RRBLUP [HAP]: PearsonR = 0.822 ± 0.030
+  R_GBLUP [HAP]: PearsonR = 0.790 ± 0.021
+  R_RRBLUP [HAP]: PearsonR = 0.848 ± 0.019
+  XGBoost [HAP]: PearsonR = 0.778 ± 0.013
+
+Results saved to:
+  - results/cv_gs_detailed_results.csv
+  - results/cv_gs_summary_stats_fm1.csv
+  - results/cv_gs_results.json
+  - results/cv_gs_summary_stats_fm2.csv
+
+---------------------------------------------------------------------------
+PERFORMANCE ANALYSIS
+---------------------------------------------------------------------------
+
+===========================================================================================
+TRAINING TIME SUMMARY
+===========================================================================================
+      Model Marker_View  Mean_Time_s  Std_Time_s  Min_Time_s  Max_Time_s  N_Runs  Total_Time_s
+   R_RRBLUP         HAP     5.892412    0.326641    5.499114    6.294286       5     29.462059
+    R_GBLUP         HAP     5.874627    0.109742    5.714016    6.017447       5     29.373133
+     RRBLUP         HAP     0.148865    0.032634    0.122974    0.208774       5      0.744327
+ ElasticNet         HAP     0.029999    0.002250    0.027374    0.034128       5      0.149997
+        RFR         HAP     0.302004    0.012755    0.288949    0.325416       5      1.510019
+        BRR         HAP     0.420038    0.051895    0.370986    0.517064       5      2.100190
+    XGBoost         HAP     0.855456    0.052045    0.808213    0.941483       5      4.277280
+   LightGBM         HAP     0.475965    0.027288    0.451442    0.527647       5      2.379827
+      DNNGS         HAP   189.504559   32.060578  136.688511  236.102384       5    947.522795
+      MLPGS         HAP   246.877826   71.758024  180.906373  381.429158       5   1234.389128
+GraphConvGS         HAP    70.372259   12.706786   52.447368   83.209556       5    351.861294
+GraphAttnGS         HAP   215.932059   63.877937  124.981091  306.048360       5   1079.660297
+GraphSAGEGS         HAP    51.585592    8.045202   38.335788   59.726028       5    257.927958
+GraphFormer         HAP    74.037404   16.702907   55.965087  105.223058       5    370.187020
+DeepResBLUP         HAP    10.746578    0.327647   10.141783   11.134413       5     53.732892
+   DeepBLUP         HAP    15.141908    1.864617   12.420079   17.262098       5     75.709540
+ EnsembleGS         HAP    15.141908    1.864617   12.420079   17.262098       5     75.709540
+
+Training times summary saved to: results/training_times_summary.csv
+Training time chart saved to: results/training_times_comparison.png
+
+================================================================================
+TRAINING MEMORY USAGE SUMMARY
+================================================================================
+      Model Marker_View  Mean_Memory_MB  Std_Memory_MB  Min_Memory_MB  Max_Memory_MB  N_Runs
+   R_RRBLUP         HAP       86.003125     171.959378       0.000000     429.921875       5
+    R_GBLUP         HAP       -4.238281      22.352953     -44.972656      23.781250       5
+     RRBLUP         HAP       -2.377344       7.557902     -16.910156       5.277344       5
+ ElasticNet         HAP        0.000000       0.000000       0.000000       0.000000       5
+        RFR         HAP        0.852344       0.322254       0.562500       1.406250       5
+        BRR         HAP       12.078906      13.714695      -0.191406      35.617188       5
+    XGBoost         HAP        1.958594       2.753037       0.308594       7.441406       5
+   LightGBM         HAP        1.506250       3.012500       0.000000       7.531250       5
+      DNNGS         HAP        0.923438       1.720868       0.000000       4.359375       5
+      MLPGS         HAP       16.277344      13.543799       1.609375      37.226562       5
+GraphConvGS         HAP        0.542188       1.084375       0.000000       2.710938       5
+GraphAttnGS         HAP       -3.232813      10.568812     -11.679688      14.121094       5
+GraphSAGEGS         HAP        1.560938       0.885024       0.792969       3.234375       5
+GraphFormer         HAP        1.003906       1.491615      -0.132812       3.835938       5
+DeepResBLUP         HAP        7.197656       9.245509       0.000000      24.574219       5
+   DeepBLUP         HAP        1.754687       1.951320       0.000000       4.953125       5
+ EnsembleGS         HAP        0.614062       1.118292       0.000000       2.843750       5
+
+Training memory usage summary saved to: results/training_memory_usage_summary.csv
+Training memory usage chart saved to: results/training_memory_usage_comparison.png
+==================================================================
+Total execution time: 75.44 minutes (4526.28 seconds)
+==================================================================
