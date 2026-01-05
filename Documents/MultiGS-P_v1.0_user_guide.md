@@ -15,9 +15,8 @@
 - [Output](#output)
 - [Troubleshooting](#troubleshooting)
 - [Logging](#logging)
-- [Citation](#citation)
 - [Tutorials](#tutorials)
-- [License](#license)
+  
 
 # Overview
 
@@ -435,10 +434,6 @@ Results_folder/
 # Logging
 Detailed logs are saved in the results directory for debugging.
 
-# Citation
-
-If you use **MultiGS-P** in your research, please cite it as follows:
-> *You FM, Zheng C, Zagariah Daniel JJ, Li P, Jackle K,  House M, Tar’an T, Cloutier S. Genomic selection for seed yield prediction achieved through versatile pipelines for breeding efficiency in Flax. (In preparation).*  
 
 # Tutorials
 
@@ -446,6 +441,4 @@ Comprehensive instructions for configuration, data preparation, model training, 
 
 The guide will be available in the repository’s `docs/` directory.
 
-# License
 
-This project is licensed under the terms of the **MIT License**.
