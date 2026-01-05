@@ -10,6 +10,7 @@ For detailed MultiGS-P user guide: <a href="Documents/MultiGS-P_v1.0_user_guide.
 ## Table of Contents
 - [Key Features](#key-features)
 - [Installation](#installation)
+- [Citation](#citation)
 - [License](#license)
   
 ## Key Features
@@ -115,6 +116,15 @@ cd MultiGS
 conda env create -f environment.yml
 conda activate multigs
 ```
+
+## Citation
+
+If you use MultiGS-R in your research, please cite:
+    **You FM, Zheng C, Zagariah Daniel JJ, Li P, Jackle K,  House M, Tar’an T, Cloutier S.** Genomic selection for seed yield prediction achieved through versatile pipelines for breeding efficiency in Flax. (In preparation).
+
+
 ## License
 
-This project is licensed under the terms of the **MIT License**.
+This project is licensed under the MIT License - see the LICENSE file
+for details.
+
