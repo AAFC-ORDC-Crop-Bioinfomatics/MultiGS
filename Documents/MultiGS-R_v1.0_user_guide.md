@@ -11,98 +11,21 @@ A detailed tutorial is available in the file <a href="doc/MultiGS-R_v1.0_tutoria
 ## Table of Contents
 
 1. [Introduction](#introduction)
-2. [Key Features](#key-features)
-3. [System Requirements & Installation](#system-requirements--installation)
-    - [Prerequisites](#prerequisites)
-    - [Installing R Libraries](#installing-r-libraries)
-    - [Installing rtm-gwas-snpldb tool](#installing-rtm-gwas-snpldb-tool)
-    - [Obtaining MultiGS-R](#obtaining-multigs-r)
-4. [Quick Start](#quick-start)
-5. [Configuration File](#configuration-file)
+2. [Quick Start](#quick-start)
+3. [Configuration File](#configuration-file)
     - [Sample Configuration](#sample-configuration)
     - [Parameter Details](#parameter-details)
-6. [Input Files](#input-files)
+4. [Input Files](#input-files)
     - [Genotypic Data (Markers)](#genotypic-data-markers)
     - [Phenotypic Data](#phenotypic-data)
-7. [Usage](#usage)
-8. [Output](#output)
-9. [Troubleshooting](#troubleshooting)
-10. [Citation](#citation)
-11. [License](#license)
+5. [Usage](#usage)
+6. [Output](#output)
+7. [Troubleshooting](#troubleshooting)
+
 
 ## Introduction
 
 Genomic Selection accelerates genetic improvement by predicting the genetic-estimated breeding values (GEBVs) of individuals based on their genomic markers. MultiGS-R automates the complex workflow of GS, which includes data preprocessing, quality control, imputation, model training, and validation. By leveraging the robust statistical capabilities of R within a managed Java pipeline, MultiGS-R ensures reproducibility, scalability, and ease of use for both small-scale studies and large breeding populations.
-
-## Key Features
-
--   **Flexible Analysis Modes:** Supports both **cross-validation** (for
-    model evaluation) and independent **across-population prediction**
-     (using a training set to predict a test set).
-
--   **Multiple Marker Views:**
-
-    -   **SNP:** Direct use of Single Nucleotide Polymorphisms (SNPs).
-
-    -   **HAP:** Conversion of SNPs into haplotype blocks using RTM-GWAS
-         SNP-LD for potentially capturing epistatic effects.
-
-    -   **PC:** Use of Principal Components as markers to reduce
-         dimensionality and address multicollinearity.
-
--   **Comprehensive Data Preprocessing:** Includes sample alignment, genotype harmonization between training and test lines, and missing data imputation.
-
--   **Diverse GS Modeling Methods:** Integrates several state-of-the-art
-     models via R packages:
-    
-    -  **Linear Models:** Ridge-Regression BLUP (RR-BLUP) via rrBLUP and Genomic Best Linear Unbiased Predictio (GBLUP) via BGLR.
-
-    -  **Kernel Methods:** Reproducing Kernel Hilbert Spaces (RKHS).
-
-    -  **System RBayesian Approaches:** BL (Bayesian LASSO), BRR (Bayesian Ridge Regression), BayesA, BayesB, BayesC via BGLR.
-
-    -  **Machine Learning:** Random Forest for Regression (RFR) and Classification (RFC), Support Vector Regression (SVR) and Classification (SVC).
-    
-## Requirements & Installation
-
-### Prerequisites
-
-1.  **Java Runtime Environment (JRE):** Version 21 or higher must be
-    installed. You can check by running `java -version` in your
-    terminal.
-
-2.  **R:** Version 3.5 or higher must be installed and accessible from
-     the command line. Check with `R --version`.
-
-3.  **Rscript:** This executable (included with R) must be in your
-     system\'s PATH.
-
-### Installing R Libraries
-
-Before running MultiGS-R, you must install the required R packages. Start an R session and run the following commands:
-```bash
-r
-```
-```r
-# Install required packages from CRAN
-install.packages(c("rrBLUP", "BGLR", "randomForest", "e1071","ade4", "sommer", "ggplot2"))
-```
-An additional G2P package needs to be installed through source file. Please download it from GitHub and follow installation instruction:
-<https://github.com/cma2015/G2P>
-
-### 
-
-### Installing rtm-gwas-snpldb tool
-
-The latest executable rtm-gwas-snpldb tool for haplotype block identification can be
-downloaded from: <https://github.com/njau-sri/rtm-gwas>
-
-
-### Obtaining MultiGS-R
-
-Download the latest release of the MultiGS-R repository from https://github.com/AAFC-ORDC-Crop-Bioinfomatics/MultiGS-R.
-
-`git clone https://github.com/AAFC-ORDC-Crop-Bioinfomatics/MultiGS-R`
 
 ## Quick Start
 
@@ -291,13 +214,4 @@ result_folder/
 -   **VCF file errors:**
   Ensure your VCF files are properly formatted and have necessary header
 
-## Citation
 
-If you use MultiGS-R in your research, please cite:
-    **You FM, Zheng C, Zagariah Daniel JJ, Li P, Jackle K,  House M, Tar’an T, Cloutier S.** Genomic selection for seed yield prediction achieved through versatile pipelines for breeding efficiency in Flax. (In preparation).
-
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file
-for details.
