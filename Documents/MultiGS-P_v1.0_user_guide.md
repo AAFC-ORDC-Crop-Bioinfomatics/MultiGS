@@ -6,8 +6,6 @@
 
 # Table of Contents
 - [Overview](#overview)
-- [Key Features](#key-features)
-- [Installation](#installation)
 - [Configuration](#configuration)
 - [Input Files](#input-files)
 - [Advanced Configuration](#advanced-configuration)
@@ -21,88 +19,6 @@
 # Overview
 
 **MultiGS-P** provides an end-to-end workflow for **Genomic Selection (GS)**, from data preprocessing to model training, evaluation, and prediction. The pipeline streamlines all stages of the genomic selection process, enabling **reproducible** and **scalable** genomic prediction across diverse datasets and environments. The pipeline supports multiple **genomic marker representations** including SNPs, Haplotypes, and Principal Components along with a broad suite of **statistical, machine learning, and deep learning algorithms**, making it a complete platform for both **cross-validation** and **across-population prediction** workflows.
-
-# Key Features
-### Multiple marker types (Feature Views):
-- **SNP marker (SNP)**
-  - Raw SNP markers (0,1,2 encoding)
-  - Direct use of individual SNP effects
-- **Haplotype View (HAP)**
-  - Constructed using RTM-GWAS SNPLDB tool
-  -	Captures linkage disequilibrium patterns
-  -	Reduces dimensionality while preserving genetic information
-- **Principal Components (PC)**
-  - Dimensionality reduction via PCA
-  -	Configurable variance threshold for component selection
-  -	Efficient representation of genetic structure
-### Diverse Model Support:
-- **Machine learning:** 
-    - **Random Forest (RFR):** Ensemble of decision trees
-    - **XGBoost:** Gradient boosting implementation
-    - **LightGBM:** Light gradient boosting machine
-- **Deep learning:** 
- 	- **CNN:** Convolutional Neural Network for spatial patterns
-    - **HybridCNN:** CNN with Transformer-like attention
-    - **MLP:** Multi-Layer Perceptron with advanced features
-    - **DNN:** Deep neural network
-    - **Transformer:** Deep learning (attention)
-    - **GCN:** Graph Convolutional Neural Network in Graph nural network (GNN) 
-    - **GAT:** Graph Attention Network in GNN
-    - **GraphSAGE:** Graph Sample and AggregatE in GNN
-- **Statistical/linear models:** 
-    - **ElasticNet:** Linear model with L1 and L2 regularization
-	- **LASSO:** L1-regularized linear model
-	- **BRR:** Bayesian Ridge Regression
- 	- **R-RRBLUP** Ridge regression BLUP, R-based
-  	- **R-GBLUP** Genomic Best Linear Unbiased Prediction, R-based
- 	- **RRBLUP** Python implimentation of RRBLUP
-- **Ensemble:**
-    - **Stacking**: Meta-ensemble combining multiple base models
-	- Any models implemented in this pipeline can be stacked.
-
-### Comprehensive Analysis:
- - Phenotype analysis 
- - Visualization
- - Statistical reporting
-
-### Primary Information of Supported Models:
-| Model Name | Architecture / Type | Core Algorithm / Method | Key Features / Implementation | Advantages | Performance | Best Use Cases |
-|------------|----------------------|--------------------------|------------------------------|------------|-------------|----------------|
-| **R_RRBLUP (R)** | Linear mixed model | Ridge regression BLUP via rrBLUP (R) | R backend execution | Trusted RRBLUP implementation | Fast | GS pipelines requiring R benchmarks |
-| **R_GBLUP (R)** | Linear mixed model | GBLUP using R (rrBLUP) | R backend; genomic relationship matrix | Captures population structure | Fast–moderate | Across-population prediction |
-| **RRBLUP (Python)** | Linear mixed model | Equivalent to GBLUP with homogeneous SNP variance | `sklearn.linear_model.Ridge` | Classical GS baseline; stable | Very fast | Traits with polygenic architecture |
-| **ElasticNet** | Linear model | L1 + L2 regularized regression | `sklearn.linear_model.ElasticNet` | Handles correlated SNPs; variable shrinkage + selection | Very fast | Baseline GS; large SNP panels |
-| **LASSO** | Linear model | L1-regularized regression | `sklearn.linear_model.Lasso` | Sparse feature selection | Very fast | When only a few markers matter |
-| **BRR (Bayesian Ridge)** | Bayesian linear | Bayesian regression with priors | `sklearn.linear_model.BayesianRidge` | Probabilistic; captures uncertainty | Fast–moderate | Classical benchmark; small–medium datasets |
-| **RFR (Random Forest)** | Ensemble (bagging) | Randomized decision trees | `sklearn.ensemble.RandomForestRegressor` | Non-linear interactions; robust to noise | Moderate | Complex architectures; mixed effects |
-| **XGBoost** | Ensemble (boosting) | Gradient boosted trees | `xgboost.XGBRegressor` | Captures nonlinearities & SNP interactions | Moderate | SNP interactions; medium–large sets |
-| **LightGBM** | Ensemble (boosting) | GOSS + leaf-wise growth | `lightgbm.LGBMRegressor` | Faster and lighter than XGBoost | Fast–moderate | Very large SNP sets |
-| **MLP** | Neural network | Multi-layer perceptron | Dense layers + GELU + dropout | Simple, robust NN baseline | Moderate | Medium datasets; mild nonlinearity |
-| **DNN** | Deep neural network | 4–5 layer fully connected architecture | ReLU + batch norm + dropout | Learns complex genotype–phenotype patterns | Moderate–slow | Large marker sets; continuous traits |
-| **CNN** | Deep learning | 1D convolutional network | 2–3 conv layers + pooling + dropout | Captures local LD/block patterns | Slowest (GPU helps) | Traits influenced by local SNP clusters |
-| **HybridCNN** | Deep learning hybrid | CNN + Transformer-like attention | CNN extractor → attention → MLP | Captures local + long-range SNP interactions | Slowest (GPU recommended) | High-dimensional SNP data |
-| **Transformer** | Deep learning (attention) | Transformer encoder with positional encoding | Multi-head self-attention; 6 encoder layers | Global long-range dependency modeling | Slow, GPU intensive | Traits with long-range LD |
-| **GCN (Graph Convolutional Network)** | Graph neural network | Node message passing on correlation graph | PyTorch Geometric; correlation graph using SAGEConv | Learns relatedness/population structure | Slowest | Across-population prediction; sample-as-node modeling |
-| **GAT (Graph Attention Network)** | Graph neural network | Attention-weighted message passing | PyG `GATConv` | Learns heterogeneous relationships | Very slow | Structured populations; relatedness-sensitive traits |
-| **GraphSAGE** | Graph neural network | Aggregation-based message passing | PyG `SAGEConv` | Scales better than GAT; inductive | Very slow | Population graphs; clustering structure |
-| **Stacking** | Ensemble meta-model | Level-2 regression stacking | Linear model combining ML + DL predictions | Improves robustness; reduces model variance | Depends on base models | Integrative predictions across models |
-
-
-# Installation
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/AAFC-ORDC-Crop-Bioinfomatics/MultiGS-P.git
-cd MultiGS-P
-```
-### 2. Create the Conda Environment
-```bash
-conda env create -f environment.yml
-conda activate multigs_p
-```
-### 3. Installing *rtm-gwas-snpldb* tool
-The rtm-gwas-snpldb tool for haplotype block identification is included in the utilities folder in this repository. The latest executable can also be downloaded separately from:
-https://github.com/njau-sri/rtm-gwas
 
 # Configuration
 
