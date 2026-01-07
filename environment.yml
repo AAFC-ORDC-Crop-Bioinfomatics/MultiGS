@@ -1,0 +1,40 @@
+name: multigs
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip
+  - numpy=2.2
+  - pandas=2.3
+  - scipy=1.15
+  - scikit-learn=1.7
+  - pytorch=2.5
+  - torchvision=0.20
+  - lightgbm=3.3
+  - xgboost=2.0
+  - optuna=4.5
+  - statsmodels=0.14
+  
+  - matplotlib
+  - seaborn
+  - joblib
+  - tqdm
+  - h5py
+  - openpyxl
+  - xlsxwriter
+  - yaml
+  - jupyterlab
+
+  - pip:
+      - scikit-allel
+      - adjusttext
+      - colorlog
+      - cloudpickle
+      - dask
+      - patsy
+      - sqlalchemy
+      - webargs
+      - torch_geometric
+      - rpy2
