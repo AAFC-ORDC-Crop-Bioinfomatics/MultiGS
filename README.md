@@ -119,8 +119,9 @@ conda activate multigs
 
 ## Citation
 
-If you use MultiGS-R in your research, please cite:
-    **You FM, Zheng C, Zagariah Daniel JJ, Li P, Jackle K,  House M, Tar’an T, Cloutier S.** Genomic selection for seed yield prediction achieved through versatile pipelines for breeding efficiency in Flax. (In preparation).
+If you use MultiGS in your research, please cite:
+
+    **View ORCID ProfileFrank M. You, Chunfang Zheng, John Joseph Zagariah Daniel, Pingchuan Li, Bunyamin Tar’an,  View ORCID ProfileSylvie Cloutier** MultiGS: A comprehensive and user-friendly genomic prediction platform Integrating statistical, machine learning, and deep learning models for breeders. https://www.biorxiv.org/content/10.64898/2026.01.02.697306v1
 
 
 ## License
