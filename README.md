@@ -120,8 +120,7 @@ conda activate multigs
 ## Citation
 
 If you use MultiGS in your research, please cite:
-
-    **Frank M. You, Chunfang Zheng, John Joseph Zagariah Daniel, Pingchuan Li, Bunyamin Tar’an, Sylvie Cloutier** MultiGS: A comprehensive and user-friendly genomic prediction platform Integrating statistical, machine learning, and deep learning models for breeders. https://www.biorxiv.org/content/10.64898/2026.01.02.697306v1
+**Frank M. You, Chunfang Zheng, John Joseph Zagariah Daniel, Pingchuan Li, Bunyamin Tar’an, Sylvie Cloutier** MultiGS: A comprehensive and user-friendly genomic prediction platform Integrating statistical, machine learning, and deep learning models for breeders. https://www.biorxiv.org/content/10.64898/2026.01.02.697306v1
 
 
 ## License
