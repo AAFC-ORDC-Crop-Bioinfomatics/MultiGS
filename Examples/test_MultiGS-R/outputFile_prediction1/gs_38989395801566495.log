@@ -1,0 +1,364 @@
+
+[Log] Writing console output to: outputFile_prediction1/gs_38989395801566495.log
+
+==================================================================
+MultiGS-R (1.0): GENOMIC SELECTION PIPELINE USING R PACKAGES
+==================================================================
+Mode: PREDICTION
+Enabled models: [RR-BLUP, GBLUP, BRR, BL, BayesA, BayesB, BayesC, RFR, SVR, RKHS, RFC, SVC]
+Feature (marker) views: [SNP, HAP, PC]
+Results directory: outputFile_prediction1
+
+
+Check R libraries required in this pipeline...
+✓ All required R libraries are available
+
+
+Generated files:
+  YLD -> /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/pheno_data/YLD_normalized.tsv
+  PLH -> /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/pheno_data/PLH_normalized.tsv
+==========================================================
+Performing GS for marker type: SNP
+==========================================================
+
+[SNP] Performing GS for YLD
+[Train] Cleaned VCF : /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.vcf
+[Train] Cleaned Pheno: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/YLD_normalized.aligned.sorted.tsv
+[Train] VCF samples in: 298
+[Train] Pheno samples in: 293
+[Train] Common samples : 293
+
+[STEP]Harmonize train and test vcf file:
+[All] Kept common SNPs: 2000
+[Train] Train VCF: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.harmonized.vcf
+[Train] Train VCF samples: 293
+[Test] Test  VCF: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/test_genotype.harmonized.vcf
+[Test] Test  VCF samples: 186
+[All] Combined VCF: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted__PLUS__test_genotype.combined.harmonized.vcf
+Wrote MDS plot to: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/plots/combined_MDS_plot.png
+
+[STEP]Score genotypes using 0, 1, 2 scheme for SNPs or haplotype markers (HAP)...
+Converted vcf file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.harmonized.vcf.GSCode.txt
+Converting vcf test_marker_file to 0, 1, 2 NA code for GS...
+Converted test vcf file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/test_genotype.harmonized.vcf.GSCode.txt
+
+[STEP]Perform imputation for SNP or HAP markers...
+[PRED] Train imputed: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.harmonized.vcf.GSCode.imputed.tsv
+[PRED] Test  imputed: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/test_genotype.harmonized.vcf.GSCode.imputed.tsv
+[PRED] Kept markers : 2000
+
+Reading training phenotypic data...
+
+[STEP]Transpose marker file for a GS format...
+Transposed training marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.harmonized.vcf.GSCode.imputed.samples_x_markers.tsv
+Imputed marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.harmonized.vcf.GSCode.imputed.samples_x_markers.tsv
+Transposed training marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/test_genotype.harmonized.vcf.GSCode.imputed.samples_x_markers.tsv
+Imputed marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/test_genotype.harmonized.vcf.GSCode.imputed.samples_x_markers.tsv
+
+Performing prediction... 
+Mode: Prediction
+Models: [RR-BLUP, GBLUP, BRR, BL, BayesA, BayesB, BayesC, RFR, SVR, RKHS, RFC, SVC]
+Trait: YLD
+
+[SNP] Performing GS for PLH
+[Train] Cleaned VCF : /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.vcf
+[Train] Cleaned Pheno: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/PLH_normalized.aligned.sorted.tsv
+[Train] VCF samples in: 298
+[Train] Pheno samples in: 293
+[Train] Common samples : 293
+
+[STEP]Harmonize train and test vcf file:
+[All] Kept common SNPs: 2000
+[Train] Train VCF: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.harmonized.vcf
+[Train] Train VCF samples: 293
+[Test] Test  VCF: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/test_genotype.harmonized.vcf
+[Test] Test  VCF samples: 186
+[All] Combined VCF: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted__PLUS__test_genotype.combined.harmonized.vcf
+Wrote MDS plot to: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/plots/combined_MDS_plot.png
+
+[STEP]Score genotypes using 0, 1, 2 scheme for SNPs or haplotype markers (HAP)...
+Converted vcf file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.harmonized.vcf.GSCode.txt
+Converting vcf test_marker_file to 0, 1, 2 NA code for GS...
+Converted test vcf file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/test_genotype.harmonized.vcf.GSCode.txt
+
+[STEP]Perform imputation for SNP or HAP markers...
+[PRED] Train imputed: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.harmonized.vcf.GSCode.imputed.tsv
+[PRED] Test  imputed: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/test_genotype.harmonized.vcf.GSCode.imputed.tsv
+[PRED] Kept markers : 2000
+
+Reading training phenotypic data...
+
+[STEP]Transpose marker file for a GS format...
+Transposed training marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.harmonized.vcf.GSCode.imputed.samples_x_markers.tsv
+Imputed marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.harmonized.vcf.GSCode.imputed.samples_x_markers.tsv
+Transposed training marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/test_genotype.harmonized.vcf.GSCode.imputed.samples_x_markers.tsv
+Imputed marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/test_genotype.harmonized.vcf.GSCode.imputed.samples_x_markers.tsv
+
+Performing prediction... 
+Mode: Prediction
+Models: [RR-BLUP, GBLUP, BRR, BL, BayesA, BayesB, BayesC, RFR, SVR, RKHS, RFC, SVC]
+Trait: PLH
+
+Post analysis of GS results for SNP...
+Wrote R plotting script to: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/trait_predictions/plot_pred_obs.R
+No phenotype file provided.
+Loaded prediction: marker type=SNP trait=PLH model=RKHS rows=186
+Loaded prediction: marker type=SNP trait=YLD model=RKHS rows=186
+Loaded prediction: marker type=SNP trait=PLH model=BayesA rows=186
+Loaded prediction: marker type=SNP trait=PLH model=SVR rows=186
+Loaded prediction: marker type=SNP trait=YLD model=BayesB rows=186
+Loaded prediction: marker type=SNP trait=YLD model=BayesA rows=186
+Loaded prediction: marker type=SNP trait=YLD model=BRR rows=186
+Loaded prediction: marker type=SNP trait=PLH model=SVC rows=186
+Loaded prediction: marker type=SNP trait=PLH model=RR-BLUP rows=186
+Loaded prediction: marker type=SNP trait=YLD model=SVC rows=186
+Loaded prediction: marker type=SNP trait=PLH model=RFC rows=186
+Loaded prediction: marker type=SNP trait=PLH model=BRR rows=186
+Loaded prediction: marker type=SNP trait=PLH model=BayesC rows=186
+Loaded prediction: marker type=SNP trait=YLD model=BL rows=186
+Loaded prediction: marker type=SNP trait=YLD model=SVR rows=186
+Loaded prediction: marker type=SNP trait=YLD model=RFC rows=186
+Loaded prediction: marker type=SNP trait=PLH model=RFR rows=186
+Loaded prediction: marker type=SNP trait=PLH model=GBLUP rows=186
+Loaded prediction: marker type=SNP trait=PLH model=BayesB rows=186
+Loaded prediction: marker type=SNP trait=YLD model=RR-BLUP rows=186
+Loaded prediction: marker type=SNP trait=YLD model=GBLUP rows=186
+Loaded prediction: marker type=SNP trait=YLD model=BayesC rows=186
+Loaded prediction: marker type=SNP trait=YLD model=RFR rows=186
+Loaded prediction: marker type=SNP trait=PLH model=BL rows=186
+Wrote merged: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/trait_predictions/SNP_YLD_merged_predictions.txt
+Wrote merged: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/trait_predictions/SNP_PLH_merged_predictions.txt
+No obs for trait YLD -> skip Pearson/plots.
+No obs for trait PLH -> skip Pearson/plots.
+Updated summary: outputFile_prediction1/SNP_prediction_detailed_results.txt
+
+=== Final prediction summary for SNP === 
+
+==========================================================
+Performing GS for marker type: HAP
+==========================================================
+
+[HAP] Performing GS for YLD
+[Train] Cleaned VCF : /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.vcf
+[Train] Cleaned Pheno: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/YLD_normalized.aligned.sorted.tsv
+[Train] VCF samples in: 298
+[Train] Pheno samples in: 293
+[Train] Common samples : 293
+
+[STEP]Harmonize train and test vcf file:
+[All] Kept common SNPs: 2000
+[Train] Train VCF: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.harmonized.vcf
+[Train] Train VCF samples: 293
+[Test] Test  VCF: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/test_genotype.harmonized.vcf
+[Test] Test  VCF samples: 186
+[All] Combined VCF: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted__PLUS__test_genotype.combined.harmonized.vcf
+Wrote MDS plot to: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/plots/combined_MDS_plot.png
+
+[STEP]Generate haplotype markers from SNPs...
+
+[STEP]Score genotypes using 0, 1, 2 scheme for SNPs or haplotype markers (HAP)...
+Converted vcf file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/converted_train_hap.vcf.GSCode.txt
+Converting vcf test_marker_file to 0, 1, 2 NA code for GS...
+Converted test vcf file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/converted_test_hap.vcf.GSCode.txt
+
+[STEP]Perform imputation for SNP or HAP markers...
+[PRED] Train imputed: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/converted_train_hap.vcf.GSCode.imputed.tsv
+[PRED] Test  imputed: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/converted_test_hap.vcf.GSCode.imputed.tsv
+[PRED] Kept markers : 1568
+
+Reading training phenotypic data...
+
+[STEP]Transpose marker file for a GS format...
+Transposed training marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/converted_train_hap.vcf.GSCode.imputed.samples_x_markers.tsv
+Imputed marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/converted_train_hap.vcf.GSCode.imputed.samples_x_markers.tsv
+Transposed training marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/converted_test_hap.vcf.GSCode.imputed.samples_x_markers.tsv
+Imputed marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/converted_test_hap.vcf.GSCode.imputed.samples_x_markers.tsv
+
+Performing prediction... 
+Mode: Prediction
+Models: [RR-BLUP, GBLUP, BRR, BL, BayesA, BayesB, BayesC, RFR, SVR, RKHS, RFC, SVC]
+Trait: YLD
+
+[HAP] Performing GS for PLH
+[Train] Cleaned VCF : /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.vcf
+[Train] Cleaned Pheno: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/PLH_normalized.aligned.sorted.tsv
+[Train] VCF samples in: 298
+[Train] Pheno samples in: 293
+[Train] Common samples : 293
+
+[STEP]Harmonize train and test vcf file:
+[All] Kept common SNPs: 2000
+[Train] Train VCF: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.harmonized.vcf
+[Train] Train VCF samples: 293
+[Test] Test  VCF: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/test_genotype.harmonized.vcf
+[Test] Test  VCF samples: 186
+[All] Combined VCF: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted__PLUS__test_genotype.combined.harmonized.vcf
+Wrote MDS plot to: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/plots/combined_MDS_plot.png
+
+[STEP]Generate haplotype markers from SNPs...
+
+[STEP]Score genotypes using 0, 1, 2 scheme for SNPs or haplotype markers (HAP)...
+Converted vcf file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/converted_train_hap.vcf.GSCode.txt
+Converting vcf test_marker_file to 0, 1, 2 NA code for GS...
+Converted test vcf file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/converted_test_hap.vcf.GSCode.txt
+
+[STEP]Perform imputation for SNP or HAP markers...
+[PRED] Train imputed: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/converted_train_hap.vcf.GSCode.imputed.tsv
+[PRED] Test  imputed: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/converted_test_hap.vcf.GSCode.imputed.tsv
+[PRED] Kept markers : 1568
+
+Reading training phenotypic data...
+
+[STEP]Transpose marker file for a GS format...
+Transposed training marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/converted_train_hap.vcf.GSCode.imputed.samples_x_markers.tsv
+Imputed marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/converted_train_hap.vcf.GSCode.imputed.samples_x_markers.tsv
+Transposed training marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/converted_test_hap.vcf.GSCode.imputed.samples_x_markers.tsv
+Imputed marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/converted_test_hap.vcf.GSCode.imputed.samples_x_markers.tsv
+
+Performing prediction... 
+Mode: Prediction
+Models: [RR-BLUP, GBLUP, BRR, BL, BayesA, BayesB, BayesC, RFR, SVR, RKHS, RFC, SVC]
+Trait: PLH
+
+Post analysis of GS results for HAP...
+No phenotype file provided.
+Loaded prediction: marker type=HAP trait=YLD model=SVR rows=186
+Loaded prediction: marker type=HAP trait=PLH model=BayesA rows=186
+Loaded prediction: marker type=HAP trait=YLD model=BRR rows=186
+Loaded prediction: marker type=HAP trait=YLD model=RR-BLUP rows=186
+Loaded prediction: marker type=HAP trait=YLD model=RFR rows=186
+Loaded prediction: marker type=HAP trait=PLH model=SVR rows=186
+Loaded prediction: marker type=HAP trait=YLD model=BayesA rows=186
+Loaded prediction: marker type=HAP trait=PLH model=BayesC rows=186
+Loaded prediction: marker type=HAP trait=YLD model=BayesB rows=186
+Loaded prediction: marker type=HAP trait=PLH model=RFR rows=186
+Loaded prediction: marker type=HAP trait=YLD model=RFC rows=186
+Loaded prediction: marker type=HAP trait=PLH model=BL rows=186
+Loaded prediction: marker type=HAP trait=PLH model=GBLUP rows=186
+Loaded prediction: marker type=HAP trait=PLH model=RFC rows=186
+Loaded prediction: marker type=HAP trait=YLD model=SVC rows=186
+Loaded prediction: marker type=HAP trait=PLH model=RKHS rows=186
+Loaded prediction: marker type=HAP trait=PLH model=BRR rows=186
+Loaded prediction: marker type=HAP trait=YLD model=GBLUP rows=186
+Loaded prediction: marker type=HAP trait=PLH model=SVC rows=186
+Loaded prediction: marker type=HAP trait=PLH model=BayesB rows=186
+Loaded prediction: marker type=HAP trait=YLD model=RKHS rows=186
+Loaded prediction: marker type=HAP trait=PLH model=RR-BLUP rows=186
+Loaded prediction: marker type=HAP trait=YLD model=BL rows=186
+Loaded prediction: marker type=HAP trait=YLD model=BayesC rows=186
+Wrote merged: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/trait_predictions/HAP_YLD_merged_predictions.txt
+Wrote merged: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/trait_predictions/HAP_PLH_merged_predictions.txt
+No obs for trait YLD -> skip Pearson/plots.
+No obs for trait PLH -> skip Pearson/plots.
+Updated summary: outputFile_prediction1/HAP_prediction_detailed_results.txt
+
+=== Final prediction summary for HAP === 
+
+==========================================================
+Performing GS for marker type: PC
+==========================================================
+
+[PC] Performing GS for YLD
+[Train] Cleaned VCF : /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.vcf
+[Train] Cleaned Pheno: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/YLD_normalized.aligned.sorted.tsv
+[Train] VCF samples in: 298
+[Train] Pheno samples in: 293
+[Train] Common samples : 293
+
+[STEP]Harmonize train and test vcf file:
+[All] Kept common SNPs: 2000
+[Train] Train VCF: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.harmonized.vcf
+[Train] Train VCF samples: 293
+[Test] Test  VCF: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/test_genotype.harmonized.vcf
+[Test] Test  VCF samples: 186
+[All] Combined VCF: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted__PLUS__test_genotype.combined.harmonized.vcf
+Wrote MDS plot to: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/plots/combined_MDS_plot.png
+
+[STEP]Perform PCA and generate PC markers...
+[Train] Train PCs: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.harmonized.PCs.tsv
+[Test] Test PCs: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/test_genotype.harmonized.PCs.tsv
+[All] Number of PCs = 273
+
+Reading training phenotypic data...
+
+[STEP]Transpose marker file for a GS format...
+Transposed training marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.harmonized.PCs.samples_x_markers.tsv
+Imputed marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.harmonized.PCs.samples_x_markers.tsv
+Transposed training marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/test_genotype.harmonized.PCs.samples_x_markers.tsv
+Imputed marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/test_genotype.harmonized.PCs.samples_x_markers.tsv
+
+Performing prediction... 
+Mode: Prediction
+Models: [RR-BLUP, GBLUP, BRR, BL, BayesA, BayesB, BayesC, RFR, SVR, RKHS, RFC, SVC]
+Trait: YLD
+
+[PC] Performing GS for PLH
+[Train] Cleaned VCF : /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.vcf
+[Train] Cleaned Pheno: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/PLH_normalized.aligned.sorted.tsv
+[Train] VCF samples in: 298
+[Train] Pheno samples in: 293
+[Train] Common samples : 293
+
+[STEP]Harmonize train and test vcf file:
+[All] Kept common SNPs: 2000
+[Train] Train VCF: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.harmonized.vcf
+[Train] Train VCF samples: 293
+[Test] Test  VCF: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/test_genotype.harmonized.vcf
+[Test] Test  VCF samples: 186
+[All] Combined VCF: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted__PLUS__test_genotype.combined.harmonized.vcf
+Wrote MDS plot to: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/plots/combined_MDS_plot.png
+
+[STEP]Perform PCA and generate PC markers...
+[Train] Train PCs: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.harmonized.PCs.tsv
+[Test] Test PCs: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/test_genotype.harmonized.PCs.tsv
+[All] Number of PCs = 273
+
+Reading training phenotypic data...
+
+[STEP]Transpose marker file for a GS format...
+Transposed training marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.harmonized.PCs.samples_x_markers.tsv
+Imputed marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/train_genotype.aligned.sorted.harmonized.PCs.samples_x_markers.tsv
+Transposed training marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/test_genotype.harmonized.PCs.samples_x_markers.tsv
+Imputed marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/intermediate_data/test_genotype.harmonized.PCs.samples_x_markers.tsv
+
+Performing prediction... 
+Mode: Prediction
+Models: [RR-BLUP, GBLUP, BRR, BL, BayesA, BayesB, BayesC, RFR, SVR, RKHS, RFC, SVC]
+Trait: PLH
+
+Post analysis of GS results for PC...
+No phenotype file provided.
+Loaded prediction: marker type=PC trait=YLD model=RFR rows=186
+Loaded prediction: marker type=PC trait=PLH model=RFC rows=186
+Loaded prediction: marker type=PC trait=PLH model=BayesA rows=186
+Loaded prediction: marker type=PC trait=PLH model=GBLUP rows=186
+Loaded prediction: marker type=PC trait=YLD model=BRR rows=186
+Loaded prediction: marker type=PC trait=YLD model=SVR rows=186
+Loaded prediction: marker type=PC trait=YLD model=BayesC rows=186
+Loaded prediction: marker type=PC trait=PLH model=BayesB rows=186
+Loaded prediction: marker type=PC trait=YLD model=BayesB rows=186
+Loaded prediction: marker type=PC trait=YLD model=GBLUP rows=186
+Loaded prediction: marker type=PC trait=YLD model=RR-BLUP rows=186
+Loaded prediction: marker type=PC trait=YLD model=BayesA rows=186
+Loaded prediction: marker type=PC trait=PLH model=SVC rows=186
+Loaded prediction: marker type=PC trait=YLD model=BL rows=186
+Loaded prediction: marker type=PC trait=PLH model=BayesC rows=186
+Loaded prediction: marker type=PC trait=YLD model=RKHS rows=186
+Loaded prediction: marker type=PC trait=YLD model=SVC rows=186
+Loaded prediction: marker type=PC trait=PLH model=RFR rows=186
+Loaded prediction: marker type=PC trait=PLH model=BL rows=186
+Loaded prediction: marker type=PC trait=PLH model=BRR rows=186
+Loaded prediction: marker type=PC trait=PLH model=RR-BLUP rows=186
+Loaded prediction: marker type=PC trait=YLD model=RFC rows=186
+Loaded prediction: marker type=PC trait=PLH model=RKHS rows=186
+Loaded prediction: marker type=PC trait=PLH model=SVR rows=186
+Wrote merged: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/trait_predictions/PC_YLD_merged_predictions.txt
+Wrote merged: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_prediction1/trait_predictions/PC_PLH_merged_predictions.txt
+No obs for trait YLD -> skip Pearson/plots.
+No obs for trait PLH -> skip Pearson/plots.
+Updated summary: outputFile_prediction1/PC_prediction_detailed_results.txt
+
+=== Final prediction summary for PC === 
+
+
+Pipeline finished. Elapsed: 18.23 mins

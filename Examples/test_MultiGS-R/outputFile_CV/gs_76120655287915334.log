@@ -1,0 +1,1528 @@
+
+[Log] Writing console output to: outputFile_CV/gs_76120655287915334.log
+
+==================================================================
+MultiGS-R (1.0): GENOMIC SELECTION PIPELINE USING R PACKAGES
+==================================================================
+Mode: CROSS-VALIDATION
+Enabled models: [RR-BLUP, GBLUP, BRR, BL, BayesA, BayesB, BayesC, RFR, SVR, RKHS, RFC, SVC]
+Feature (marker) views: [SNP, HAP, PC]
+Results directory: outputFile_CV
+
+
+Check R libraries required in this pipeline...
+✓ All required R libraries are available
+
+
+Generated files:
+  YLD -> /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/pheno_data/YLD_normalized.tsv
+  PLH -> /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/pheno_data/PLH_normalized.tsv
+==========================================================
+Performing GS for marker type: SNP
+==========================================================
+
+[SNP] Performing GS for YLD
+[All] Cleaned VCF : /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/train_genotype.aligned.sorted.vcf
+[All] Cleaned Pheno: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/YLD_normalized.aligned.sorted.tsv
+[All] VCF samples in: 298
+[All] Pheno samples in: 293
+[All] Common samples : 293
+
+[STEP]Score genotypes using 0, 1, 2 scheme for SNPs or haplotype markers (HAP)...
+Converted vcf file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/train_genotype.aligned.sorted.vcf.GSCode.txt
+
+[STEP]Perform imputation for SNP or HAP markers...
+[CV] Imputed file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/train_genotype.aligned.sorted.vcf.GSCode.imputed.tsv
+[CV] Markers = 2000
+[CV] Samples = 293
+
+Reading training phenotypic data...
+
+[STEP]Transpose marker file for a GS format...
+Transposed training marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/train_genotype.aligned.sorted.vcf.GSCode.imputed.samples_x_markers.tsv
+Imputed marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/train_genotype.aligned.sorted.vcf.GSCode.imputed.samples_x_markers.tsv
+
+[STEP]Performing five-fold cross validation...
+
+=== Replicate [1/3] Fold [1/5] ===
+[SNP] YLD [RR-BLUP]: R2 (model) = 0.9479 PearsonR (test) = 0.804
+[SNP] YLD [GBLUP]: R2 (model) = 0.9409 PearsonR (test) = 0.7999
+[SNP] YLD [BRR]: R2 (model) = 0.9406 PearsonR (test) = 0.7975
+[SNP] YLD [BL]: R2 (model) = 0.9353 PearsonR (test) = 0.7984
+[SNP] YLD [BayesA]: R2 (model) = 0.9389 PearsonR (test) = 0.798
+[SNP] YLD [BayesB]: R2 (model) = 0.9394 PearsonR (test) = 0.8023
+[SNP] YLD [BayesC]: R2 (model) = 0.9401 PearsonR (test) = 0.7979
+[SNP] YLD [RFR]: R2 (model) = 0.9679 PearsonR (test) = 0.8031
+[SNP] YLD [SVR]: R2 (model) = 0.9734 PearsonR (test) = 0.7683
+[SNP] YLD [RKHS]: R2 (model) = 0.9578 PearsonR (test) = 0.8061
+[SNP] YLD [RFC]: R2 (model) = 0.729 PearsonR (test) = 0.7484
+[SNP] YLD [SVC]: R2 (model) = 0.685 PearsonR (test) = 0.6366
+
+=== Replicate [1/3] Fold [2/5] ===
+[SNP] YLD [RR-BLUP]: R2 (model) = 0.9454 PearsonR (test) = 0.8
+[SNP] YLD [GBLUP]: R2 (model) = 0.9363 PearsonR (test) = 0.7942
+[SNP] YLD [BRR]: R2 (model) = 0.9365 PearsonR (test) = 0.7926
+[SNP] YLD [BL]: R2 (model) = 0.9319 PearsonR (test) = 0.7954
+[SNP] YLD [BayesA]: R2 (model) = 0.9346 PearsonR (test) = 0.7972
+[SNP] YLD [BayesB]: R2 (model) = 0.9352 PearsonR (test) = 0.7956
+[SNP] YLD [BayesC]: R2 (model) = 0.9356 PearsonR (test) = 0.795
+[SNP] YLD [RFR]: R2 (model) = 0.9696 PearsonR (test) = 0.8037
+[SNP] YLD [SVR]: R2 (model) = 0.9705 PearsonR (test) = 0.7511
+[SNP] YLD [RKHS]: R2 (model) = 0.9524 PearsonR (test) = 0.7953
+[SNP] YLD [RFC]: R2 (model) = 0.7413 PearsonR (test) = 0.7609
+[SNP] YLD [SVC]: R2 (model) = 0.6838 PearsonR (test) = 0.6666
+
+=== Replicate [1/3] Fold [3/5] ===
+[SNP] YLD [RR-BLUP]: R2 (model) = 0.9344 PearsonR (test) = 0.8882
+[SNP] YLD [GBLUP]: R2 (model) = 0.9268 PearsonR (test) = 0.8894
+[SNP] YLD [BRR]: R2 (model) = 0.9264 PearsonR (test) = 0.8884
+[SNP] YLD [BL]: R2 (model) = 0.921 PearsonR (test) = 0.888
+[SNP] YLD [BayesA]: R2 (model) = 0.9244 PearsonR (test) = 0.8901
+[SNP] YLD [BayesB]: R2 (model) = 0.9249 PearsonR (test) = 0.8908
+[SNP] YLD [BayesC]: R2 (model) = 0.9258 PearsonR (test) = 0.89
+[SNP] YLD [RFR]: R2 (model) = 0.9678 PearsonR (test) = 0.8756
+[SNP] YLD [SVR]: R2 (model) = 0.9696 PearsonR (test) = 0.884
+[SNP] YLD [RKHS]: R2 (model) = 0.9526 PearsonR (test) = 0.8839
+[SNP] YLD [RFC]: R2 (model) = 0.7214 PearsonR (test) = 0.8122
+[SNP] YLD [SVC]: R2 (model) = 0.672 PearsonR (test) = 0.7898
+
+=== Replicate [1/3] Fold [4/5] ===
+[SNP] YLD [RR-BLUP]: R2 (model) = 0.9579 PearsonR (test) = 0.8376
+[SNP] YLD [GBLUP]: R2 (model) = 0.9461 PearsonR (test) = 0.8374
+[SNP] YLD [BRR]: R2 (model) = 0.9459 PearsonR (test) = 0.8381
+[SNP] YLD [BL]: R2 (model) = 0.9417 PearsonR (test) = 0.8391
+[SNP] YLD [BayesA]: R2 (model) = 0.9446 PearsonR (test) = 0.8386
+[SNP] YLD [BayesB]: R2 (model) = 0.9456 PearsonR (test) = 0.8351
+[SNP] YLD [BayesC]: R2 (model) = 0.9452 PearsonR (test) = 0.8365
+[SNP] YLD [RFR]: R2 (model) = 0.9703 PearsonR (test) = 0.819
+[SNP] YLD [SVR]: R2 (model) = 0.9804 PearsonR (test) = 0.7984
+[SNP] YLD [RKHS]: R2 (model) = 0.9653 PearsonR (test) = 0.8296
+[SNP] YLD [RFC]: R2 (model) = 0.722 PearsonR (test) = 0.7794
+[SNP] YLD [SVC]: R2 (model) = 0.6788 PearsonR (test) = 0.7151
+
+=== Replicate [1/3] Fold [5/5] ===
+[SNP] YLD [RR-BLUP]: R2 (model) = 0.9509 PearsonR (test) = 0.8411
+[SNP] YLD [GBLUP]: R2 (model) = 0.9403 PearsonR (test) = 0.8449
+[SNP] YLD [BRR]: R2 (model) = 0.9403 PearsonR (test) = 0.844
+[SNP] YLD [BL]: R2 (model) = 0.9383 PearsonR (test) = 0.8454
+[SNP] YLD [BayesA]: R2 (model) = 0.9376 PearsonR (test) = 0.8443
+[SNP] YLD [BayesB]: R2 (model) = 0.9385 PearsonR (test) = 0.8423
+[SNP] YLD [BayesC]: R2 (model) = 0.9403 PearsonR (test) = 0.8446
+[SNP] YLD [RFR]: R2 (model) = 0.9695 PearsonR (test) = 0.8045
+[SNP] YLD [SVR]: R2 (model) = 0.9756 PearsonR (test) = 0.8286
+[SNP] YLD [RKHS]: R2 (model) = 0.962 PearsonR (test) = 0.8439
+[SNP] YLD [RFC]: R2 (model) = 0.7315 PearsonR (test) = 0.7639
+[SNP] YLD [SVC]: R2 (model) = 0.6851 PearsonR (test) = 0.7424
+
+=== Replicate [2/3] Fold [1/5] ===
+[SNP] YLD [RR-BLUP]: R2 (model) = 0.9433 PearsonR (test) = 0.8418
+[SNP] YLD [GBLUP]: R2 (model) = 0.9346 PearsonR (test) = 0.835
+[SNP] YLD [BRR]: R2 (model) = 0.9345 PearsonR (test) = 0.8379
+[SNP] YLD [BL]: R2 (model) = 0.9286 PearsonR (test) = 0.8357
+[SNP] YLD [BayesA]: R2 (model) = 0.9322 PearsonR (test) = 0.8375
+[SNP] YLD [BayesB]: R2 (model) = 0.9327 PearsonR (test) = 0.8393
+[SNP] YLD [BayesC]: R2 (model) = 0.9338 PearsonR (test) = 0.8353
+[SNP] YLD [RFR]: R2 (model) = 0.9672 PearsonR (test) = 0.8268
+[SNP] YLD [SVR]: R2 (model) = 0.975 PearsonR (test) = 0.8412
+[SNP] YLD [RKHS]: R2 (model) = 0.9534 PearsonR (test) = 0.8151
+[SNP] YLD [RFC]: R2 (model) = 0.7309 PearsonR (test) = 0.7722
+[SNP] YLD [SVC]: R2 (model) = 0.6748 PearsonR (test) = 0.7622
+
+=== Replicate [2/3] Fold [2/5] ===
+[SNP] YLD [RR-BLUP]: R2 (model) = 0.9455 PearsonR (test) = 0.8321
+[SNP] YLD [GBLUP]: R2 (model) = 0.9372 PearsonR (test) = 0.8271
+[SNP] YLD [BRR]: R2 (model) = 0.937 PearsonR (test) = 0.8292
+[SNP] YLD [BL]: R2 (model) = 0.9323 PearsonR (test) = 0.829
+[SNP] YLD [BayesA]: R2 (model) = 0.935 PearsonR (test) = 0.8277
+[SNP] YLD [BayesB]: R2 (model) = 0.9352 PearsonR (test) = 0.8301
+[SNP] YLD [BayesC]: R2 (model) = 0.9364 PearsonR (test) = 0.8285
+[SNP] YLD [RFR]: R2 (model) = 0.9676 PearsonR (test) = 0.8194
+[SNP] YLD [SVR]: R2 (model) = 0.9726 PearsonR (test) = 0.8147
+[SNP] YLD [RKHS]: R2 (model) = 0.9563 PearsonR (test) = 0.8269
+[SNP] YLD [RFC]: R2 (model) = 0.7332 PearsonR (test) = 0.8175
+[SNP] YLD [SVC]: R2 (model) = 0.6853 PearsonR (test) = 0.8192
+
+=== Replicate [2/3] Fold [3/5] ===
+[SNP] YLD [RR-BLUP]: R2 (model) = 0.9658 PearsonR (test) = 0.8431
+[SNP] YLD [GBLUP]: R2 (model) = 0.9491 PearsonR (test) = 0.8468
+[SNP] YLD [BRR]: R2 (model) = 0.9488 PearsonR (test) = 0.8467
+[SNP] YLD [BL]: R2 (model) = 0.9443 PearsonR (test) = 0.8476
+[SNP] YLD [BayesA]: R2 (model) = 0.9472 PearsonR (test) = 0.8452
+[SNP] YLD [BayesB]: R2 (model) = 0.9468 PearsonR (test) = 0.8449
+[SNP] YLD [BayesC]: R2 (model) = 0.9478 PearsonR (test) = 0.8471
+[SNP] YLD [RFR]: R2 (model) = 0.9706 PearsonR (test) = 0.8323
+[SNP] YLD [SVR]: R2 (model) = 0.9799 PearsonR (test) = 0.8206
+[SNP] YLD [RKHS]: R2 (model) = 0.9697 PearsonR (test) = 0.831
+[SNP] YLD [RFC]: R2 (model) = 0.7352 PearsonR (test) = 0.7734
+[SNP] YLD [SVC]: R2 (model) = 0.6721 PearsonR (test) = 0.6883
+
+=== Replicate [2/3] Fold [4/5] ===
+[SNP] YLD [RR-BLUP]: R2 (model) = 0.9505 PearsonR (test) = 0.8364
+[SNP] YLD [GBLUP]: R2 (model) = 0.9394 PearsonR (test) = 0.8391
+[SNP] YLD [BRR]: R2 (model) = 0.9394 PearsonR (test) = 0.8388
+[SNP] YLD [BL]: R2 (model) = 0.9338 PearsonR (test) = 0.8405
+[SNP] YLD [BayesA]: R2 (model) = 0.9374 PearsonR (test) = 0.839
+[SNP] YLD [BayesB]: R2 (model) = 0.9376 PearsonR (test) = 0.8355
+[SNP] YLD [BayesC]: R2 (model) = 0.9379 PearsonR (test) = 0.8401
+[SNP] YLD [RFR]: R2 (model) = 0.9705 PearsonR (test) = 0.8006
+[SNP] YLD [SVR]: R2 (model) = 0.9732 PearsonR (test) = 0.8176
+[SNP] YLD [RKHS]: R2 (model) = 0.9606 PearsonR (test) = 0.8357
+[SNP] YLD [RFC]: R2 (model) = 0.7098 PearsonR (test) = 0.8019
+[SNP] YLD [SVC]: R2 (model) = 0.6603 PearsonR (test) = 0.8062
+
+=== Replicate [2/3] Fold [5/5] ===
+[SNP] YLD [RR-BLUP]: R2 (model) = 0.9419 PearsonR (test) = 0.8593
+[SNP] YLD [GBLUP]: R2 (model) = 0.9321 PearsonR (test) = 0.8607
+[SNP] YLD [BRR]: R2 (model) = 0.932 PearsonR (test) = 0.8596
+[SNP] YLD [BL]: R2 (model) = 0.9304 PearsonR (test) = 0.8599
+[SNP] YLD [BayesA]: R2 (model) = 0.9291 PearsonR (test) = 0.8594
+[SNP] YLD [BayesB]: R2 (model) = 0.9302 PearsonR (test) = 0.8583
+[SNP] YLD [BayesC]: R2 (model) = 0.9323 PearsonR (test) = 0.8597
+[SNP] YLD [RFR]: R2 (model) = 0.9688 PearsonR (test) = 0.8559
+[SNP] YLD [SVR]: R2 (model) = 0.971 PearsonR (test) = 0.8475
+[SNP] YLD [RKHS]: R2 (model) = 0.9546 PearsonR (test) = 0.8626
+[SNP] YLD [RFC]: R2 (model) = 0.7216 PearsonR (test) = 0.8111
+[SNP] YLD [SVC]: R2 (model) = 0.6718 PearsonR (test) = 0.7554
+
+=== Replicate [3/3] Fold [1/5] ===
+[SNP] YLD [RR-BLUP]: R2 (model) = 0.9511 PearsonR (test) = 0.8403
+[SNP] YLD [GBLUP]: R2 (model) = 0.9425 PearsonR (test) = 0.8384
+[SNP] YLD [BRR]: R2 (model) = 0.942 PearsonR (test) = 0.8387
+[SNP] YLD [BL]: R2 (model) = 0.937 PearsonR (test) = 0.8384
+[SNP] YLD [BayesA]: R2 (model) = 0.9408 PearsonR (test) = 0.8383
+[SNP] YLD [BayesB]: R2 (model) = 0.9414 PearsonR (test) = 0.8421
+[SNP] YLD [BayesC]: R2 (model) = 0.9419 PearsonR (test) = 0.8391
+[SNP] YLD [RFR]: R2 (model) = 0.9688 PearsonR (test) = 0.8345
+[SNP] YLD [SVR]: R2 (model) = 0.9752 PearsonR (test) = 0.83
+[SNP] YLD [RKHS]: R2 (model) = 0.9599 PearsonR (test) = 0.8448
+[SNP] YLD [RFC]: R2 (model) = 0.7247 PearsonR (test) = 0.7847
+[SNP] YLD [SVC]: R2 (model) = 0.6811 PearsonR (test) = 0.699
+
+=== Replicate [3/3] Fold [2/5] ===
+[SNP] YLD [RR-BLUP]: R2 (model) = 0.9514 PearsonR (test) = 0.7267
+[SNP] YLD [GBLUP]: R2 (model) = 0.9434 PearsonR (test) = 0.7127
+[SNP] YLD [BRR]: R2 (model) = 0.9434 PearsonR (test) = 0.7165
+[SNP] YLD [BL]: R2 (model) = 0.9381 PearsonR (test) = 0.7168
+[SNP] YLD [BayesA]: R2 (model) = 0.9412 PearsonR (test) = 0.7194
+[SNP] YLD [BayesB]: R2 (model) = 0.9415 PearsonR (test) = 0.7205
+[SNP] YLD [BayesC]: R2 (model) = 0.9424 PearsonR (test) = 0.7168
+[SNP] YLD [RFR]: R2 (model) = 0.9728 PearsonR (test) = 0.7254
+[SNP] YLD [SVR]: R2 (model) = 0.9727 PearsonR (test) = 0.7069
+[SNP] YLD [RKHS]: R2 (model) = 0.9634 PearsonR (test) = 0.692
+[SNP] YLD [RFC]: R2 (model) = 0.7378 PearsonR (test) = 0.663
+[SNP] YLD [SVC]: R2 (model) = 0.6748 PearsonR (test) = 0.5943
+
+=== Replicate [3/3] Fold [3/5] ===
+[SNP] YLD [RR-BLUP]: R2 (model) = 0.9337 PearsonR (test) = 0.8157
+[SNP] YLD [GBLUP]: R2 (model) = 0.9266 PearsonR (test) = 0.8091
+[SNP] YLD [BRR]: R2 (model) = 0.9267 PearsonR (test) = 0.8097
+[SNP] YLD [BL]: R2 (model) = 0.9199 PearsonR (test) = 0.8068
+[SNP] YLD [BayesA]: R2 (model) = 0.9235 PearsonR (test) = 0.8104
+[SNP] YLD [BayesB]: R2 (model) = 0.9241 PearsonR (test) = 0.8062
+[SNP] YLD [BayesC]: R2 (model) = 0.9254 PearsonR (test) = 0.8087
+[SNP] YLD [RFR]: R2 (model) = 0.9683 PearsonR (test) = 0.7746
+[SNP] YLD [SVR]: R2 (model) = 0.9704 PearsonR (test) = 0.8182
+[SNP] YLD [RKHS]: R2 (model) = 0.9493 PearsonR (test) = 0.8018
+[SNP] YLD [RFC]: R2 (model) = 0.7354 PearsonR (test) = 0.7438
+[SNP] YLD [SVC]: R2 (model) = 0.689 PearsonR (test) = 0.6728
+
+=== Replicate [3/3] Fold [4/5] ===
+[SNP] YLD [RR-BLUP]: R2 (model) = 0.9416 PearsonR (test) = 0.8043
+[SNP] YLD [GBLUP]: R2 (model) = 0.9342 PearsonR (test) = 0.8016
+[SNP] YLD [BRR]: R2 (model) = 0.9343 PearsonR (test) = 0.8001
+[SNP] YLD [BL]: R2 (model) = 0.9284 PearsonR (test) = 0.8023
+[SNP] YLD [BayesA]: R2 (model) = 0.9323 PearsonR (test) = 0.7987
+[SNP] YLD [BayesB]: R2 (model) = 0.9339 PearsonR (test) = 0.801
+[SNP] YLD [BayesC]: R2 (model) = 0.9338 PearsonR (test) = 0.7982
+[SNP] YLD [RFR]: R2 (model) = 0.9703 PearsonR (test) = 0.7797
+[SNP] YLD [SVR]: R2 (model) = 0.9728 PearsonR (test) = 0.7902
+[SNP] YLD [RKHS]: R2 (model) = 0.9559 PearsonR (test) = 0.7933
+[SNP] YLD [RFC]: R2 (model) = 0.7392 PearsonR (test) = 0.7027
+[SNP] YLD [SVC]: R2 (model) = 0.6851 PearsonR (test) = 0.6749
+
+=== Replicate [3/3] Fold [5/5] ===
+[SNP] YLD [RR-BLUP]: R2 (model) = 0.9377 PearsonR (test) = 0.846
+[SNP] YLD [GBLUP]: R2 (model) = 0.931 PearsonR (test) = 0.8427
+[SNP] YLD [BRR]: R2 (model) = 0.93 PearsonR (test) = 0.8435
+[SNP] YLD [BL]: R2 (model) = 0.9285 PearsonR (test) = 0.8423
+[SNP] YLD [BayesA]: R2 (model) = 0.9269 PearsonR (test) = 0.8448
+[SNP] YLD [BayesB]: R2 (model) = 0.928 PearsonR (test) = 0.8444
+[SNP] YLD [BayesC]: R2 (model) = 0.9303 PearsonR (test) = 0.8437
+[SNP] YLD [RFR]: R2 (model) = 0.9683 PearsonR (test) = 0.8545
+[SNP] YLD [SVR]: R2 (model) = 0.9718 PearsonR (test) = 0.8433
+[SNP] YLD [RKHS]: R2 (model) = 0.9515 PearsonR (test) = 0.8444
+[SNP] YLD [RFC]: R2 (model) = 0.7131 PearsonR (test) = 0.7853
+[SNP] YLD [SVC]: R2 (model) = 0.6729 PearsonR (test) = 0.7429
+
+[SNP] Performing GS for PLH
+[All] Cleaned VCF : /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/train_genotype.aligned.sorted.vcf
+[All] Cleaned Pheno: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/PLH_normalized.aligned.sorted.tsv
+[All] VCF samples in: 298
+[All] Pheno samples in: 293
+[All] Common samples : 293
+
+[STEP]Score genotypes using 0, 1, 2 scheme for SNPs or haplotype markers (HAP)...
+Converted vcf file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/train_genotype.aligned.sorted.vcf.GSCode.txt
+
+[STEP]Perform imputation for SNP or HAP markers...
+[CV] Imputed file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/train_genotype.aligned.sorted.vcf.GSCode.imputed.tsv
+[CV] Markers = 2000
+[CV] Samples = 293
+
+Reading training phenotypic data...
+
+[STEP]Transpose marker file for a GS format...
+Transposed training marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/train_genotype.aligned.sorted.vcf.GSCode.imputed.samples_x_markers.tsv
+Imputed marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/train_genotype.aligned.sorted.vcf.GSCode.imputed.samples_x_markers.tsv
+
+[STEP]Performing five-fold cross validation...
+
+=== Replicate [1/3] Fold [1/5] ===
+[SNP] PLH [RR-BLUP]: R2 (model) = 0.9401 PearsonR (test) = 0.9021
+[SNP] PLH [GBLUP]: R2 (model) = 0.9283 PearsonR (test) = 0.9018
+[SNP] PLH [BRR]: R2 (model) = 0.9279 PearsonR (test) = 0.9028
+[SNP] PLH [BL]: R2 (model) = 0.9151 PearsonR (test) = 0.901
+[SNP] PLH [BayesA]: R2 (model) = 0.9253 PearsonR (test) = 0.9027
+[SNP] PLH [BayesB]: R2 (model) = 0.9284 PearsonR (test) = 0.898
+[SNP] PLH [BayesC]: R2 (model) = 0.9273 PearsonR (test) = 0.9019
+[SNP] PLH [RFR]: R2 (model) = 0.9699 PearsonR (test) = 0.8609
+[SNP] PLH [SVR]: R2 (model) = 0.9844 PearsonR (test) = 0.9011
+[SNP] PLH [RKHS]: R2 (model) = 0.9593 PearsonR (test) = 0.8971
+[SNP] PLH [RFC]: R2 (model) = 0.7053 PearsonR (test) = 0.8338
+[SNP] PLH [SVC]: R2 (model) = 0.6605 PearsonR (test) = 0.8307
+
+=== Replicate [1/3] Fold [2/5] ===
+[SNP] PLH [RR-BLUP]: R2 (model) = 0.9599 PearsonR (test) = 0.8038
+[SNP] PLH [GBLUP]: R2 (model) = 0.9443 PearsonR (test) = 0.8149
+[SNP] PLH [BRR]: R2 (model) = 0.9441 PearsonR (test) = 0.8134
+[SNP] PLH [BL]: R2 (model) = 0.9368 PearsonR (test) = 0.8134
+[SNP] PLH [BayesA]: R2 (model) = 0.942 PearsonR (test) = 0.8141
+[SNP] PLH [BayesB]: R2 (model) = 0.9429 PearsonR (test) = 0.8184
+[SNP] PLH [BayesC]: R2 (model) = 0.9424 PearsonR (test) = 0.8148
+[SNP] PLH [RFR]: R2 (model) = 0.9698 PearsonR (test) = 0.8318
+[SNP] PLH [SVR]: R2 (model) = 0.9857 PearsonR (test) = 0.7977
+[SNP] PLH [RKHS]: R2 (model) = 0.965 PearsonR (test) = 0.8265
+[SNP] PLH [RFC]: R2 (model) = 0.6881 PearsonR (test) = 0.8052
+[SNP] PLH [SVC]: R2 (model) = 0.6398 PearsonR (test) = 0.7569
+
+=== Replicate [1/3] Fold [3/5] ===
+[SNP] PLH [RR-BLUP]: R2 (model) = 0.9544 PearsonR (test) = 0.821
+[SNP] PLH [GBLUP]: R2 (model) = 0.9403 PearsonR (test) = 0.82
+[SNP] PLH [BRR]: R2 (model) = 0.9407 PearsonR (test) = 0.817
+[SNP] PLH [BL]: R2 (model) = 0.9325 PearsonR (test) = 0.817
+[SNP] PLH [BayesA]: R2 (model) = 0.9379 PearsonR (test) = 0.8165
+[SNP] PLH [BayesB]: R2 (model) = 0.9382 PearsonR (test) = 0.8209
+[SNP] PLH [BayesC]: R2 (model) = 0.9396 PearsonR (test) = 0.8159
+[SNP] PLH [RFR]: R2 (model) = 0.9704 PearsonR (test) = 0.8239
+[SNP] PLH [SVR]: R2 (model) = 0.9856 PearsonR (test) = 0.823
+[SNP] PLH [RKHS]: R2 (model) = 0.9643 PearsonR (test) = 0.8304
+[SNP] PLH [RFC]: R2 (model) = 0.6929 PearsonR (test) = 0.7425
+[SNP] PLH [SVC]: R2 (model) = 0.6564 PearsonR (test) = 0.7373
+
+=== Replicate [1/3] Fold [4/5] ===
+[SNP] PLH [RR-BLUP]: R2 (model) = 0.9379 PearsonR (test) = 0.8355
+[SNP] PLH [GBLUP]: R2 (model) = 0.9299 PearsonR (test) = 0.828
+[SNP] PLH [BRR]: R2 (model) = 0.9303 PearsonR (test) = 0.8281
+[SNP] PLH [BL]: R2 (model) = 0.9184 PearsonR (test) = 0.8276
+[SNP] PLH [BayesA]: R2 (model) = 0.9278 PearsonR (test) = 0.8291
+[SNP] PLH [BayesB]: R2 (model) = 0.9305 PearsonR (test) = 0.8293
+[SNP] PLH [BayesC]: R2 (model) = 0.9289 PearsonR (test) = 0.8279
+[SNP] PLH [RFR]: R2 (model) = 0.969 PearsonR (test) = 0.8206
+[SNP] PLH [SVR]: R2 (model) = 0.9846 PearsonR (test) = 0.8162
+[SNP] PLH [RKHS]: R2 (model) = 0.9595 PearsonR (test) = 0.8236
+[SNP] PLH [RFC]: R2 (model) = 0.7354 PearsonR (test) = 0.7358
+[SNP] PLH [SVC]: R2 (model) = 0.695 PearsonR (test) = 0.7096
+
+=== Replicate [1/3] Fold [5/5] ===
+[SNP] PLH [RR-BLUP]: R2 (model) = 0.9765 PearsonR (test) = 0.7542
+[SNP] PLH [GBLUP]: R2 (model) = 0.9546 PearsonR (test) = 0.7577
+[SNP] PLH [BRR]: R2 (model) = 0.9549 PearsonR (test) = 0.7601
+[SNP] PLH [BL]: R2 (model) = 0.9541 PearsonR (test) = 0.7605
+[SNP] PLH [BayesA]: R2 (model) = 0.9499 PearsonR (test) = 0.7619
+[SNP] PLH [BayesB]: R2 (model) = 0.9517 PearsonR (test) = 0.7662
+[SNP] PLH [BayesC]: R2 (model) = 0.9547 PearsonR (test) = 0.7616
+[SNP] PLH [RFR]: R2 (model) = 0.9722 PearsonR (test) = 0.7465
+[SNP] PLH [SVR]: R2 (model) = 0.9896 PearsonR (test) = 0.7256
+[SNP] PLH [RKHS]: R2 (model) = 0.9726 PearsonR (test) = 0.7703
+[SNP] PLH [RFC]: R2 (model) = 0.7142 PearsonR (test) = 0.7315
+[SNP] PLH [SVC]: R2 (model) = 0.6697 PearsonR (test) = 0.6744
+
+=== Replicate [2/3] Fold [1/5] ===
+[SNP] PLH [RR-BLUP]: R2 (model) = 0.9536 PearsonR (test) = 0.8799
+[SNP] PLH [GBLUP]: R2 (model) = 0.9373 PearsonR (test) = 0.8855
+[SNP] PLH [BRR]: R2 (model) = 0.9365 PearsonR (test) = 0.8844
+[SNP] PLH [BL]: R2 (model) = 0.9285 PearsonR (test) = 0.8862
+[SNP] PLH [BayesA]: R2 (model) = 0.9344 PearsonR (test) = 0.8874
+[SNP] PLH [BayesB]: R2 (model) = 0.9352 PearsonR (test) = 0.8879
+[SNP] PLH [BayesC]: R2 (model) = 0.9363 PearsonR (test) = 0.8862
+[SNP] PLH [RFR]: R2 (model) = 0.9675 PearsonR (test) = 0.8994
+[SNP] PLH [SVR]: R2 (model) = 0.9855 PearsonR (test) = 0.8464
+[SNP] PLH [RKHS]: R2 (model) = 0.9604 PearsonR (test) = 0.8895
+[SNP] PLH [RFC]: R2 (model) = 0.7024 PearsonR (test) = 0.8302
+[SNP] PLH [SVC]: R2 (model) = 0.6471 PearsonR (test) = 0.7938
+
+=== Replicate [2/3] Fold [2/5] ===
+[SNP] PLH [RR-BLUP]: R2 (model) = 0.9507 PearsonR (test) = 0.8635
+[SNP] PLH [GBLUP]: R2 (model) = 0.9371 PearsonR (test) = 0.8617
+[SNP] PLH [BRR]: R2 (model) = 0.9361 PearsonR (test) = 0.8623
+[SNP] PLH [BL]: R2 (model) = 0.9278 PearsonR (test) = 0.8623
+[SNP] PLH [BayesA]: R2 (model) = 0.9348 PearsonR (test) = 0.8619
+[SNP] PLH [BayesB]: R2 (model) = 0.9353 PearsonR (test) = 0.8627
+[SNP] PLH [BayesC]: R2 (model) = 0.9355 PearsonR (test) = 0.863
+[SNP] PLH [RFR]: R2 (model) = 0.9703 PearsonR (test) = 0.8621
+[SNP] PLH [SVR]: R2 (model) = 0.9845 PearsonR (test) = 0.8483
+[SNP] PLH [RKHS]: R2 (model) = 0.9602 PearsonR (test) = 0.8652
+[SNP] PLH [RFC]: R2 (model) = 0.6782 PearsonR (test) = 0.8298
+[SNP] PLH [SVC]: R2 (model) = 0.6244 PearsonR (test) = 0.7919
+
+=== Replicate [2/3] Fold [3/5] ===
+[SNP] PLH [RR-BLUP]: R2 (model) = 0.9532 PearsonR (test) = 0.8447
+[SNP] PLH [GBLUP]: R2 (model) = 0.9415 PearsonR (test) = 0.8423
+[SNP] PLH [BRR]: R2 (model) = 0.94 PearsonR (test) = 0.8429
+[SNP] PLH [BL]: R2 (model) = 0.9325 PearsonR (test) = 0.8421
+[SNP] PLH [BayesA]: R2 (model) = 0.9394 PearsonR (test) = 0.8429
+[SNP] PLH [BayesB]: R2 (model) = 0.9403 PearsonR (test) = 0.8422
+[SNP] PLH [BayesC]: R2 (model) = 0.9402 PearsonR (test) = 0.8422
+[SNP] PLH [RFR]: R2 (model) = 0.9689 PearsonR (test) = 0.8481
+[SNP] PLH [SVR]: R2 (model) = 0.9842 PearsonR (test) = 0.8314
+[SNP] PLH [RKHS]: R2 (model) = 0.9613 PearsonR (test) = 0.854
+[SNP] PLH [RFC]: R2 (model) = 0.6791 PearsonR (test) = 0.7839
+[SNP] PLH [SVC]: R2 (model) = 0.6374 PearsonR (test) = 0.7083
+
+=== Replicate [2/3] Fold [4/5] ===
+[SNP] PLH [RR-BLUP]: R2 (model) = 0.9511 PearsonR (test) = 0.8353
+[SNP] PLH [GBLUP]: R2 (model) = 0.9363 PearsonR (test) = 0.8356
+[SNP] PLH [BRR]: R2 (model) = 0.9364 PearsonR (test) = 0.8351
+[SNP] PLH [BL]: R2 (model) = 0.9249 PearsonR (test) = 0.8365
+[SNP] PLH [BayesA]: R2 (model) = 0.9324 PearsonR (test) = 0.8369
+[SNP] PLH [BayesB]: R2 (model) = 0.9351 PearsonR (test) = 0.8373
+[SNP] PLH [BayesC]: R2 (model) = 0.9349 PearsonR (test) = 0.8352
+[SNP] PLH [RFR]: R2 (model) = 0.9719 PearsonR (test) = 0.8115
+[SNP] PLH [SVR]: R2 (model) = 0.9832 PearsonR (test) = 0.8237
+[SNP] PLH [RKHS]: R2 (model) = 0.9598 PearsonR (test) = 0.8323
+[SNP] PLH [RFC]: R2 (model) = 0.7115 PearsonR (test) = 0.7692
+[SNP] PLH [SVC]: R2 (model) = 0.6781 PearsonR (test) = 0.7365
+
+=== Replicate [2/3] Fold [5/5] ===
+[SNP] PLH [RR-BLUP]: R2 (model) = 0.949 PearsonR (test) = 0.8346
+[SNP] PLH [GBLUP]: R2 (model) = 0.9371 PearsonR (test) = 0.8274
+[SNP] PLH [BRR]: R2 (model) = 0.9371 PearsonR (test) = 0.8298
+[SNP] PLH [BL]: R2 (model) = 0.9354 PearsonR (test) = 0.8296
+[SNP] PLH [BayesA]: R2 (model) = 0.9325 PearsonR (test) = 0.8283
+[SNP] PLH [BayesB]: R2 (model) = 0.9359 PearsonR (test) = 0.8288
+[SNP] PLH [BayesC]: R2 (model) = 0.9376 PearsonR (test) = 0.8298
+[SNP] PLH [RFR]: R2 (model) = 0.9723 PearsonR (test) = 0.8123
+[SNP] PLH [SVR]: R2 (model) = 0.9828 PearsonR (test) = 0.8152
+[SNP] PLH [RKHS]: R2 (model) = 0.9624 PearsonR (test) = 0.8363
+[SNP] PLH [RFC]: R2 (model) = 0.7069 PearsonR (test) = 0.7847
+[SNP] PLH [SVC]: R2 (model) = 0.6655 PearsonR (test) = 0.757
+
+=== Replicate [3/3] Fold [1/5] ===
+[SNP] PLH [RR-BLUP]: R2 (model) = 0.955 PearsonR (test) = 0.8487
+[SNP] PLH [GBLUP]: R2 (model) = 0.9399 PearsonR (test) = 0.847
+[SNP] PLH [BRR]: R2 (model) = 0.9394 PearsonR (test) = 0.8483
+[SNP] PLH [BL]: R2 (model) = 0.9285 PearsonR (test) = 0.8466
+[SNP] PLH [BayesA]: R2 (model) = 0.9363 PearsonR (test) = 0.8486
+[SNP] PLH [BayesB]: R2 (model) = 0.9363 PearsonR (test) = 0.8503
+[SNP] PLH [BayesC]: R2 (model) = 0.9378 PearsonR (test) = 0.8471
+[SNP] PLH [RFR]: R2 (model) = 0.971 PearsonR (test) = 0.8398
+[SNP] PLH [SVR]: R2 (model) = 0.9856 PearsonR (test) = 0.8367
+[SNP] PLH [RKHS]: R2 (model) = 0.9634 PearsonR (test) = 0.8442
+[SNP] PLH [RFC]: R2 (model) = 0.699 PearsonR (test) = 0.799
+[SNP] PLH [SVC]: R2 (model) = 0.6639 PearsonR (test) = 0.7595
+
+=== Replicate [3/3] Fold [2/5] ===
+[SNP] PLH [RR-BLUP]: R2 (model) = 0.9544 PearsonR (test) = 0.8908
+[SNP] PLH [GBLUP]: R2 (model) = 0.937 PearsonR (test) = 0.8931
+[SNP] PLH [BRR]: R2 (model) = 0.9367 PearsonR (test) = 0.894
+[SNP] PLH [BL]: R2 (model) = 0.9266 PearsonR (test) = 0.8937
+[SNP] PLH [BayesA]: R2 (model) = 0.9348 PearsonR (test) = 0.8919
+[SNP] PLH [BayesB]: R2 (model) = 0.9352 PearsonR (test) = 0.8897
+[SNP] PLH [BayesC]: R2 (model) = 0.937 PearsonR (test) = 0.8926
+[SNP] PLH [RFR]: R2 (model) = 0.97 PearsonR (test) = 0.904
+[SNP] PLH [SVR]: R2 (model) = 0.9851 PearsonR (test) = 0.8786
+[SNP] PLH [RKHS]: R2 (model) = 0.9614 PearsonR (test) = 0.8991
+[SNP] PLH [RFC]: R2 (model) = 0.683 PearsonR (test) = 0.8547
+[SNP] PLH [SVC]: R2 (model) = 0.6423 PearsonR (test) = 0.7786
+
+=== Replicate [3/3] Fold [3/5] ===
+[SNP] PLH [RR-BLUP]: R2 (model) = 0.9551 PearsonR (test) = 0.8625
+[SNP] PLH [GBLUP]: R2 (model) = 0.9399 PearsonR (test) = 0.8602
+[SNP] PLH [BRR]: R2 (model) = 0.939 PearsonR (test) = 0.8598
+[SNP] PLH [BL]: R2 (model) = 0.9302 PearsonR (test) = 0.8591
+[SNP] PLH [BayesA]: R2 (model) = 0.9374 PearsonR (test) = 0.8602
+[SNP] PLH [BayesB]: R2 (model) = 0.9378 PearsonR (test) = 0.861
+[SNP] PLH [BayesC]: R2 (model) = 0.9382 PearsonR (test) = 0.8602
+[SNP] PLH [RFR]: R2 (model) = 0.9694 PearsonR (test) = 0.867
+[SNP] PLH [SVR]: R2 (model) = 0.9855 PearsonR (test) = 0.8587
+[SNP] PLH [RKHS]: R2 (model) = 0.9634 PearsonR (test) = 0.8667
+[SNP] PLH [RFC]: R2 (model) = 0.693 PearsonR (test) = 0.8209
+[SNP] PLH [SVC]: R2 (model) = 0.6597 PearsonR (test) = 0.8038
+
+=== Replicate [3/3] Fold [4/5] ===
+[SNP] PLH [RR-BLUP]: R2 (model) = 0.954 PearsonR (test) = 0.8256
+[SNP] PLH [GBLUP]: R2 (model) = 0.9405 PearsonR (test) = 0.8263
+[SNP] PLH [BRR]: R2 (model) = 0.9403 PearsonR (test) = 0.826
+[SNP] PLH [BL]: R2 (model) = 0.9334 PearsonR (test) = 0.8244
+[SNP] PLH [BayesA]: R2 (model) = 0.9389 PearsonR (test) = 0.8259
+[SNP] PLH [BayesB]: R2 (model) = 0.9415 PearsonR (test) = 0.8234
+[SNP] PLH [BayesC]: R2 (model) = 0.9398 PearsonR (test) = 0.8266
+[SNP] PLH [RFR]: R2 (model) = 0.9716 PearsonR (test) = 0.8315
+[SNP] PLH [SVR]: R2 (model) = 0.9858 PearsonR (test) = 0.8131
+[SNP] PLH [RKHS]: R2 (model) = 0.9626 PearsonR (test) = 0.8448
+[SNP] PLH [RFC]: R2 (model) = 0.7162 PearsonR (test) = 0.7666
+[SNP] PLH [SVC]: R2 (model) = 0.6655 PearsonR (test) = 0.7268
+
+=== Replicate [3/3] Fold [5/5] ===
+[SNP] PLH [RR-BLUP]: R2 (model) = 0.9567 PearsonR (test) = 0.7802
+[SNP] PLH [GBLUP]: R2 (model) = 0.9442 PearsonR (test) = 0.7704
+[SNP] PLH [BRR]: R2 (model) = 0.9433 PearsonR (test) = 0.7711
+[SNP] PLH [BL]: R2 (model) = 0.941 PearsonR (test) = 0.7703
+[SNP] PLH [BayesA]: R2 (model) = 0.9391 PearsonR (test) = 0.7692
+[SNP] PLH [BayesB]: R2 (model) = 0.9423 PearsonR (test) = 0.766
+[SNP] PLH [BayesC]: R2 (model) = 0.9425 PearsonR (test) = 0.7712
+[SNP] PLH [RFR]: R2 (model) = 0.9717 PearsonR (test) = 0.7389
+[SNP] PLH [SVR]: R2 (model) = 0.9858 PearsonR (test) = 0.7428
+[SNP] PLH [RKHS]: R2 (model) = 0.9654 PearsonR (test) = 0.7876
+[SNP] PLH [RFC]: R2 (model) = 0.7103 PearsonR (test) = 0.7524
+[SNP] PLH [SVC]: R2 (model) = 0.6637 PearsonR (test) = 0.7298
+
+Post analysis of GS results for SNP...
+
+=== FINAL RESULTS ===
+
+YLD:
+RR-BLUP: PearsonR = 0.828 ± 0.036
+GBLUP: PearsonR = 0.825 ± 0.040
+BRR: PearsonR = 0.825 ± 0.039
+BL: PearsonR = 0.826 ± 0.039
+BayesA: PearsonR = 0.826 ± 0.039
+BayesB: PearsonR = 0.826 ± 0.038
+BayesC: PearsonR = 0.825 ± 0.039
+RFR: PearsonR = 0.814 ± 0.037
+SVR: PearsonR = 0.811 ± 0.043
+RKHS: PearsonR = 0.820 ± 0.043
+RFC: PearsonR = 0.768 ± 0.042
+SVC: PearsonR = 0.718 ± 0.064
+
+PLH:
+RR-BLUP: PearsonR = 0.839 ± 0.040
+GBLUP: PearsonR = 0.838 ± 0.040
+BRR: PearsonR = 0.838 ± 0.040
+BL: PearsonR = 0.838 ± 0.040
+BayesA: PearsonR = 0.839 ± 0.040
+BayesB: PearsonR = 0.839 ± 0.039
+BayesC: PearsonR = 0.838 ± 0.040
+RFR: PearsonR = 0.833 ± 0.046
+SVR: PearsonR = 0.824 ± 0.045
+RKHS: PearsonR = 0.845 ± 0.037
+RFC: PearsonR = 0.789 ± 0.039
+SVC: PearsonR = 0.753 ± 0.042
+
+CV summary statics saved to: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/SNP_CV_summary_statistics.csv
+==========================================================
+Performing GS for marker type: HAP
+==========================================================
+
+[HAP] Performing GS for YLD
+[All] Cleaned VCF : /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/train_genotype.aligned.sorted.vcf
+[All] Cleaned Pheno: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/YLD_normalized.aligned.sorted.tsv
+[All] VCF samples in: 298
+[All] Pheno samples in: 293
+[All] Common samples : 293
+
+[STEP]Generate haplotype markers from SNPs...
+
+[STEP]Score genotypes using 0, 1, 2 scheme for SNPs or haplotype markers (HAP)...
+Converted vcf file: CV_haplotype_markers.vcf.GSCode.txt
+
+[STEP]Perform imputation for SNP or HAP markers...
+[CV] Imputed file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/CV_haplotype_markers.vcf.GSCode.imputed.tsv
+[CV] Markers = 1607
+[CV] Samples = 293
+
+Reading training phenotypic data...
+
+[STEP]Transpose marker file for a GS format...
+Transposed training marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/CV_haplotype_markers.vcf.GSCode.imputed.samples_x_markers.tsv
+Imputed marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/CV_haplotype_markers.vcf.GSCode.imputed.samples_x_markers.tsv
+
+[STEP]Performing five-fold cross validation...
+
+=== Replicate [1/3] Fold [1/5] ===
+[HAP] YLD [RR-BLUP]: R2 (model) = 0.9648 PearsonR (test) = 0.7752
+[HAP] YLD [GBLUP]: R2 (model) = 0.9508 PearsonR (test) = 0.774
+[HAP] YLD [BRR]: R2 (model) = 0.9501 PearsonR (test) = 0.772
+[HAP] YLD [BL]: R2 (model) = 0.9386 PearsonR (test) = 0.7688
+[HAP] YLD [BayesA]: R2 (model) = 0.9482 PearsonR (test) = 0.7732
+[HAP] YLD [BayesB]: R2 (model) = 0.947 PearsonR (test) = 0.7735
+[HAP] YLD [BayesC]: R2 (model) = 0.9489 PearsonR (test) = 0.772
+[HAP] YLD [RFR]: R2 (model) = 0.9701 PearsonR (test) = 0.742
+[HAP] YLD [SVR]: R2 (model) = 0.9842 PearsonR (test) = 0.769
+[HAP] YLD [RKHS]: R2 (model) = 0.9695 PearsonR (test) = 0.7501
+[HAP] YLD [RFC]: R2 (model) = 0.7459 PearsonR (test) = 0.6753
+[HAP] YLD [SVC]: R2 (model) = 0.7001 PearsonR (test) = 0.6582
+
+=== Replicate [1/3] Fold [2/5] ===
+[HAP] YLD [RR-BLUP]: R2 (model) = 0.9533 PearsonR (test) = 0.8783
+[HAP] YLD [GBLUP]: R2 (model) = 0.9431 PearsonR (test) = 0.8759
+[HAP] YLD [BRR]: R2 (model) = 0.9419 PearsonR (test) = 0.8754
+[HAP] YLD [BL]: R2 (model) = 0.9309 PearsonR (test) = 0.8775
+[HAP] YLD [BayesA]: R2 (model) = 0.941 PearsonR (test) = 0.8764
+[HAP] YLD [BayesB]: R2 (model) = 0.9405 PearsonR (test) = 0.8736
+[HAP] YLD [BayesC]: R2 (model) = 0.9413 PearsonR (test) = 0.8754
+[HAP] YLD [RFR]: R2 (model) = 0.969 PearsonR (test) = 0.8714
+[HAP] YLD [SVR]: R2 (model) = 0.9731 PearsonR (test) = 0.8526
+[HAP] YLD [RKHS]: R2 (model) = 0.9603 PearsonR (test) = 0.8787
+[HAP] YLD [RFC]: R2 (model) = 0.7247 PearsonR (test) = 0.8466
+[HAP] YLD [SVC]: R2 (model) = 0.6665 PearsonR (test) = 0.7865
+
+=== Replicate [1/3] Fold [3/5] ===
+[HAP] YLD [RR-BLUP]: R2 (model) = 0.9757 PearsonR (test) = 0.7931
+[HAP] YLD [GBLUP]: R2 (model) = 0.9622 PearsonR (test) = 0.7939
+[HAP] YLD [BRR]: R2 (model) = 0.961 PearsonR (test) = 0.7945
+[HAP] YLD [BL]: R2 (model) = 0.9539 PearsonR (test) = 0.7955
+[HAP] YLD [BayesA]: R2 (model) = 0.9614 PearsonR (test) = 0.7922
+[HAP] YLD [BayesB]: R2 (model) = 0.9605 PearsonR (test) = 0.7928
+[HAP] YLD [BayesC]: R2 (model) = 0.9612 PearsonR (test) = 0.7933
+[HAP] YLD [RFR]: R2 (model) = 0.9721 PearsonR (test) = 0.7924
+[HAP] YLD [SVR]: R2 (model) = 0.9852 PearsonR (test) = 0.7765
+[HAP] YLD [RKHS]: R2 (model) = 0.9754 PearsonR (test) = 0.7994
+[HAP] YLD [RFC]: R2 (model) = 0.7304 PearsonR (test) = 0.7482
+[HAP] YLD [SVC]: R2 (model) = 0.6778 PearsonR (test) = 0.6888
+
+=== Replicate [1/3] Fold [4/5] ===
+[HAP] YLD [RR-BLUP]: R2 (model) = 0.9665 PearsonR (test) = 0.8429
+[HAP] YLD [GBLUP]: R2 (model) = 0.954 PearsonR (test) = 0.8452
+[HAP] YLD [BRR]: R2 (model) = 0.9528 PearsonR (test) = 0.8449
+[HAP] YLD [BL]: R2 (model) = 0.9428 PearsonR (test) = 0.845
+[HAP] YLD [BayesA]: R2 (model) = 0.9543 PearsonR (test) = 0.818
+[HAP] YLD [BayesB]: R2 (model) = 0.9534 PearsonR (test) = 0.8125
+[HAP] YLD [BayesC]: R2 (model) = 0.9541 PearsonR (test) = 0.8435
+[HAP] YLD [RFR]: R2 (model) = 0.9694 PearsonR (test) = 0.8179
+[HAP] YLD [SVR]: R2 (model) = 0.9817 PearsonR (test) = 0.8261
+[HAP] YLD [RKHS]: R2 (model) = 0.9697 PearsonR (test) = 0.8382
+[HAP] YLD [RFC]: R2 (model) = 0.7244 PearsonR (test) = 0.8076
+[HAP] YLD [SVC]: R2 (model) = 0.6784 PearsonR (test) = 0.7535
+
+=== Replicate [1/3] Fold [5/5] ===
+[HAP] YLD [RR-BLUP]: R2 (model) = 0.9556 PearsonR (test) = 0.8579
+[HAP] YLD [GBLUP]: R2 (model) = 0.9446 PearsonR (test) = 0.8603
+[HAP] YLD [BRR]: R2 (model) = 0.9452 PearsonR (test) = 0.8587
+[HAP] YLD [BL]: R2 (model) = 0.9422 PearsonR (test) = 0.8575
+[HAP] YLD [BayesA]: R2 (model) = 0.9418 PearsonR (test) = 0.8567
+[HAP] YLD [BayesB]: R2 (model) = 0.9436 PearsonR (test) = 0.8513
+[HAP] YLD [BayesC]: R2 (model) = 0.9448 PearsonR (test) = 0.8562
+[HAP] YLD [RFR]: R2 (model) = 0.9707 PearsonR (test) = 0.829
+[HAP] YLD [SVR]: R2 (model) = 0.9764 PearsonR (test) = 0.8446
+[HAP] YLD [RKHS]: R2 (model) = 0.9644 PearsonR (test) = 0.8633
+[HAP] YLD [RFC]: R2 (model) = 0.7216 PearsonR (test) = 0.8298
+[HAP] YLD [SVC]: R2 (model) = 0.6592 PearsonR (test) = 0.7725
+
+=== Replicate [2/3] Fold [1/5] ===
+[HAP] YLD [RR-BLUP]: R2 (model) = 0.9471 PearsonR (test) = 0.8996
+[HAP] YLD [GBLUP]: R2 (model) = 0.9372 PearsonR (test) = 0.8936
+[HAP] YLD [BRR]: R2 (model) = 0.9363 PearsonR (test) = 0.8935
+[HAP] YLD [BL]: R2 (model) = 0.9233 PearsonR (test) = 0.8914
+[HAP] YLD [BayesA]: R2 (model) = 0.936 PearsonR (test) = 0.8937
+[HAP] YLD [BayesB]: R2 (model) = 0.9355 PearsonR (test) = 0.8917
+[HAP] YLD [BayesC]: R2 (model) = 0.9368 PearsonR (test) = 0.8923
+[HAP] YLD [RFR]: R2 (model) = 0.9677 PearsonR (test) = 0.8739
+[HAP] YLD [SVR]: R2 (model) = 0.9739 PearsonR (test) = 0.8916
+[HAP] YLD [RKHS]: R2 (model) = 0.9609 PearsonR (test) = 0.8864
+[HAP] YLD [RFC]: R2 (model) = 0.7201 PearsonR (test) = 0.8589
+[HAP] YLD [SVC]: R2 (model) = 0.6734 PearsonR (test) = 0.88
+
+=== Replicate [2/3] Fold [2/5] ===
+[HAP] YLD [RR-BLUP]: R2 (model) = 0.9724 PearsonR (test) = 0.8358
+[HAP] YLD [GBLUP]: R2 (model) = 0.9582 PearsonR (test) = 0.8337
+[HAP] YLD [BRR]: R2 (model) = 0.9575 PearsonR (test) = 0.8339
+[HAP] YLD [BL]: R2 (model) = 0.9491 PearsonR (test) = 0.835
+[HAP] YLD [BayesA]: R2 (model) = 0.9577 PearsonR (test) = 0.8334
+[HAP] YLD [BayesB]: R2 (model) = 0.9572 PearsonR (test) = 0.8356
+[HAP] YLD [BayesC]: R2 (model) = 0.958 PearsonR (test) = 0.8345
+[HAP] YLD [RFR]: R2 (model) = 0.9705 PearsonR (test) = 0.8187
+[HAP] YLD [SVR]: R2 (model) = 0.9836 PearsonR (test) = 0.8138
+[HAP] YLD [RKHS]: R2 (model) = 0.972 PearsonR (test) = 0.8329
+[HAP] YLD [RFC]: R2 (model) = 0.7176 PearsonR (test) = 0.7781
+[HAP] YLD [SVC]: R2 (model) = 0.6674 PearsonR (test) = 0.7381
+
+=== Replicate [2/3] Fold [3/5] ===
+[HAP] YLD [RR-BLUP]: R2 (model) = 0.9503 PearsonR (test) = 0.8546
+[HAP] YLD [GBLUP]: R2 (model) = 0.937 PearsonR (test) = 0.8589
+[HAP] YLD [BRR]: R2 (model) = 0.9354 PearsonR (test) = 0.8573
+[HAP] YLD [BL]: R2 (model) = 0.9227 PearsonR (test) = 0.854
+[HAP] YLD [BayesA]: R2 (model) = 0.9354 PearsonR (test) = 0.8569
+[HAP] YLD [BayesB]: R2 (model) = 0.9371 PearsonR (test) = 0.8542
+[HAP] YLD [BayesC]: R2 (model) = 0.9357 PearsonR (test) = 0.8579
+[HAP] YLD [RFR]: R2 (model) = 0.9708 PearsonR (test) = 0.7992
+[HAP] YLD [SVR]: R2 (model) = 0.9722 PearsonR (test) = 0.8518
+[HAP] YLD [RKHS]: R2 (model) = 0.9596 PearsonR (test) = 0.8422
+[HAP] YLD [RFC]: R2 (model) = 0.7248 PearsonR (test) = 0.7576
+[HAP] YLD [SVC]: R2 (model) = 0.6751 PearsonR (test) = 0.739
+
+=== Replicate [2/3] Fold [4/5] ===
+[HAP] YLD [RR-BLUP]: R2 (model) = 0.9488 PearsonR (test) = 0.8728
+[HAP] YLD [GBLUP]: R2 (model) = 0.9393 PearsonR (test) = 0.8661
+[HAP] YLD [BRR]: R2 (model) = 0.9379 PearsonR (test) = 0.8656
+[HAP] YLD [BL]: R2 (model) = 0.9264 PearsonR (test) = 0.8614
+[HAP] YLD [BayesA]: R2 (model) = 0.9373 PearsonR (test) = 0.8607
+[HAP] YLD [BayesB]: R2 (model) = 0.9353 PearsonR (test) = 0.8562
+[HAP] YLD [BayesC]: R2 (model) = 0.9377 PearsonR (test) = 0.8626
+[HAP] YLD [RFR]: R2 (model) = 0.9704 PearsonR (test) = 0.807
+[HAP] YLD [SVR]: R2 (model) = 0.9715 PearsonR (test) = 0.8643
+[HAP] YLD [RKHS]: R2 (model) = 0.9602 PearsonR (test) = 0.8544
+[HAP] YLD [RFC]: R2 (model) = 0.7143 PearsonR (test) = 0.8053
+[HAP] YLD [SVC]: R2 (model) = 0.6663 PearsonR (test) = 0.814
+
+=== Replicate [2/3] Fold [5/5] ===
+[HAP] YLD [RR-BLUP]: R2 (model) = 0.9577 PearsonR (test) = 0.867
+[HAP] YLD [GBLUP]: R2 (model) = 0.9446 PearsonR (test) = 0.8635
+[HAP] YLD [BRR]: R2 (model) = 0.9449 PearsonR (test) = 0.8618
+[HAP] YLD [BL]: R2 (model) = 0.9406 PearsonR (test) = 0.8628
+[HAP] YLD [BayesA]: R2 (model) = 0.9409 PearsonR (test) = 0.8587
+[HAP] YLD [BayesB]: R2 (model) = 0.9412 PearsonR (test) = 0.853
+[HAP] YLD [BayesC]: R2 (model) = 0.9436 PearsonR (test) = 0.8628
+[HAP] YLD [RFR]: R2 (model) = 0.969 PearsonR (test) = 0.828
+[HAP] YLD [SVR]: R2 (model) = 0.9757 PearsonR (test) = 0.8519
+[HAP] YLD [RKHS]: R2 (model) = 0.965 PearsonR (test) = 0.8483
+[HAP] YLD [RFC]: R2 (model) = 0.7162 PearsonR (test) = 0.7875
+[HAP] YLD [SVC]: R2 (model) = 0.6483 PearsonR (test) = 0.735
+
+=== Replicate [3/3] Fold [1/5] ===
+[HAP] YLD [RR-BLUP]: R2 (model) = 0.9519 PearsonR (test) = 0.9089
+[HAP] YLD [GBLUP]: R2 (model) = 0.9385 PearsonR (test) = 0.9147
+[HAP] YLD [BRR]: R2 (model) = 0.9374 PearsonR (test) = 0.9162
+[HAP] YLD [BL]: R2 (model) = 0.9238 PearsonR (test) = 0.914
+[HAP] YLD [BayesA]: R2 (model) = 0.9375 PearsonR (test) = 0.9137
+[HAP] YLD [BayesB]: R2 (model) = 0.937 PearsonR (test) = 0.9098
+[HAP] YLD [BayesC]: R2 (model) = 0.9376 PearsonR (test) = 0.9124
+[HAP] YLD [RFR]: R2 (model) = 0.9665 PearsonR (test) = 0.8945
+[HAP] YLD [SVR]: R2 (model) = 0.9724 PearsonR (test) = 0.9023
+[HAP] YLD [RKHS]: R2 (model) = 0.9595 PearsonR (test) = 0.9095
+[HAP] YLD [RFC]: R2 (model) = 0.7283 PearsonR (test) = 0.8549
+[HAP] YLD [SVC]: R2 (model) = 0.6679 PearsonR (test) = 0.8133
+
+=== Replicate [3/3] Fold [2/5] ===
+[HAP] YLD [RR-BLUP]: R2 (model) = 0.9591 PearsonR (test) = 0.8359
+[HAP] YLD [GBLUP]: R2 (model) = 0.9472 PearsonR (test) = 0.8411
+[HAP] YLD [BRR]: R2 (model) = 0.9462 PearsonR (test) = 0.8414
+[HAP] YLD [BL]: R2 (model) = 0.9366 PearsonR (test) = 0.8438
+[HAP] YLD [BayesA]: R2 (model) = 0.9461 PearsonR (test) = 0.8422
+[HAP] YLD [BayesB]: R2 (model) = 0.9457 PearsonR (test) = 0.8421
+[HAP] YLD [BayesC]: R2 (model) = 0.947 PearsonR (test) = 0.8396
+[HAP] YLD [RFR]: R2 (model) = 0.9688 PearsonR (test) = 0.86
+[HAP] YLD [SVR]: R2 (model) = 0.9744 PearsonR (test) = 0.8083
+[HAP] YLD [RKHS]: R2 (model) = 0.9632 PearsonR (test) = 0.8504
+[HAP] YLD [RFC]: R2 (model) = 0.7166 PearsonR (test) = 0.8026
+[HAP] YLD [SVC]: R2 (model) = 0.6496 PearsonR (test) = 0.6449
+
+=== Replicate [3/3] Fold [3/5] ===
+[HAP] YLD [RR-BLUP]: R2 (model) = 0.9547 PearsonR (test) = 0.7796
+[HAP] YLD [GBLUP]: R2 (model) = 0.9457 PearsonR (test) = 0.7727
+[HAP] YLD [BRR]: R2 (model) = 0.9451 PearsonR (test) = 0.7762
+[HAP] YLD [BL]: R2 (model) = 0.9336 PearsonR (test) = 0.769
+[HAP] YLD [BayesA]: R2 (model) = 0.9437 PearsonR (test) = 0.7731
+[HAP] YLD [BayesB]: R2 (model) = 0.9446 PearsonR (test) = 0.7716
+[HAP] YLD [BayesC]: R2 (model) = 0.9447 PearsonR (test) = 0.7732
+[HAP] YLD [RFR]: R2 (model) = 0.9693 PearsonR (test) = 0.7729
+[HAP] YLD [SVR]: R2 (model) = 0.9744 PearsonR (test) = 0.7755
+[HAP] YLD [RKHS]: R2 (model) = 0.9632 PearsonR (test) = 0.7536
+[HAP] YLD [RFC]: R2 (model) = 0.7544 PearsonR (test) = 0.6543
+[HAP] YLD [SVC]: R2 (model) = 0.6918 PearsonR (test) = 0.7043
+
+=== Replicate [3/3] Fold [4/5] ===
+[HAP] YLD [RR-BLUP]: R2 (model) = 0.9582 PearsonR (test) = 0.8706
+[HAP] YLD [GBLUP]: R2 (model) = 0.945 PearsonR (test) = 0.8722
+[HAP] YLD [BRR]: R2 (model) = 0.9439 PearsonR (test) = 0.8698
+[HAP] YLD [BL]: R2 (model) = 0.9329 PearsonR (test) = 0.8668
+[HAP] YLD [BayesA]: R2 (model) = 0.9435 PearsonR (test) = 0.869
+[HAP] YLD [BayesB]: R2 (model) = 0.9427 PearsonR (test) = 0.8658
+[HAP] YLD [BayesC]: R2 (model) = 0.9436 PearsonR (test) = 0.869
+[HAP] YLD [RFR]: R2 (model) = 0.9705 PearsonR (test) = 0.8298
+[HAP] YLD [SVR]: R2 (model) = 0.974 PearsonR (test) = 0.8715
+[HAP] YLD [RKHS]: R2 (model) = 0.9649 PearsonR (test) = 0.8545
+[HAP] YLD [RFC]: R2 (model) = 0.7133 PearsonR (test) = 0.8308
+[HAP] YLD [SVC]: R2 (model) = 0.6505 PearsonR (test) = 0.8227
+
+=== Replicate [3/3] Fold [5/5] ===
+[HAP] YLD [RR-BLUP]: R2 (model) = 0.9539 PearsonR (test) = 0.8744
+[HAP] YLD [GBLUP]: R2 (model) = 0.9425 PearsonR (test) = 0.8736
+[HAP] YLD [BRR]: R2 (model) = 0.942 PearsonR (test) = 0.8724
+[HAP] YLD [BL]: R2 (model) = 0.9371 PearsonR (test) = 0.8716
+[HAP] YLD [BayesA]: R2 (model) = 0.9377 PearsonR (test) = 0.8679
+[HAP] YLD [BayesB]: R2 (model) = 0.9382 PearsonR (test) = 0.8627
+[HAP] YLD [BayesC]: R2 (model) = 0.94 PearsonR (test) = 0.8687
+[HAP] YLD [RFR]: R2 (model) = 0.97 PearsonR (test) = 0.8348
+[HAP] YLD [SVR]: R2 (model) = 0.9743 PearsonR (test) = 0.8731
+[HAP] YLD [RKHS]: R2 (model) = 0.9621 PearsonR (test) = 0.8628
+[HAP] YLD [RFC]: R2 (model) = 0.7186 PearsonR (test) = 0.8018
+[HAP] YLD [SVC]: R2 (model) = 0.6607 PearsonR (test) = 0.8076
+
+[HAP] Performing GS for PLH
+[All] Cleaned VCF : /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/train_genotype.aligned.sorted.vcf
+[All] Cleaned Pheno: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/PLH_normalized.aligned.sorted.tsv
+[All] VCF samples in: 298
+[All] Pheno samples in: 293
+[All] Common samples : 293
+
+[STEP]Generate haplotype markers from SNPs...
+
+[STEP]Score genotypes using 0, 1, 2 scheme for SNPs or haplotype markers (HAP)...
+Converted vcf file: CV_haplotype_markers.vcf.GSCode.txt
+
+[STEP]Perform imputation for SNP or HAP markers...
+[CV] Imputed file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/CV_haplotype_markers.vcf.GSCode.imputed.tsv
+[CV] Markers = 1607
+[CV] Samples = 293
+
+Reading training phenotypic data...
+
+[STEP]Transpose marker file for a GS format...
+Transposed training marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/CV_haplotype_markers.vcf.GSCode.imputed.samples_x_markers.tsv
+Imputed marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/CV_haplotype_markers.vcf.GSCode.imputed.samples_x_markers.tsv
+
+[STEP]Performing five-fold cross validation...
+
+=== Replicate [1/3] Fold [1/5] ===
+[HAP] PLH [RR-BLUP]: R2 (model) = 0.9898 PearsonR (test) = 0.8369
+[HAP] PLH [GBLUP]: R2 (model) = 0.9636 PearsonR (test) = 0.8445
+[HAP] PLH [BRR]: R2 (model) = 0.9623 PearsonR (test) = 0.8448
+[HAP] PLH [BL]: R2 (model) = 0.9533 PearsonR (test) = 0.8458
+[HAP] PLH [BayesA]: R2 (model) = 0.9625 PearsonR (test) = 0.8438
+[HAP] PLH [BayesB]: R2 (model) = 0.9641 PearsonR (test) = 0.838
+[HAP] PLH [BayesC]: R2 (model) = 0.9643 PearsonR (test) = 0.8433
+[HAP] PLH [RFR]: R2 (model) = 0.9724 PearsonR (test) = 0.8246
+[HAP] PLH [SVR]: R2 (model) = 0.9871 PearsonR (test) = 0.8353
+[HAP] PLH [RKHS]: R2 (model) = 0.9764 PearsonR (test) = 0.8525
+[HAP] PLH [RFC]: R2 (model) = 0.7191 PearsonR (test) = 0.7844
+[HAP] PLH [SVC]: R2 (model) = 0.6583 PearsonR (test) = 0.7387
+
+=== Replicate [1/3] Fold [2/5] ===
+[HAP] PLH [RR-BLUP]: R2 (model) = 0.9651 PearsonR (test) = 0.9044
+[HAP] PLH [GBLUP]: R2 (model) = 0.945 PearsonR (test) = 0.8999
+[HAP] PLH [BRR]: R2 (model) = 0.9434 PearsonR (test) = 0.8999
+[HAP] PLH [BL]: R2 (model) = 0.9299 PearsonR (test) = 0.8985
+[HAP] PLH [BayesA]: R2 (model) = 0.9431 PearsonR (test) = 0.8997
+[HAP] PLH [BayesB]: R2 (model) = 0.9445 PearsonR (test) = 0.902
+[HAP] PLH [BayesC]: R2 (model) = 0.945 PearsonR (test) = 0.901
+[HAP] PLH [RFR]: R2 (model) = 0.9686 PearsonR (test) = 0.8935
+[HAP] PLH [SVR]: R2 (model) = 0.9836 PearsonR (test) = 0.8955
+[HAP] PLH [RKHS]: R2 (model) = 0.9645 PearsonR (test) = 0.9048
+[HAP] PLH [RFC]: R2 (model) = 0.6819 PearsonR (test) = 0.859
+[HAP] PLH [SVC]: R2 (model) = 0.6382 PearsonR (test) = 0.8151
+
+=== Replicate [1/3] Fold [3/5] ===
+[HAP] PLH [RR-BLUP]: R2 (model) = 0.9693 PearsonR (test) = 0.8557
+[HAP] PLH [GBLUP]: R2 (model) = 0.9483 PearsonR (test) = 0.8586
+[HAP] PLH [BRR]: R2 (model) = 0.9469 PearsonR (test) = 0.8591
+[HAP] PLH [BL]: R2 (model) = 0.9323 PearsonR (test) = 0.8602
+[HAP] PLH [BayesA]: R2 (model) = 0.9458 PearsonR (test) = 0.8611
+[HAP] PLH [BayesB]: R2 (model) = 0.9473 PearsonR (test) = 0.8591
+[HAP] PLH [BayesC]: R2 (model) = 0.9479 PearsonR (test) = 0.8593
+[HAP] PLH [RFR]: R2 (model) = 0.9703 PearsonR (test) = 0.8565
+[HAP] PLH [SVR]: R2 (model) = 0.9851 PearsonR (test) = 0.8448
+[HAP] PLH [RKHS]: R2 (model) = 0.9694 PearsonR (test) = 0.8626
+[HAP] PLH [RFC]: R2 (model) = 0.7116 PearsonR (test) = 0.8292
+[HAP] PLH [SVC]: R2 (model) = 0.6468 PearsonR (test) = 0.7531
+
+=== Replicate [1/3] Fold [4/5] ===
+[HAP] PLH [RR-BLUP]: R2 (model) = 0.9628 PearsonR (test) = 0.8679
+[HAP] PLH [GBLUP]: R2 (model) = 0.9435 PearsonR (test) = 0.8665
+[HAP] PLH [BRR]: R2 (model) = 0.9415 PearsonR (test) = 0.8674
+[HAP] PLH [BL]: R2 (model) = 0.9256 PearsonR (test) = 0.8666
+[HAP] PLH [BayesA]: R2 (model) = 0.9401 PearsonR (test) = 0.8682
+[HAP] PLH [BayesB]: R2 (model) = 0.9415 PearsonR (test) = 0.8649
+[HAP] PLH [BayesC]: R2 (model) = 0.9421 PearsonR (test) = 0.8673
+[HAP] PLH [RFR]: R2 (model) = 0.9692 PearsonR (test) = 0.8492
+[HAP] PLH [SVR]: R2 (model) = 0.9841 PearsonR (test) = 0.8686
+[HAP] PLH [RKHS]: R2 (model) = 0.9661 PearsonR (test) = 0.8681
+[HAP] PLH [RFC]: R2 (model) = 0.6867 PearsonR (test) = 0.8181
+[HAP] PLH [SVC]: R2 (model) = 0.6339 PearsonR (test) = 0.7814
+
+=== Replicate [1/3] Fold [5/5] ===
+[HAP] PLH [RR-BLUP]: R2 (model) = 0.9613 PearsonR (test) = 0.8226
+[HAP] PLH [GBLUP]: R2 (model) = 0.9419 PearsonR (test) = 0.8171
+[HAP] PLH [BRR]: R2 (model) = 0.9414 PearsonR (test) = 0.8157
+[HAP] PLH [BL]: R2 (model) = 0.9367 PearsonR (test) = 0.8161
+[HAP] PLH [BayesA]: R2 (model) = 0.9368 PearsonR (test) = 0.8159
+[HAP] PLH [BayesB]: R2 (model) = 0.9398 PearsonR (test) = 0.8226
+[HAP] PLH [BayesC]: R2 (model) = 0.9423 PearsonR (test) = 0.8196
+[HAP] PLH [RFR]: R2 (model) = 0.97 PearsonR (test) = 0.802
+[HAP] PLH [SVR]: R2 (model) = 0.9845 PearsonR (test) = 0.8194
+[HAP] PLH [RKHS]: R2 (model) = 0.9646 PearsonR (test) = 0.8113
+[HAP] PLH [RFC]: R2 (model) = 0.7218 PearsonR (test) = 0.7368
+[HAP] PLH [SVC]: R2 (model) = 0.6702 PearsonR (test) = 0.6967
+
+=== Replicate [2/3] Fold [1/5] ===
+[HAP] PLH [RR-BLUP]: R2 (model) = 0.9748 PearsonR (test) = 0.8178
+[HAP] PLH [GBLUP]: R2 (model) = 0.9557 PearsonR (test) = 0.8243
+[HAP] PLH [BRR]: R2 (model) = 0.9539 PearsonR (test) = 0.8263
+[HAP] PLH [BL]: R2 (model) = 0.9427 PearsonR (test) = 0.8295
+[HAP] PLH [BayesA]: R2 (model) = 0.9539 PearsonR (test) = 0.8246
+[HAP] PLH [BayesB]: R2 (model) = 0.9557 PearsonR (test) = 0.8221
+[HAP] PLH [BayesC]: R2 (model) = 0.9546 PearsonR (test) = 0.8267
+[HAP] PLH [RFR]: R2 (model) = 0.973 PearsonR (test) = 0.8019
+[HAP] PLH [SVR]: R2 (model) = 0.9872 PearsonR (test) = 0.8116
+[HAP] PLH [RKHS]: R2 (model) = 0.9721 PearsonR (test) = 0.8405
+[HAP] PLH [RFC]: R2 (model) = 0.7156 PearsonR (test) = 0.764
+[HAP] PLH [SVC]: R2 (model) = 0.6626 PearsonR (test) = 0.7306
+
+=== Replicate [2/3] Fold [2/5] ===
+[HAP] PLH [RR-BLUP]: R2 (model) = 0.9564 PearsonR (test) = 0.864
+[HAP] PLH [GBLUP]: R2 (model) = 0.9429 PearsonR (test) = 0.8574
+[HAP] PLH [BRR]: R2 (model) = 0.9408 PearsonR (test) = 0.8568
+[HAP] PLH [BL]: R2 (model) = 0.925 PearsonR (test) = 0.8553
+[HAP] PLH [BayesA]: R2 (model) = 0.9391 PearsonR (test) = 0.8566
+[HAP] PLH [BayesB]: R2 (model) = 0.9407 PearsonR (test) = 0.8585
+[HAP] PLH [BayesC]: R2 (model) = 0.9413 PearsonR (test) = 0.8568
+[HAP] PLH [RFR]: R2 (model) = 0.9708 PearsonR (test) = 0.8362
+[HAP] PLH [SVR]: R2 (model) = 0.9844 PearsonR (test) = 0.8581
+[HAP] PLH [RKHS]: R2 (model) = 0.9642 PearsonR (test) = 0.8604
+[HAP] PLH [RFC]: R2 (model) = 0.7123 PearsonR (test) = 0.7767
+[HAP] PLH [SVC]: R2 (model) = 0.662 PearsonR (test) = 0.7295
+
+=== Replicate [2/3] Fold [3/5] ===
+[HAP] PLH [RR-BLUP]: R2 (model) = 0.9666 PearsonR (test) = 0.8329
+[HAP] PLH [GBLUP]: R2 (model) = 0.9496 PearsonR (test) = 0.8317
+[HAP] PLH [BRR]: R2 (model) = 0.9485 PearsonR (test) = 0.829
+[HAP] PLH [BL]: R2 (model) = 0.9359 PearsonR (test) = 0.829
+[HAP] PLH [BayesA]: R2 (model) = 0.9469 PearsonR (test) = 0.8292
+[HAP] PLH [BayesB]: R2 (model) = 0.9476 PearsonR (test) = 0.8283
+[HAP] PLH [BayesC]: R2 (model) = 0.9489 PearsonR (test) = 0.8299
+[HAP] PLH [RFR]: R2 (model) = 0.9715 PearsonR (test) = 0.7856
+[HAP] PLH [SVR]: R2 (model) = 0.9853 PearsonR (test) = 0.831
+[HAP] PLH [RKHS]: R2 (model) = 0.9675 PearsonR (test) = 0.8289
+[HAP] PLH [RFC]: R2 (model) = 0.6796 PearsonR (test) = 0.7618
+[HAP] PLH [SVC]: R2 (model) = 0.6325 PearsonR (test) = 0.7315
+
+=== Replicate [2/3] Fold [4/5] ===
+[HAP] PLH [RR-BLUP]: R2 (model) = 0.9748 PearsonR (test) = 0.7889
+[HAP] PLH [GBLUP]: R2 (model) = 0.9554 PearsonR (test) = 0.7931
+[HAP] PLH [BRR]: R2 (model) = 0.9539 PearsonR (test) = 0.7941
+[HAP] PLH [BL]: R2 (model) = 0.9424 PearsonR (test) = 0.7938
+[HAP] PLH [BayesA]: R2 (model) = 0.953 PearsonR (test) = 0.7925
+[HAP] PLH [BayesB]: R2 (model) = 0.9534 PearsonR (test) = 0.7958
+[HAP] PLH [BayesC]: R2 (model) = 0.9546 PearsonR (test) = 0.7965
+[HAP] PLH [RFR]: R2 (model) = 0.9708 PearsonR (test) = 0.8069
+[HAP] PLH [SVR]: R2 (model) = 0.9872 PearsonR (test) = 0.7909
+[HAP] PLH [RKHS]: R2 (model) = 0.9718 PearsonR (test) = 0.8032
+[HAP] PLH [RFC]: R2 (model) = 0.7009 PearsonR (test) = 0.7867
+[HAP] PLH [SVC]: R2 (model) = 0.6582 PearsonR (test) = 0.768
+
+=== Replicate [2/3] Fold [5/5] ===
+[HAP] PLH [RR-BLUP]: R2 (model) = 0.9738 PearsonR (test) = 0.8935
+[HAP] PLH [GBLUP]: R2 (model) = 0.9524 PearsonR (test) = 0.8954
+[HAP] PLH [BRR]: R2 (model) = 0.9524 PearsonR (test) = 0.8962
+[HAP] PLH [BL]: R2 (model) = 0.9481 PearsonR (test) = 0.8978
+[HAP] PLH [BayesA]: R2 (model) = 0.9493 PearsonR (test) = 0.8972
+[HAP] PLH [BayesB]: R2 (model) = 0.9487 PearsonR (test) = 0.8981
+[HAP] PLH [BayesC]: R2 (model) = 0.9515 PearsonR (test) = 0.896
+[HAP] PLH [RFR]: R2 (model) = 0.9718 PearsonR (test) = 0.9049
+[HAP] PLH [SVR]: R2 (model) = 0.9838 PearsonR (test) = 0.8856
+[HAP] PLH [RKHS]: R2 (model) = 0.9708 PearsonR (test) = 0.9033
+[HAP] PLH [RFC]: R2 (model) = 0.6811 PearsonR (test) = 0.844
+[HAP] PLH [SVC]: R2 (model) = 0.641 PearsonR (test) = 0.7816
+
+=== Replicate [3/3] Fold [1/5] ===
+[HAP] PLH [RR-BLUP]: R2 (model) = 0.9699 PearsonR (test) = 0.7918
+[HAP] PLH [GBLUP]: R2 (model) = 0.9527 PearsonR (test) = 0.7871
+[HAP] PLH [BRR]: R2 (model) = 0.9512 PearsonR (test) = 0.7895
+[HAP] PLH [BL]: R2 (model) = 0.9396 PearsonR (test) = 0.7893
+[HAP] PLH [BayesA]: R2 (model) = 0.95 PearsonR (test) = 0.7896
+[HAP] PLH [BayesB]: R2 (model) = 0.9495 PearsonR (test) = 0.7903
+[HAP] PLH [BayesC]: R2 (model) = 0.9507 PearsonR (test) = 0.7872
+[HAP] PLH [RFR]: R2 (model) = 0.9728 PearsonR (test) = 0.7863
+[HAP] PLH [SVR]: R2 (model) = 0.9847 PearsonR (test) = 0.7806
+[HAP] PLH [RKHS]: R2 (model) = 0.9717 PearsonR (test) = 0.7929
+[HAP] PLH [RFC]: R2 (model) = 0.7008 PearsonR (test) = 0.7485
+[HAP] PLH [SVC]: R2 (model) = 0.6568 PearsonR (test) = 0.6692
+
+=== Replicate [3/3] Fold [2/5] ===
+[HAP] PLH [RR-BLUP]: R2 (model) = 0.9628 PearsonR (test) = 0.8659
+[HAP] PLH [GBLUP]: R2 (model) = 0.9457 PearsonR (test) = 0.8624
+[HAP] PLH [BRR]: R2 (model) = 0.944 PearsonR (test) = 0.8642
+[HAP] PLH [BL]: R2 (model) = 0.9295 PearsonR (test) = 0.8687
+[HAP] PLH [BayesA]: R2 (model) = 0.9431 PearsonR (test) = 0.8656
+[HAP] PLH [BayesB]: R2 (model) = 0.9442 PearsonR (test) = 0.8682
+[HAP] PLH [BayesC]: R2 (model) = 0.9453 PearsonR (test) = 0.8642
+[HAP] PLH [RFR]: R2 (model) = 0.9711 PearsonR (test) = 0.8633
+[HAP] PLH [SVR]: R2 (model) = 0.9825 PearsonR (test) = 0.8396
+[HAP] PLH [RKHS]: R2 (model) = 0.9645 PearsonR (test) = 0.8703
+[HAP] PLH [RFC]: R2 (model) = 0.7103 PearsonR (test) = 0.8215
+[HAP] PLH [SVC]: R2 (model) = 0.661 PearsonR (test) = 0.8132
+
+=== Replicate [3/3] Fold [3/5] ===
+[HAP] PLH [RR-BLUP]: R2 (model) = 0.9648 PearsonR (test) = 0.8462
+[HAP] PLH [GBLUP]: R2 (model) = 0.9437 PearsonR (test) = 0.8403
+[HAP] PLH [BRR]: R2 (model) = 0.942 PearsonR (test) = 0.8415
+[HAP] PLH [BL]: R2 (model) = 0.9245 PearsonR (test) = 0.8435
+[HAP] PLH [BayesA]: R2 (model) = 0.9408 PearsonR (test) = 0.8427
+[HAP] PLH [BayesB]: R2 (model) = 0.9426 PearsonR (test) = 0.8463
+[HAP] PLH [BayesC]: R2 (model) = 0.9427 PearsonR (test) = 0.844
+[HAP] PLH [RFR]: R2 (model) = 0.968 PearsonR (test) = 0.8573
+[HAP] PLH [SVR]: R2 (model) = 0.9854 PearsonR (test) = 0.8248
+[HAP] PLH [RKHS]: R2 (model) = 0.9659 PearsonR (test) = 0.8409
+[HAP] PLH [RFC]: R2 (model) = 0.7135 PearsonR (test) = 0.7731
+[HAP] PLH [SVC]: R2 (model) = 0.6668 PearsonR (test) = 0.7557
+
+=== Replicate [3/3] Fold [4/5] ===
+[HAP] PLH [RR-BLUP]: R2 (model) = 0.9656 PearsonR (test) = 0.8347
+[HAP] PLH [GBLUP]: R2 (model) = 0.9473 PearsonR (test) = 0.8354
+[HAP] PLH [BRR]: R2 (model) = 0.9457 PearsonR (test) = 0.8336
+[HAP] PLH [BL]: R2 (model) = 0.9308 PearsonR (test) = 0.8346
+[HAP] PLH [BayesA]: R2 (model) = 0.9455 PearsonR (test) = 0.8351
+[HAP] PLH [BayesB]: R2 (model) = 0.9473 PearsonR (test) = 0.8396
+[HAP] PLH [BayesC]: R2 (model) = 0.9462 PearsonR (test) = 0.8371
+[HAP] PLH [RFR]: R2 (model) = 0.9693 PearsonR (test) = 0.8246
+[HAP] PLH [SVR]: R2 (model) = 0.9803 PearsonR (test) = 0.8244
+[HAP] PLH [RKHS]: R2 (model) = 0.9664 PearsonR (test) = 0.8404
+[HAP] PLH [RFC]: R2 (model) = 0.6939 PearsonR (test) = 0.7578
+[HAP] PLH [SVC]: R2 (model) = 0.6523 PearsonR (test) = 0.7364
+
+=== Replicate [3/3] Fold [5/5] ===
+[HAP] PLH [RR-BLUP]: R2 (model) = 0.9845 PearsonR (test) = 0.8023
+[HAP] PLH [GBLUP]: R2 (model) = 0.9616 PearsonR (test) = 0.8195
+[HAP] PLH [BRR]: R2 (model) = 0.9604 PearsonR (test) = 0.8211
+[HAP] PLH [BL]: R2 (model) = 0.9569 PearsonR (test) = 0.8229
+[HAP] PLH [BayesA]: R2 (model) = 0.9582 PearsonR (test) = 0.8224
+[HAP] PLH [BayesB]: R2 (model) = 0.9582 PearsonR (test) = 0.8197
+[HAP] PLH [BayesC]: R2 (model) = 0.9602 PearsonR (test) = 0.8199
+[HAP] PLH [RFR]: R2 (model) = 0.9718 PearsonR (test) = 0.8414
+[HAP] PLH [SVR]: R2 (model) = 0.9873 PearsonR (test) = 0.7979
+[HAP] PLH [RKHS]: R2 (model) = 0.9735 PearsonR (test) = 0.8466
+[HAP] PLH [RFC]: R2 (model) = 0.7032 PearsonR (test) = 0.8173
+[HAP] PLH [SVC]: R2 (model) = 0.6581 PearsonR (test) = 0.7103
+
+Post analysis of GS results for HAP...
+
+=== FINAL RESULTS ===
+
+YLD:
+RR-BLUP: PearsonR = 0.850 ± 0.040
+GBLUP: PearsonR = 0.849 ± 0.041
+BRR: PearsonR = 0.849 ± 0.041
+BL: PearsonR = 0.848 ± 0.041
+BayesA: PearsonR = 0.846 ± 0.041
+BayesB: PearsonR = 0.843 ± 0.040
+BayesC: PearsonR = 0.848 ± 0.040
+RFR: PearsonR = 0.825 ± 0.040
+SVR: PearsonR = 0.838 ± 0.042
+RKHS: PearsonR = 0.842 ± 0.044
+RFC: PearsonR = 0.789 ± 0.060
+SVC: PearsonR = 0.757 ± 0.066
+
+PLH:
+RR-BLUP: PearsonR = 0.842 ± 0.034
+GBLUP: PearsonR = 0.842 ± 0.032
+BRR: PearsonR = 0.843 ± 0.032
+BL: PearsonR = 0.843 ± 0.032
+BayesA: PearsonR = 0.843 ± 0.033
+BayesB: PearsonR = 0.844 ± 0.033
+BayesC: PearsonR = 0.843 ± 0.032
+RFR: PearsonR = 0.836 ± 0.036
+SVR: PearsonR = 0.834 ± 0.033
+RKHS: PearsonR = 0.848 ± 0.032
+RFC: PearsonR = 0.792 ± 0.037
+SVC: PearsonR = 0.747 ± 0.040
+
+CV summary statics saved to: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/HAP_CV_summary_statistics.csv
+==========================================================
+Performing GS for marker type: PC
+==========================================================
+
+[PC] Performing GS for YLD
+[All] Cleaned VCF : /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/train_genotype.aligned.sorted.vcf
+[All] Cleaned Pheno: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/YLD_normalized.aligned.sorted.tsv
+[All] VCF samples in: 298
+[All] Pheno samples in: 293
+[All] Common samples : 293
+
+[STEP]Perform PCA and generate PC markers...
+[All] PC file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/train_genotype.aligned.sorted.PCs.tsv
+[All] Number of PCs = 188
+[All] Number of samples=293
+
+Reading training phenotypic data...
+
+[STEP]Transpose marker file for a GS format...
+Transposed training marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/train_genotype.aligned.sorted.PCs.samples_x_markers.tsv
+Imputed marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/train_genotype.aligned.sorted.PCs.samples_x_markers.tsv
+
+[STEP]Performing five-fold cross validation...
+
+=== Replicate [1/3] Fold [1/5] ===
+[PC] YLD [RR-BLUP]: R2 (model) = 0.9015 PearsonR (test) = 0.8288
+[PC] YLD [GBLUP]: R2 (model) = 0.9317 PearsonR (test) = 0.6305
+[PC] YLD [BRR]: R2 (model) = 0.9318 PearsonR (test) = 0.6222
+[PC] YLD [BL]: R2 (model) = 0.9122 PearsonR (test) = 0.8022
+[PC] YLD [BayesA]: R2 (model) = 0.9012 PearsonR (test) = 0.8007
+[PC] YLD [BayesB]: R2 (model) = 0.8389 PearsonR (test) = 0.8167
+[PC] YLD [BayesC]: R2 (model) = 0.8078 PearsonR (test) = 0.8263
+[PC] YLD [RFR]: R2 (model) = 0.9675 PearsonR (test) = 0.7817
+[PC] YLD [SVR]: R2 (model) = 0.8031 PearsonR (test) = 0.5735
+[PC] YLD [RKHS]: R2 (model) = 0.9498 PearsonR (test) = 0.6833
+[PC] YLD [RFC]: R2 (model) = 0.7148 PearsonR (test) = 0.6965
+[PC] YLD [SVC]: R2 (model) = 0.6434 PearsonR (test) = 0.4503
+
+=== Replicate [1/3] Fold [2/5] ===
+[PC] YLD [RR-BLUP]: R2 (model) = 0.8978 PearsonR (test) = 0.8801
+[PC] YLD [GBLUP]: R2 (model) = 0.9288 PearsonR (test) = 0.727
+[PC] YLD [BRR]: R2 (model) = 0.9288 PearsonR (test) = 0.7317
+[PC] YLD [BL]: R2 (model) = 0.909 PearsonR (test) = 0.8199
+[PC] YLD [BayesA]: R2 (model) = 0.8969 PearsonR (test) = 0.8251
+[PC] YLD [BayesB]: R2 (model) = 0.8267 PearsonR (test) = 0.8376
+[PC] YLD [BayesC]: R2 (model) = 0.7836 PearsonR (test) = 0.8543
+[PC] YLD [RFR]: R2 (model) = 0.9697 PearsonR (test) = 0.8457
+[PC] YLD [SVR]: R2 (model) = 0.7949 PearsonR (test) = 0.7245
+[PC] YLD [RKHS]: R2 (model) = 0.943 PearsonR (test) = 0.7057
+[PC] YLD [RFC]: R2 (model) = 0.7048 PearsonR (test) = 0.7179
+[PC] YLD [SVC]: R2 (model) = 0.6157 PearsonR (test) = 0.5836
+
+=== Replicate [1/3] Fold [3/5] ===
+[PC] YLD [RR-BLUP]: R2 (model) = 0.9015 PearsonR (test) = 0.8712
+[PC] YLD [GBLUP]: R2 (model) = 0.9287 PearsonR (test) = 0.7491
+[PC] YLD [BRR]: R2 (model) = 0.9287 PearsonR (test) = 0.7591
+[PC] YLD [BL]: R2 (model) = 0.9113 PearsonR (test) = 0.8278
+[PC] YLD [BayesA]: R2 (model) = 0.9018 PearsonR (test) = 0.8304
+[PC] YLD [BayesB]: R2 (model) = 0.8365 PearsonR (test) = 0.8379
+[PC] YLD [BayesC]: R2 (model) = 0.807 PearsonR (test) = 0.8481
+[PC] YLD [RFR]: R2 (model) = 0.9688 PearsonR (test) = 0.7929
+[PC] YLD [SVR]: R2 (model) = 0.8131 PearsonR (test) = 0.6953
+[PC] YLD [RKHS]: R2 (model) = 0.9488 PearsonR (test) = 0.6434
+[PC] YLD [RFC]: R2 (model) = 0.7072 PearsonR (test) = 0.7221
+[PC] YLD [SVC]: R2 (model) = 0.6294 PearsonR (test) = 0.6119
+
+=== Replicate [1/3] Fold [4/5] ===
+[PC] YLD [RR-BLUP]: R2 (model) = 0.9034 PearsonR (test) = 0.8112
+[PC] YLD [GBLUP]: R2 (model) = 0.9342 PearsonR (test) = 0.6219
+[PC] YLD [BRR]: R2 (model) = 0.934 PearsonR (test) = 0.6178
+[PC] YLD [BL]: R2 (model) = 0.9102 PearsonR (test) = 0.7497
+[PC] YLD [BayesA]: R2 (model) = 0.9001 PearsonR (test) = 0.7476
+[PC] YLD [BayesB]: R2 (model) = 0.8066 PearsonR (test) = 0.7753
+[PC] YLD [BayesC]: R2 (model) = 0.7808 PearsonR (test) = 0.7752
+[PC] YLD [RFR]: R2 (model) = 0.9683 PearsonR (test) = 0.7589
+[PC] YLD [SVR]: R2 (model) = 0.8015 PearsonR (test) = 0.5414
+[PC] YLD [RKHS]: R2 (model) = 0.9536 PearsonR (test) = 0.6165
+[PC] YLD [RFC]: R2 (model) = 0.7057 PearsonR (test) = 0.6952
+[PC] YLD [SVC]: R2 (model) = 0.612 PearsonR (test) = 0.4899
+
+=== Replicate [1/3] Fold [5/5] ===
+[PC] YLD [RR-BLUP]: R2 (model) = 0.9135 PearsonR (test) = 0.8787
+[PC] YLD [GBLUP]: R2 (model) = 0.9397 PearsonR (test) = 0.7518
+[PC] YLD [BRR]: R2 (model) = 0.9396 PearsonR (test) = 0.7524
+[PC] YLD [BL]: R2 (model) = 0.9205 PearsonR (test) = 0.8508
+[PC] YLD [BayesA]: R2 (model) = 0.9122 PearsonR (test) = 0.8566
+[PC] YLD [BayesB]: R2 (model) = 0.8241 PearsonR (test) = 0.8566
+[PC] YLD [BayesC]: R2 (model) = 0.792 PearsonR (test) = 0.8579
+[PC] YLD [RFR]: R2 (model) = 0.9682 PearsonR (test) = 0.8492
+[PC] YLD [SVR]: R2 (model) = 0.7746 PearsonR (test) = 0.758
+[PC] YLD [RKHS]: R2 (model) = 0.9627 PearsonR (test) = 0.7326
+[PC] YLD [RFC]: R2 (model) = 0.6998 PearsonR (test) = 0.7564
+[PC] YLD [SVC]: R2 (model) = 0.6232 PearsonR (test) = 0.6981
+
+=== Replicate [2/3] Fold [1/5] ===
+[PC] YLD [RR-BLUP]: R2 (model) = 0.9107 PearsonR (test) = 0.8503
+[PC] YLD [GBLUP]: R2 (model) = 0.9411 PearsonR (test) = 0.725
+[PC] YLD [BRR]: R2 (model) = 0.9412 PearsonR (test) = 0.7277
+[PC] YLD [BL]: R2 (model) = 0.9213 PearsonR (test) = 0.8345
+[PC] YLD [BayesA]: R2 (model) = 0.911 PearsonR (test) = 0.8357
+[PC] YLD [BayesB]: R2 (model) = 0.8271 PearsonR (test) = 0.8316
+[PC] YLD [BayesC]: R2 (model) = 0.8052 PearsonR (test) = 0.8306
+[PC] YLD [RFR]: R2 (model) = 0.9663 PearsonR (test) = 0.7653
+[PC] YLD [SVR]: R2 (model) = 0.8028 PearsonR (test) = 0.7294
+[PC] YLD [RKHS]: R2 (model) = 0.9558 PearsonR (test) = 0.5859
+[PC] YLD [RFC]: R2 (model) = 0.7111 PearsonR (test) = 0.6331
+[PC] YLD [SVC]: R2 (model) = 0.623 PearsonR (test) = 0.6199
+
+=== Replicate [2/3] Fold [2/5] ===
+[PC] YLD [RR-BLUP]: R2 (model) = 0.9195 PearsonR (test) = 0.7956
+[PC] YLD [GBLUP]: R2 (model) = 0.9427 PearsonR (test) = 0.6667
+[PC] YLD [BRR]: R2 (model) = 0.943 PearsonR (test) = 0.6556
+[PC] YLD [BL]: R2 (model) = 0.9257 PearsonR (test) = 0.7519
+[PC] YLD [BayesA]: R2 (model) = 0.9149 PearsonR (test) = 0.7587
+[PC] YLD [BayesB]: R2 (model) = 0.8349 PearsonR (test) = 0.7804
+[PC] YLD [BayesC]: R2 (model) = 0.8019 PearsonR (test) = 0.7849
+[PC] YLD [RFR]: R2 (model) = 0.9699 PearsonR (test) = 0.7727
+[PC] YLD [SVR]: R2 (model) = 0.8082 PearsonR (test) = 0.5839
+[PC] YLD [RKHS]: R2 (model) = 0.9616 PearsonR (test) = 0.6502
+[PC] YLD [RFC]: R2 (model) = 0.7215 PearsonR (test) = 0.672
+[PC] YLD [SVC]: R2 (model) = 0.644 PearsonR (test) = 0.5043
+
+=== Replicate [2/3] Fold [3/5] ===
+[PC] YLD [RR-BLUP]: R2 (model) = 0.9125 PearsonR (test) = 0.8211
+[PC] YLD [GBLUP]: R2 (model) = 0.9364 PearsonR (test) = 0.6744
+[PC] YLD [BRR]: R2 (model) = 0.9363 PearsonR (test) = 0.6733
+[PC] YLD [BL]: R2 (model) = 0.9204 PearsonR (test) = 0.7745
+[PC] YLD [BayesA]: R2 (model) = 0.9103 PearsonR (test) = 0.7736
+[PC] YLD [BayesB]: R2 (model) = 0.82 PearsonR (test) = 0.7938
+[PC] YLD [BayesC]: R2 (model) = 0.7971 PearsonR (test) = 0.7917
+[PC] YLD [RFR]: R2 (model) = 0.9679 PearsonR (test) = 0.7342
+[PC] YLD [SVR]: R2 (model) = 0.8109 PearsonR (test) = 0.633
+[PC] YLD [RKHS]: R2 (model) = 0.9632 PearsonR (test) = 0.6232
+[PC] YLD [RFC]: R2 (model) = 0.7067 PearsonR (test) = 0.7195
+[PC] YLD [SVC]: R2 (model) = 0.6255 PearsonR (test) = 0.4886
+
+=== Replicate [2/3] Fold [4/5] ===
+[PC] YLD [RR-BLUP]: R2 (model) = 0.9089 PearsonR (test) = 0.8134
+[PC] YLD [GBLUP]: R2 (model) = 0.9376 PearsonR (test) = 0.5957
+[PC] YLD [BRR]: R2 (model) = 0.9377 PearsonR (test) = 0.6086
+[PC] YLD [BL]: R2 (model) = 0.9184 PearsonR (test) = 0.8009
+[PC] YLD [BayesA]: R2 (model) = 0.9113 PearsonR (test) = 0.813
+[PC] YLD [BayesB]: R2 (model) = 0.8407 PearsonR (test) = 0.7892
+[PC] YLD [BayesC]: R2 (model) = 0.8206 PearsonR (test) = 0.7868
+[PC] YLD [RFR]: R2 (model) = 0.9694 PearsonR (test) = 0.7896
+[PC] YLD [SVR]: R2 (model) = 0.8187 PearsonR (test) = 0.5577
+[PC] YLD [RKHS]: R2 (model) = 0.9616 PearsonR (test) = 0.5025
+[PC] YLD [RFC]: R2 (model) = 0.701 PearsonR (test) = 0.6181
+[PC] YLD [SVC]: R2 (model) = 0.6297 PearsonR (test) = 0.4789
+
+=== Replicate [2/3] Fold [5/5] ===
+[PC] YLD [RR-BLUP]: R2 (model) = 0.9043 PearsonR (test) = 0.8665
+[PC] YLD [GBLUP]: R2 (model) = 0.9305 PearsonR (test) = 0.7563
+[PC] YLD [BRR]: R2 (model) = 0.9306 PearsonR (test) = 0.7565
+[PC] YLD [BL]: R2 (model) = 0.9114 PearsonR (test) = 0.8521
+[PC] YLD [BayesA]: R2 (model) = 0.901 PearsonR (test) = 0.8528
+[PC] YLD [BayesB]: R2 (model) = 0.8301 PearsonR (test) = 0.8549
+[PC] YLD [BayesC]: R2 (model) = 0.8062 PearsonR (test) = 0.856
+[PC] YLD [RFR]: R2 (model) = 0.9707 PearsonR (test) = 0.8344
+[PC] YLD [SVR]: R2 (model) = 0.7918 PearsonR (test) = 0.709
+[PC] YLD [RKHS]: R2 (model) = 0.9483 PearsonR (test) = 0.7208
+[PC] YLD [RFC]: R2 (model) = 0.6936 PearsonR (test) = 0.7227
+[PC] YLD [SVC]: R2 (model) = 0.61 PearsonR (test) = 0.6643
+
+=== Replicate [3/3] Fold [1/5] ===
+[PC] YLD [RR-BLUP]: R2 (model) = 0.9142 PearsonR (test) = 0.8445
+[PC] YLD [GBLUP]: R2 (model) = 0.9412 PearsonR (test) = 0.6373
+[PC] YLD [BRR]: R2 (model) = 0.9416 PearsonR (test) = 0.6332
+[PC] YLD [BL]: R2 (model) = 0.9231 PearsonR (test) = 0.801
+[PC] YLD [BayesA]: R2 (model) = 0.9164 PearsonR (test) = 0.7987
+[PC] YLD [BayesB]: R2 (model) = 0.8437 PearsonR (test) = 0.8403
+[PC] YLD [BayesC]: R2 (model) = 0.8092 PearsonR (test) = 0.8463
+[PC] YLD [RFR]: R2 (model) = 0.9673 PearsonR (test) = 0.8302
+[PC] YLD [SVR]: R2 (model) = 0.8196 PearsonR (test) = 0.6388
+[PC] YLD [RKHS]: R2 (model) = 0.9499 PearsonR (test) = 0.6313
+[PC] YLD [RFC]: R2 (model) = 0.6907 PearsonR (test) = 0.7314
+[PC] YLD [SVC]: R2 (model) = 0.628 PearsonR (test) = 0.562
+
+=== Replicate [3/3] Fold [2/5] ===
+[PC] YLD [RR-BLUP]: R2 (model) = 0.8955 PearsonR (test) = 0.8709
+[PC] YLD [GBLUP]: R2 (model) = 0.9259 PearsonR (test) = 0.7636
+[PC] YLD [BRR]: R2 (model) = 0.9263 PearsonR (test) = 0.7654
+[PC] YLD [BL]: R2 (model) = 0.905 PearsonR (test) = 0.8558
+[PC] YLD [BayesA]: R2 (model) = 0.8932 PearsonR (test) = 0.855
+[PC] YLD [BayesB]: R2 (model) = 0.8098 PearsonR (test) = 0.8697
+[PC] YLD [BayesC]: R2 (model) = 0.783 PearsonR (test) = 0.8728
+[PC] YLD [RFR]: R2 (model) = 0.9658 PearsonR (test) = 0.8398
+[PC] YLD [SVR]: R2 (model) = 0.7681 PearsonR (test) = 0.7247
+[PC] YLD [RKHS]: R2 (model) = 0.9464 PearsonR (test) = 0.6639
+[PC] YLD [RFC]: R2 (model) = 0.704 PearsonR (test) = 0.7112
+[PC] YLD [SVC]: R2 (model) = 0.5952 PearsonR (test) = 0.5629
+
+=== Replicate [3/3] Fold [3/5] ===
+[PC] YLD [RR-BLUP]: R2 (model) = 0.9224 PearsonR (test) = 0.7775
+[PC] YLD [GBLUP]: R2 (model) = 0.9506 PearsonR (test) = 0.5704
+[PC] YLD [BRR]: R2 (model) = 0.9507 PearsonR (test) = 0.5652
+[PC] YLD [BL]: R2 (model) = 0.9302 PearsonR (test) = 0.7614
+[PC] YLD [BayesA]: R2 (model) = 0.9232 PearsonR (test) = 0.7703
+[PC] YLD [BayesB]: R2 (model) = 0.8385 PearsonR (test) = 0.7767
+[PC] YLD [BayesC]: R2 (model) = 0.8146 PearsonR (test) = 0.7725
+[PC] YLD [RFR]: R2 (model) = 0.9695 PearsonR (test) = 0.777
+[PC] YLD [SVR]: R2 (model) = 0.8194 PearsonR (test) = 0.5942
+[PC] YLD [RKHS]: R2 (model) = 0.968 PearsonR (test) = 0.5503
+[PC] YLD [RFC]: R2 (model) = 0.7142 PearsonR (test) = 0.6527
+[PC] YLD [SVC]: R2 (model) = 0.6338 PearsonR (test) = 0.5271
+
+=== Replicate [3/3] Fold [4/5] ===
+[PC] YLD [RR-BLUP]: R2 (model) = 0.9 PearsonR (test) = 0.834
+[PC] YLD [GBLUP]: R2 (model) = 0.9351 PearsonR (test) = 0.6253
+[PC] YLD [BRR]: R2 (model) = 0.9349 PearsonR (test) = 0.6431
+[PC] YLD [BL]: R2 (model) = 0.9099 PearsonR (test) = 0.7564
+[PC] YLD [BayesA]: R2 (model) = 0.8959 PearsonR (test) = 0.7515
+[PC] YLD [BayesB]: R2 (model) = 0.8184 PearsonR (test) = 0.7998
+[PC] YLD [BayesC]: R2 (model) = 0.7881 PearsonR (test) = 0.8083
+[PC] YLD [RFR]: R2 (model) = 0.9689 PearsonR (test) = 0.7867
+[PC] YLD [SVR]: R2 (model) = 0.7985 PearsonR (test) = 0.6486
+[PC] YLD [RKHS]: R2 (model) = 0.9442 PearsonR (test) = 0.6325
+[PC] YLD [RFC]: R2 (model) = 0.7077 PearsonR (test) = 0.6719
+[PC] YLD [SVC]: R2 (model) = 0.6253 PearsonR (test) = 0.5921
+
+=== Replicate [3/3] Fold [5/5] ===
+[PC] YLD [RR-BLUP]: R2 (model) = 0.9054 PearsonR (test) = 0.8787
+[PC] YLD [GBLUP]: R2 (model) = 0.9406 PearsonR (test) = 0.6617
+[PC] YLD [BRR]: R2 (model) = 0.9409 PearsonR (test) = 0.6579
+[PC] YLD [BL]: R2 (model) = 0.918 PearsonR (test) = 0.8518
+[PC] YLD [BayesA]: R2 (model) = 0.9072 PearsonR (test) = 0.8547
+[PC] YLD [BayesB]: R2 (model) = 0.8283 PearsonR (test) = 0.8645
+[PC] YLD [BayesC]: R2 (model) = 0.797 PearsonR (test) = 0.8629
+[PC] YLD [RFR]: R2 (model) = 0.9706 PearsonR (test) = 0.836
+[PC] YLD [SVR]: R2 (model) = 0.7993 PearsonR (test) = 0.6568
+[PC] YLD [RKHS]: R2 (model) = 0.9638 PearsonR (test) = 0.677
+[PC] YLD [RFC]: R2 (model) = 0.6972 PearsonR (test) = 0.7133
+[PC] YLD [SVC]: R2 (model) = 0.6205 PearsonR (test) = 0.5782
+
+[PC] Performing GS for PLH
+[All] Cleaned VCF : /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/train_genotype.aligned.sorted.vcf
+[All] Cleaned Pheno: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/PLH_normalized.aligned.sorted.tsv
+[All] VCF samples in: 298
+[All] Pheno samples in: 293
+[All] Common samples : 293
+
+[STEP]Perform PCA and generate PC markers...
+[All] PC file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/train_genotype.aligned.sorted.PCs.tsv
+[All] Number of PCs = 188
+[All] Number of samples=293
+
+Reading training phenotypic data...
+
+[STEP]Transpose marker file for a GS format...
+Transposed training marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/train_genotype.aligned.sorted.PCs.samples_x_markers.tsv
+Imputed marker file: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/intermediate_data/train_genotype.aligned.sorted.PCs.samples_x_markers.tsv
+
+[STEP]Performing five-fold cross validation...
+
+=== Replicate [1/3] Fold [1/5] ===
+[PC] PLH [RR-BLUP]: R2 (model) = 0.8986 PearsonR (test) = 0.8457
+[PC] PLH [GBLUP]: R2 (model) = 0.9415 PearsonR (test) = 0.5845
+[PC] PLH [BRR]: R2 (model) = 0.9416 PearsonR (test) = 0.5788
+[PC] PLH [BL]: R2 (model) = 0.9108 PearsonR (test) = 0.8126
+[PC] PLH [BayesA]: R2 (model) = 0.8896 PearsonR (test) = 0.8225
+[PC] PLH [BayesB]: R2 (model) = 0.8597 PearsonR (test) = 0.8238
+[PC] PLH [BayesC]: R2 (model) = 0.7486 PearsonR (test) = 0.8479
+[PC] PLH [RFR]: R2 (model) = 0.9734 PearsonR (test) = 0.818
+[PC] PLH [SVR]: R2 (model) = 0.7735 PearsonR (test) = 0.6081
+[PC] PLH [RKHS]: R2 (model) = 0.9667 PearsonR (test) = 0.615
+[PC] PLH [RFC]: R2 (model) = 0.703 PearsonR (test) = 0.765
+[PC] PLH [SVC]: R2 (model) = 0.6439 PearsonR (test) = 0.5143
+
+=== Replicate [1/3] Fold [2/5] ===
+[PC] PLH [RR-BLUP]: R2 (model) = 0.8989 PearsonR (test) = 0.8797
+[PC] PLH [GBLUP]: R2 (model) = 0.9372 PearsonR (test) = 0.6894
+[PC] PLH [BRR]: R2 (model) = 0.9375 PearsonR (test) = 0.6999
+[PC] PLH [BL]: R2 (model) = 0.9102 PearsonR (test) = 0.851
+[PC] PLH [BayesA]: R2 (model) = 0.8907 PearsonR (test) = 0.8613
+[PC] PLH [BayesB]: R2 (model) = 0.8447 PearsonR (test) = 0.8402
+[PC] PLH [BayesC]: R2 (model) = 0.7636 PearsonR (test) = 0.8303
+[PC] PLH [RFR]: R2 (model) = 0.9718 PearsonR (test) = 0.8783
+[PC] PLH [SVR]: R2 (model) = 0.7754 PearsonR (test) = 0.6306
+[PC] PLH [RKHS]: R2 (model) = 0.9663 PearsonR (test) = 0.7378
+[PC] PLH [RFC]: R2 (model) = 0.6846 PearsonR (test) = 0.8214
+[PC] PLH [SVC]: R2 (model) = 0.6365 PearsonR (test) = 0.6465
+
+=== Replicate [1/3] Fold [3/5] ===
+[PC] PLH [RR-BLUP]: R2 (model) = 0.906 PearsonR (test) = 0.8401
+[PC] PLH [GBLUP]: R2 (model) = 0.9455 PearsonR (test) = 0.6303
+[PC] PLH [BRR]: R2 (model) = 0.9451 PearsonR (test) = 0.643
+[PC] PLH [BL]: R2 (model) = 0.9163 PearsonR (test) = 0.8239
+[PC] PLH [BayesA]: R2 (model) = 0.8961 PearsonR (test) = 0.84
+[PC] PLH [BayesB]: R2 (model) = 0.8584 PearsonR (test) = 0.8315
+[PC] PLH [BayesC]: R2 (model) = 0.7593 PearsonR (test) = 0.8296
+[PC] PLH [RFR]: R2 (model) = 0.9721 PearsonR (test) = 0.833
+[PC] PLH [SVR]: R2 (model) = 0.7766 PearsonR (test) = 0.6833
+[PC] PLH [RKHS]: R2 (model) = 0.9717 PearsonR (test) = 0.6849
+[PC] PLH [RFC]: R2 (model) = 0.6858 PearsonR (test) = 0.7907
+[PC] PLH [SVC]: R2 (model) = 0.6196 PearsonR (test) = 0.5756
+
+=== Replicate [1/3] Fold [4/5] ===
+[PC] PLH [RR-BLUP]: R2 (model) = 0.9015 PearsonR (test) = 0.8729
+[PC] PLH [GBLUP]: R2 (model) = 0.9426 PearsonR (test) = 0.727
+[PC] PLH [BRR]: R2 (model) = 0.9427 PearsonR (test) = 0.7251
+[PC] PLH [BL]: R2 (model) = 0.9098 PearsonR (test) = 0.8677
+[PC] PLH [BayesA]: R2 (model) = 0.8881 PearsonR (test) = 0.8706
+[PC] PLH [BayesB]: R2 (model) = 0.8388 PearsonR (test) = 0.869
+[PC] PLH [BayesC]: R2 (model) = 0.7214 PearsonR (test) = 0.8569
+[PC] PLH [RFR]: R2 (model) = 0.9702 PearsonR (test) = 0.8484
+[PC] PLH [SVR]: R2 (model) = 0.7649 PearsonR (test) = 0.7156
+[PC] PLH [RKHS]: R2 (model) = 0.9747 PearsonR (test) = 0.7116
+[PC] PLH [RFC]: R2 (model) = 0.6751 PearsonR (test) = 0.8035
+[PC] PLH [SVC]: R2 (model) = 0.6095 PearsonR (test) = 0.6627
+
+=== Replicate [1/3] Fold [5/5] ===
+[PC] PLH [RR-BLUP]: R2 (model) = 0.8839 PearsonR (test) = 0.8444
+[PC] PLH [GBLUP]: R2 (model) = 0.9335 PearsonR (test) = 0.7096
+[PC] PLH [BRR]: R2 (model) = 0.9333 PearsonR (test) = 0.7084
+[PC] PLH [BL]: R2 (model) = 0.8995 PearsonR (test) = 0.8202
+[PC] PLH [BayesA]: R2 (model) = 0.8706 PearsonR (test) = 0.8138
+[PC] PLH [BayesB]: R2 (model) = 0.807 PearsonR (test) = 0.7968
+[PC] PLH [BayesC]: R2 (model) = 0.7393 PearsonR (test) = 0.7811
+[PC] PLH [RFR]: R2 (model) = 0.9749 PearsonR (test) = 0.8359
+[PC] PLH [SVR]: R2 (model) = 0.7941 PearsonR (test) = 0.6836
+[PC] PLH [RKHS]: R2 (model) = 0.9655 PearsonR (test) = 0.716
+[PC] PLH [RFC]: R2 (model) = 0.7057 PearsonR (test) = 0.7346
+[PC] PLH [SVC]: R2 (model) = 0.6405 PearsonR (test) = 0.6208
+
+=== Replicate [2/3] Fold [1/5] ===
+[PC] PLH [RR-BLUP]: R2 (model) = 0.9226 PearsonR (test) = 0.8383
+[PC] PLH [GBLUP]: R2 (model) = 0.954 PearsonR (test) = 0.6341
+[PC] PLH [BRR]: R2 (model) = 0.9538 PearsonR (test) = 0.632
+[PC] PLH [BL]: R2 (model) = 0.9293 PearsonR (test) = 0.8338
+[PC] PLH [BayesA]: R2 (model) = 0.916 PearsonR (test) = 0.8423
+[PC] PLH [BayesB]: R2 (model) = 0.8882 PearsonR (test) = 0.8432
+[PC] PLH [BayesC]: R2 (model) = 0.755 PearsonR (test) = 0.8481
+[PC] PLH [RFR]: R2 (model) = 0.9747 PearsonR (test) = 0.8427
+[PC] PLH [SVR]: R2 (model) = 0.7711 PearsonR (test) = 0.6581
+[PC] PLH [RKHS]: R2 (model) = 0.9743 PearsonR (test) = 0.6617
+[PC] PLH [RFC]: R2 (model) = 0.699 PearsonR (test) = 0.7816
+[PC] PLH [SVC]: R2 (model) = 0.6271 PearsonR (test) = 0.6357
+
+=== Replicate [2/3] Fold [2/5] ===
+[PC] PLH [RR-BLUP]: R2 (model) = 0.8948 PearsonR (test) = 0.8346
+[PC] PLH [GBLUP]: R2 (model) = 0.9346 PearsonR (test) = 0.6365
+[PC] PLH [BRR]: R2 (model) = 0.9346 PearsonR (test) = 0.6349
+[PC] PLH [BL]: R2 (model) = 0.9039 PearsonR (test) = 0.8293
+[PC] PLH [BayesA]: R2 (model) = 0.8793 PearsonR (test) = 0.8285
+[PC] PLH [BayesB]: R2 (model) = 0.8291 PearsonR (test) = 0.8267
+[PC] PLH [BayesC]: R2 (model) = 0.7563 PearsonR (test) = 0.8163
+[PC] PLH [RFR]: R2 (model) = 0.973 PearsonR (test) = 0.8403
+[PC] PLH [SVR]: R2 (model) = 0.7958 PearsonR (test) = 0.6015
+[PC] PLH [RKHS]: R2 (model) = 0.9666 PearsonR (test) = 0.6742
+[PC] PLH [RFC]: R2 (model) = 0.7211 PearsonR (test) = 0.7519
+[PC] PLH [SVC]: R2 (model) = 0.6351 PearsonR (test) = 0.5869
+
+=== Replicate [2/3] Fold [3/5] ===
+[PC] PLH [RR-BLUP]: R2 (model) = 0.9024 PearsonR (test) = 0.8691
+[PC] PLH [GBLUP]: R2 (model) = 0.9427 PearsonR (test) = 0.7052
+[PC] PLH [BRR]: R2 (model) = 0.9428 PearsonR (test) = 0.707
+[PC] PLH [BL]: R2 (model) = 0.9128 PearsonR (test) = 0.8458
+[PC] PLH [BayesA]: R2 (model) = 0.8928 PearsonR (test) = 0.85
+[PC] PLH [BayesB]: R2 (model) = 0.8528 PearsonR (test) = 0.8415
+[PC] PLH [BayesC]: R2 (model) = 0.7454 PearsonR (test) = 0.8374
+[PC] PLH [RFR]: R2 (model) = 0.971 PearsonR (test) = 0.864
+[PC] PLH [SVR]: R2 (model) = 0.7776 PearsonR (test) = 0.6959
+[PC] PLH [RKHS]: R2 (model) = 0.9639 PearsonR (test) = 0.6715
+[PC] PLH [RFC]: R2 (model) = 0.6881 PearsonR (test) = 0.7919
+[PC] PLH [SVC]: R2 (model) = 0.6011 PearsonR (test) = 0.6435
+
+=== Replicate [2/3] Fold [4/5] ===
+[PC] PLH [RR-BLUP]: R2 (model) = 0.9098 PearsonR (test) = 0.8163
+[PC] PLH [GBLUP]: R2 (model) = 0.9452 PearsonR (test) = 0.7443
+[PC] PLH [BRR]: R2 (model) = 0.9449 PearsonR (test) = 0.7431
+[PC] PLH [BL]: R2 (model) = 0.9191 PearsonR (test) = 0.8136
+[PC] PLH [BayesA]: R2 (model) = 0.8982 PearsonR (test) = 0.8197
+[PC] PLH [BayesB]: R2 (model) = 0.8681 PearsonR (test) = 0.812
+[PC] PLH [BayesC]: R2 (model) = 0.743 PearsonR (test) = 0.8205
+[PC] PLH [RFR]: R2 (model) = 0.9706 PearsonR (test) = 0.8578
+[PC] PLH [SVR]: R2 (model) = 0.779 PearsonR (test) = 0.7244
+[PC] PLH [RKHS]: R2 (model) = 0.9694 PearsonR (test) = 0.7246
+[PC] PLH [RFC]: R2 (model) = 0.7109 PearsonR (test) = 0.7389
+[PC] PLH [SVC]: R2 (model) = 0.6459 PearsonR (test) = 0.7124
+
+=== Replicate [2/3] Fold [5/5] ===
+[PC] PLH [RR-BLUP]: R2 (model) = 0.8946 PearsonR (test) = 0.7909
+[PC] PLH [GBLUP]: R2 (model) = 0.9414 PearsonR (test) = 0.5717
+[PC] PLH [BRR]: R2 (model) = 0.9412 PearsonR (test) = 0.5742
+[PC] PLH [BL]: R2 (model) = 0.9046 PearsonR (test) = 0.7646
+[PC] PLH [BayesA]: R2 (model) = 0.8748 PearsonR (test) = 0.758
+[PC] PLH [BayesB]: R2 (model) = 0.8294 PearsonR (test) = 0.7642
+[PC] PLH [BayesC]: R2 (model) = 0.7563 PearsonR (test) = 0.7618
+[PC] PLH [RFR]: R2 (model) = 0.9729 PearsonR (test) = 0.7637
+[PC] PLH [SVR]: R2 (model) = 0.785 PearsonR (test) = 0.5003
+[PC] PLH [RKHS]: R2 (model) = 0.9622 PearsonR (test) = 0.5942
+[PC] PLH [RFC]: R2 (model) = 0.6697 PearsonR (test) = 0.6836
+[PC] PLH [SVC]: R2 (model) = 0.6171 PearsonR (test) = 0.5027
+
+=== Replicate [3/3] Fold [1/5] ===
+[PC] PLH [RR-BLUP]: R2 (model) = 0.8858 PearsonR (test) = 0.789
+[PC] PLH [GBLUP]: R2 (model) = 0.9341 PearsonR (test) = 0.6026
+[PC] PLH [BRR]: R2 (model) = 0.9341 PearsonR (test) = 0.5993
+[PC] PLH [BL]: R2 (model) = 0.8967 PearsonR (test) = 0.7825
+[PC] PLH [BayesA]: R2 (model) = 0.8567 PearsonR (test) = 0.7642
+[PC] PLH [BayesB]: R2 (model) = 0.8158 PearsonR (test) = 0.766
+[PC] PLH [BayesC]: R2 (model) = 0.7445 PearsonR (test) = 0.7675
+[PC] PLH [RFR]: R2 (model) = 0.9731 PearsonR (test) = 0.7489
+[PC] PLH [SVR]: R2 (model) = 0.7925 PearsonR (test) = 0.5249
+[PC] PLH [RKHS]: R2 (model) = 0.9617 PearsonR (test) = 0.636
+[PC] PLH [RFC]: R2 (model) = 0.7137 PearsonR (test) = 0.6126
+[PC] PLH [SVC]: R2 (model) = 0.6538 PearsonR (test) = 0.4027
+
+=== Replicate [3/3] Fold [2/5] ===
+[PC] PLH [RR-BLUP]: R2 (model) = 0.8997 PearsonR (test) = 0.8458
+[PC] PLH [GBLUP]: R2 (model) = 0.9433 PearsonR (test) = 0.6866
+[PC] PLH [BRR]: R2 (model) = 0.9436 PearsonR (test) = 0.6809
+[PC] PLH [BL]: R2 (model) = 0.9124 PearsonR (test) = 0.8163
+[PC] PLH [BayesA]: R2 (model) = 0.8911 PearsonR (test) = 0.8209
+[PC] PLH [BayesB]: R2 (model) = 0.8272 PearsonR (test) = 0.7888
+[PC] PLH [BayesC]: R2 (model) = 0.7702 PearsonR (test) = 0.7714
+[PC] PLH [RFR]: R2 (model) = 0.9721 PearsonR (test) = 0.8692
+[PC] PLH [SVR]: R2 (model) = 0.7674 PearsonR (test) = 0.6885
+[PC] PLH [RKHS]: R2 (model) = 0.9682 PearsonR (test) = 0.733
+[PC] PLH [RFC]: R2 (model) = 0.6842 PearsonR (test) = 0.7556
+[PC] PLH [SVC]: R2 (model) = 0.6105 PearsonR (test) = 0.5572
+
+=== Replicate [3/3] Fold [3/5] ===
+[PC] PLH [RR-BLUP]: R2 (model) = 0.905 PearsonR (test) = 0.8912
+[PC] PLH [GBLUP]: R2 (model) = 0.945 PearsonR (test) = 0.645
+[PC] PLH [BRR]: R2 (model) = 0.945 PearsonR (test) = 0.6483
+[PC] PLH [BL]: R2 (model) = 0.9132 PearsonR (test) = 0.8757
+[PC] PLH [BayesA]: R2 (model) = 0.8929 PearsonR (test) = 0.8834
+[PC] PLH [BayesB]: R2 (model) = 0.8418 PearsonR (test) = 0.8743
+[PC] PLH [BayesC]: R2 (model) = 0.7402 PearsonR (test) = 0.8653
+[PC] PLH [RFR]: R2 (model) = 0.9718 PearsonR (test) = 0.9071
+[PC] PLH [SVR]: R2 (model) = 0.7705 PearsonR (test) = 0.645
+[PC] PLH [RKHS]: R2 (model) = 0.9695 PearsonR (test) = 0.7174
+[PC] PLH [RFC]: R2 (model) = 0.6756 PearsonR (test) = 0.8249
+[PC] PLH [SVC]: R2 (model) = 0.6292 PearsonR (test) = 0.5776
+
+=== Replicate [3/3] Fold [4/5] ===
+[PC] PLH [RR-BLUP]: R2 (model) = 0.9256 PearsonR (test) = 0.7908
+[PC] PLH [GBLUP]: R2 (model) = 0.9576 PearsonR (test) = 0.5553
+[PC] PLH [BRR]: R2 (model) = 0.9576 PearsonR (test) = 0.5658
+[PC] PLH [BL]: R2 (model) = 0.9332 PearsonR (test) = 0.7484
+[PC] PLH [BayesA]: R2 (model) = 0.9194 PearsonR (test) = 0.7663
+[PC] PLH [BayesB]: R2 (model) = 0.8901 PearsonR (test) = 0.7618
+[PC] PLH [BayesC]: R2 (model) = 0.7573 PearsonR (test) = 0.7769
+[PC] PLH [RFR]: R2 (model) = 0.975 PearsonR (test) = 0.8026
+[PC] PLH [SVR]: R2 (model) = 0.8066 PearsonR (test) = 0.4981
+[PC] PLH [RKHS]: R2 (model) = 0.9788 PearsonR (test) = 0.5479
+[PC] PLH [RFC]: R2 (model) = 0.7258 PearsonR (test) = 0.6826
+[PC] PLH [SVC]: R2 (model) = 0.6477 PearsonR (test) = 0.4493
+
+=== Replicate [3/3] Fold [5/5] ===
+[PC] PLH [RR-BLUP]: R2 (model) = 0.9089 PearsonR (test) = 0.7445
+[PC] PLH [GBLUP]: R2 (model) = 0.9443 PearsonR (test) = 0.5058
+[PC] PLH [BRR]: R2 (model) = 0.9439 PearsonR (test) = 0.5165
+[PC] PLH [BL]: R2 (model) = 0.9154 PearsonR (test) = 0.7197
+[PC] PLH [BayesA]: R2 (model) = 0.8938 PearsonR (test) = 0.729
+[PC] PLH [BayesB]: R2 (model) = 0.8554 PearsonR (test) = 0.7266
+[PC] PLH [BayesC]: R2 (model) = 0.7502 PearsonR (test) = 0.7349
+[PC] PLH [RFR]: R2 (model) = 0.9757 PearsonR (test) = 0.7331
+[PC] PLH [SVR]: R2 (model) = 0.8038 PearsonR (test) = 0.4302
+[PC] PLH [RKHS]: R2 (model) = 0.9673 PearsonR (test) = 0.5338
+[PC] PLH [RFC]: R2 (model) = 0.7157 PearsonR (test) = 0.629
+[PC] PLH [SVC]: R2 (model) = 0.6528 PearsonR (test) = 0.3089
+
+Post analysis of GS results for PC...
+
+=== FINAL RESULTS ===
+
+YLD:
+RR-BLUP: PearsonR = 0.842 ± 0.033
+GBLUP: PearsonR = 0.677 ± 0.064
+BRR: PearsonR = 0.678 ± 0.065
+BL: PearsonR = 0.806 ± 0.039
+BayesA: PearsonR = 0.808 ± 0.040
+BayesB: PearsonR = 0.822 ± 0.033
+BayesC: PearsonR = 0.825 ± 0.035
+RFR: PearsonR = 0.800 ± 0.036
+SVR: PearsonR = 0.651 ± 0.070
+RKHS: PearsonR = 0.641 ± 0.062
+RFC: PearsonR = 0.696 ± 0.039
+SVC: PearsonR = 0.561 ± 0.071
+
+PLH:
+RR-BLUP: PearsonR = 0.833 ± 0.040
+GBLUP: PearsonR = 0.642 ± 0.069
+BRR: PearsonR = 0.644 ± 0.067
+BL: PearsonR = 0.814 ± 0.043
+BayesA: PearsonR = 0.818 ± 0.045
+BayesB: PearsonR = 0.811 ± 0.043
+BayesC: PearsonR = 0.810 ± 0.041
+RFR: PearsonR = 0.830 ± 0.049
+SVR: PearsonR = 0.619 ± 0.091
+RKHS: PearsonR = 0.664 ± 0.066
+RFC: PearsonR = 0.745 ± 0.066
+SVC: PearsonR = 0.560 ± 0.108
+
+CV summary statics saved to: /isilon/projects/J-002035_flaxgenomics/J-001386Frank_Lab/Flax_GS_project_J-003426/github/MultiGS/Examples/test_MultiGS-R/outputFile_CV/PC_CV_summary_statistics.csv
+
+Pipeline finished. Elapsed: 226.68 mins
